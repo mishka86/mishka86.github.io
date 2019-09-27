@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+<title>러닝 자바스크립트 스터디 자료 - CHAPTER 13. 함수와 추상적 사고 - Mishka&#39;s Blog</title>
+<meta name="Description" content="미슈카의 개발 블로그 입니다. 포스팅에 대한 공유, 논의, 수정, 댓글 등은 언제든 환영합니다.">
+<meta name="Keywords" content="미슈카,Mishka,mishka,개발블로그,미슈카개발블로그">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+<link rel="canonical" href="http://mishka86.github.io/2019/08/03/learning-javascript-chapter13/">
+<meta property="og:title" content="Mishka's blog">
+<meta property="og:description" content="미슈카의 개발 블로그 입니다. 포스팅에 대한 공유, 논의, 수정, 댓글 등은 언제든 환영합니다.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://mishka86.github.io/">
+<meta property="og:image" content="/images/meta_logo.png">
+
+
+
+
+
+<link rel="alternative" href="rss2.xml" title="러닝 자바스크립트 스터디 자료 - CHAPTER 13. 함수와 추상적 사고" type="application/atom+xml">
+
+
+
+<link rel="icon" href="/images/favicon.ico">
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.7.2/css/bulma.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:400,600|Source+Code+Pro">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/vs2015.css">
+
+
+    
+    
+    
+    <style>body>.footer,body>.navbar,body>.section{opacity:0}</style>
+    
+
+    
+    
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css">
+    
+
+    
+    
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.css">
+
+
+    
+    
+    
+    
+
+<link rel="stylesheet" href="/css/back-to-top.css">
+
+
+    
+    
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-141930873-1"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-141930873-1');
+</script>
+
+
+    
+    
+    
+    
+
+    
+    
+<link rel="stylesheet" href="/css/progressbar.css">
+<script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
+
+    
+    
+    
+
+    
+    
+    
+
+
+<link rel="stylesheet" href="/css/style.css">
+
+<!-- 구글 AdSense -->
+
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: 'ca-pub-7669354135137434',
+            enable_page_level_ads: true
+        });
+    </script>
+
+</head>
+<body class="is-2-column">
+    <nav class="navbar navbar-main">
+    <div class="container">
+        <div class="navbar-brand is-flex-center">
+            <a class="navbar-item navbar-logo" href="/">
+            
+                <img src="/images/blog_logo.png" alt="러닝 자바스크립트 스터디 자료 - CHAPTER 13. 함수와 추상적 사고" height="28">
+            
+            </a>
+        </div>
+        <div class="navbar-menu">
+            
+            <div class="navbar-start">
+                
+                <a class="navbar-item" href="/">Home</a>
+                
+                <a class="navbar-item" href="/archives">Archives</a>
+                
+                <a class="navbar-item" href="/categories">Categories</a>
+                
+                <a class="navbar-item" href="/tags">Tags</a>
+                
+                <a class="navbar-item" href="/about">About</a>
+                
+            </div>
+            
+            <div class="navbar-end">
+                
+                    
+                    
+                    <a class="navbar-item" target="_blank" title="Download on GitHub" href="https://github.com/mishka86" rel="external nofollow noopener noreferrer">
+                        
+                        <i class="fab fa-github"></i>
+                        
+                    </a>
+                    
+                
+                
+                <a class="navbar-item is-hidden-tablet catalogue" title="카탈로그" href="javascript:;">
+                    <i class="fas fa-list-ul"></i>
+                </a>
+                
+                
+                <a class="navbar-item search" title="검색" href="javascript:;">
+                    <i class="fas fa-search"></i>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+</nav>
+    
+    <section class="section">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-8-tablet is-8-desktop is-10-widescreen has-order-2 column-main">
+    <!-- 아티클 위 광고 -->
+    <ins class="adsbygoogle card" style="display:block" data-ad-client="ca-pub-7669354135137434" data-ad-slot="1722092316" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    <script class="card">
+        (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+
+
+
+<div class="card">
+    <!-- 
+    <div class="card-image">
+        <span  class="image is-7by1">
+            <img class="thumbnail" src="/img/learning-thumbnail.jpg" alt="러닝 자바스크립트 스터디 자료 - CHAPTER 13. 함수와 추상적 사고">
+        </span>
+    </div>
+     -->
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-08-02T15:20:45.000Z">2019-08-03</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/Learning-JavaScript/">Learning-JavaScript</a>
+                </div>
+                
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                러닝 자바스크립트 스터디 자료 - CHAPTER 13. 함수와 추상적 사고
+            
+        </h1>
+        <div class="content">
+            <h2 id="서브루틴으로서의-함수"><a href="#서브루틴으로서의-함수" class="headerlink" title="서브루틴으로서의 함수"></a>서브루틴으로서의 함수</h2><p>서브루틴은 아주 오랜 된 개념이며 복잡한 코드를 간단하게 만드는 기초적인 수단입니다.<br>서브루틴은 프로시저, 루틴, 서브프로그램, 매크로 등 다양한 이름으로 불립니다. 이들은 모두 매우 단순하고 <strong>범용적인 호출 할수 있는 한 단위</strong>를 일컫는 말이다.</p>
+<h2 id="함수로서의-함수"><a href="#함수로서의-함수" class="headerlink" title="함수로서의 함수"></a>함수로서의 함수</h2><p>순수함수 - 순수함수에서는 입력이 같으면 결과도 반드시 같다.<br>순수함수에는 부수효과가 없어야 한다.<br>함수도 객체다. 자바스크립트 함수는 Function 객체의 인스턴스이다.</p>
+<a id="more"></a>
+
+<h2 id="변수로서의-함수"><a href="#변수로서의-함수" class="headerlink" title="변수로서의 함수"></a>변수로서의 함수</h2><blockquote>
+<p>함수를 가리키는 변수를 만들어 별명을 정할 수 있다,<br>배열에 함수를 넣을 수 있습니다. 물론 다른 타입의 데이터와 섞일 수 있습니다.<br>함수를 객체의 프로퍼티로 사용할 수 있습니다.<br>함수를 함수에 전달 할 수 잇습니다.<br>함수가 함수를 반환 할 수 있습니다.<br>함수를 매개변수로 받는 함수를 반환하는 것도 물론 가능합니다.</p>
+</blockquote>
+<h2 id="배열-안의-함수"><a href="#배열-안의-함수" class="headerlink" title="배열 안의 함수"></a>배열 안의 함수</h2><p>배열을 사용하면 작업 단계를 언제든 쉽게 바꿀 수 있다는 장점이 있다.<br>어떤 작업을 빼야 한다면 배열에서 제거하기만 하면되고, 추가할 작업이 있다면 배열에 추가하기만 하면 된다.</p>
+<h2 id="함수의-함수-전달"><a href="#함수의-함수-전달" class="headerlink" title="함수의 함수 전달"></a>함수의 함수 전달</h2><p>함수에 함수를 전달하는 다른 용도는 <code>비동기적 프로그래밍</code>입니다. 이런 용도로 전달하는 함수를 보통 <code>콜백</code>이라 부르며 약자로 cb를 쓸때가 많습니다. 콜백 함수는 <strong>자신을 감싼 함수가 실행을 마쳤을때 호출</strong>됩니다.<br>함수에 함수를 전달하는 대표적인 사례가 콜백이긴 하지만 그게 전부는 아니다.<br>함수는 동작이고, 함수를 받은 함수는 그 동작을 활용할 수 있다.</p>
+<h2 id="함수를-반환하는-함수"><a href="#함수를-반환하는-함수" class="headerlink" title="함수를 반환하는 함수"></a>함수를 반환하는 함수</h2><p>매개변수 여러개를 받는 함수를 매개변수 하나만 받는 함수로 바꾸는 것을 <code>커링</code> 이라고 부른다.<br>커링이라는 이름은 이 패턴을 만든 미국의 수학자 하스켈 커리의 이름을 딴것이다.</p>
+<h2 id="재귀"><a href="#재귀" class="headerlink" title="재귀"></a>재귀</h2><p>재귀 역시 널리 쓰이며 함수를 활용하는 중요한 패턴입니다, <code>재귀</code>란 <strong>자기 자신을 호출하는 함수</strong> 입니다.<br>같은 일을 반복하면서 그 대상이 점차 줄어드는 상황에서 재귀를 유용하게 활용 할 수 있습니다.<br>재귀 함수에는 <strong>종료조건</strong>이 있어야 합니다. 종료 조건이 없다면 자바스크립트 인터프리터에서 스택이 너무 깊다고 판단할 때까지 재귀 호출을 계속하다가 프로그램이 멈춥니다.</p>
+<h2 id="함수형프로그래밍"><a href="#함수형프로그래밍" class="headerlink" title="함수형프로그래밍"></a>함수형프로그래밍</h2><p>어떤 방법이 ‘더 좋은’ 방법인가? 이 질문에 정확한 답은 없다. 여러가지 상황에 맞추어 사용하면된다.</p>
+
+        </div>
+        
+        <div class="level is-size-7 is-uppercase">
+            <div class="level-start">
+                <div class="level-item">
+                    <span class="is-size-6 has-text-grey has-mr-7">#</span>
+                    <a class="has-link-grey -link" href="/tags/Function/">Function</a>, <a class="has-link-grey -link" href="/tags/추상적사고/">추상적사고</a>, <a class="has-link-grey -link" href="/tags/추상화/">추상화</a>, <a class="has-link-grey -link" href="/tags/함수/">함수</a>
+                </div>
+            </div>
+        </div>
+        
+        
+        
+        
+<div class="sharethis-inline-share-buttons"></div>
+<script type="text/javascript" src="https://platform-api.sharethis.com/js/sharethis.js#property=5d11bc2de1239400125e3dc9&amp;product=inline-share-buttons" async="async"></script>
+
+        
+    </div>
+</div>
+
+
+
+
+
+    <!-- 댓글 위 광고 -->
+    <ins class="adsbygoogle card" style="display:block" data-ad-client="ca-pub-7669354135137434" data-ad-slot="8992996108" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    <script class="card">
+        (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+
+
+
+
+<div class="card card-transparent">
+    <div class="level post-navigation is-flex-wrap is-mobile">
+        
+        <div class="level-start">
+            <a class="level level-item has-link-grey  article-nav-prev" href="/2019/08/03/Learning-JavaScript-chapter14/">
+                <i class="level-item fas fa-chevron-left"></i>
+                <span class="level-item">러닝 자바스크립트 스터디 자료 - CHAPTER 14. 비동기적 프로그래밍</span>
+            </a>
+        </div>
+        
+        
+        <div class="level-end">
+            <a class="level level-item has-link-grey  article-nav-next" href="/2019/08/03/Learning-JavaScript-chapter12/">
+                <span class="level-item">러닝 자바스크립트 스터디 자료 - CHAPTER 12. 이터레이터와 제너레이터</span>
+                <i class="level-item fas fa-chevron-right"></i>
+            </a>
+        </div>
+        
+    </div>
+</div>
+
+
+
+<div class="card">
+    <div class="card-content">
+        <h3 class="title is-5 has-text-weight-normal">댓글</h3>
+        <div id="disqus_thread"></div>
+<script>
+
+/**
+*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+/*
+var disqus_config = function () {
+this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+*/
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = 'https://https-mishka86-github-io.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="external nofollow noopener noreferrer" target="_blank">comments powered by Disqus.</a></noscript>
+    </div>
+</div>
+
+
+</div>
+                
+                
+
+
+
+
+<div class="column is-4-tablet is-4-desktop is-3-widescreen  has-order-3 column-right is-sticky">
+    
+        
+<div class="card widget" id="toc">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                카탈로그
+            </h3>
+            <ul class="menu-list"><li>
+        <a class="is-flex" href="#서브루틴으로서의-함수">
+        <span class="has-mr-6">1</span>
+        <span>서브루틴으로서의 함수</span>
+        </a></li><li>
+        <a class="is-flex" href="#함수로서의-함수">
+        <span class="has-mr-6">2</span>
+        <span>함수로서의 함수</span>
+        </a></li><li>
+        <a class="is-flex" href="#변수로서의-함수">
+        <span class="has-mr-6">3</span>
+        <span>변수로서의 함수</span>
+        </a></li><li>
+        <a class="is-flex" href="#배열-안의-함수">
+        <span class="has-mr-6">4</span>
+        <span>배열 안의 함수</span>
+        </a></li><li>
+        <a class="is-flex" href="#함수의-함수-전달">
+        <span class="has-mr-6">5</span>
+        <span>함수의 함수 전달</span>
+        </a></li><li>
+        <a class="is-flex" href="#함수를-반환하는-함수">
+        <span class="has-mr-6">6</span>
+        <span>함수를 반환하는 함수</span>
+        </a></li><li>
+        <a class="is-flex" href="#재귀">
+        <span class="has-mr-6">7</span>
+        <span>재귀</span>
+        </a></li><li>
+        <a class="is-flex" href="#함수형프로그래밍">
+        <span class="has-mr-6">8</span>
+        <span>함수형프로그래밍</span>
+        </a></li></ul>
+        </div>
+    </div>
+</div>
+
+        
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                카테고리
+            </h3>
+            <ul class="menu-list">
+            <li>
+        <a class="level is-marginless" href="/categories/Learning-JavaScript/">
+            <span class="level-start">
+                <span class="level-item">Learning-JavaScript</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">16</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/Markdown/">
+            <span class="level-start">
+                <span class="level-item">Markdown</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/VScode/">
+            <span class="level-start">
+                <span class="level-item">VScode</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">2</span>
+            </span>
+        </a><ul><li>
+        <a class="level is-marginless" href="/categories/VScode/Extension/">
+            <span class="level-start">
+                <span class="level-item">Extension</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/VScode/gitbash/">
+            <span class="level-start">
+                <span class="level-item">gitbash</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li></ul></li><li>
+        <a class="level is-marginless" href="/categories/git/">
+            <span class="level-start">
+                <span class="level-item">git</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/hexo/">
+            <span class="level-start">
+                <span class="level-item">hexo</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">8</span>
+            </span>
+        </a><ul><li>
+        <a class="level is-marginless" href="/categories/hexo/SEO/">
+            <span class="level-start">
+                <span class="level-item">SEO</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/hexo/ad/">
+            <span class="level-start">
+                <span class="level-item">ad</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/hexo/backup/">
+            <span class="level-start">
+                <span class="level-item">backup</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/hexo/comment/">
+            <span class="level-start">
+                <span class="level-item">comment</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/hexo/setting/">
+            <span class="level-start">
+                <span class="level-item">setting</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/hexo/themes/">
+            <span class="level-start">
+                <span class="level-item">themes</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li></ul></li><li>
+        <a class="level is-marginless" href="/categories/zsh/">
+            <span class="level-start">
+                <span class="level-item">zsh</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/회고/">
+            <span class="level-start">
+                <span class="level-item">회고</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+        
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            태그 클라우드
+        </h3>
+        <a href="/tags/1년6개월/" style="font-size: 10px;">1년6개월</a> <a href="/tags/ERROR/" style="font-size: 10px;">ERROR</a> <a href="/tags/Function/" style="font-size: 10px;">Function</a> <a href="/tags/Github/" style="font-size: 10px;">Github</a> <a href="/tags/LSP/" style="font-size: 10px;">LSP</a> <a href="/tags/Learning-JavaScript/" style="font-size: 17.5px;">Learning-JavaScript</a> <a href="/tags/Mac/" style="font-size: 10px;">Mac</a> <a href="/tags/MarkDown/" style="font-size: 10px;">MarkDown</a> <a href="/tags/Math/" style="font-size: 10px;">Math</a> <a href="/tags/OOP/" style="font-size: 10px;">OOP</a> <a href="/tags/SEO/" style="font-size: 10px;">SEO</a> <a href="/tags/Terminal/" style="font-size: 10px;">Terminal</a> <a href="/tags/VScode/" style="font-size: 12.5px;">VScode</a> <a href="/tags/VisualStudioCode/" style="font-size: 10px;">VisualStudioCode</a> <a href="/tags/Wiriting/" style="font-size: 12.5px;">Wiriting</a> <a href="/tags/ad/" style="font-size: 10px;">ad</a> <a href="/tags/array/" style="font-size: 10px;">array</a> <a href="/tags/babel/" style="font-size: 10px;">babel</a> <a href="/tags/backup/" style="font-size: 10px;">backup</a> <a href="/tags/blog/" style="font-size: 12.5px;">blog</a> <a href="/tags/catch/" style="font-size: 10px;">catch</a> <a href="/tags/commend/" style="font-size: 10px;">commend</a> <a href="/tags/comment/" style="font-size: 10px;">comment</a> <a href="/tags/date/" style="font-size: 10px;">date</a> <a href="/tags/deploy/" style="font-size: 10px;">deploy</a> <a href="/tags/disqus/" style="font-size: 10px;">disqus</a> <a href="/tags/draft/" style="font-size: 10px;">draft</a> <a href="/tags/eslint/" style="font-size: 10px;">eslint</a> <a href="/tags/extension/" style="font-size: 10px;">extension</a> <a href="/tags/finally/" style="font-size: 10px;">finally</a> <a href="/tags/for문/" style="font-size: 10px;">for문</a> <a href="/tags/function/" style="font-size: 10px;">function</a> <a href="/tags/git/" style="font-size: 15px;">git</a> <a href="/tags/gitbash/" style="font-size: 10px;">gitbash</a> <a href="/tags/github/" style="font-size: 10px;">github</a> <a href="/tags/gulp/" style="font-size: 10px;">gulp</a> <a href="/tags/hexo/" style="font-size: 20px;">hexo</a> <a href="/tags/icarus/" style="font-size: 10px;">icarus</a> <a href="/tags/icarus테마/" style="font-size: 10px;">icarus테마</a> <a href="/tags/if문/" style="font-size: 10px;">if문</a> <a href="/tags/map/" style="font-size: 10px;">map</a> <a href="/tags/moment/" style="font-size: 10px;">moment</a> <a href="/tags/node/" style="font-size: 10px;">node</a> <a href="/tags/post/" style="font-size: 12.5px;">post</a> <a href="/tags/posting/" style="font-size: 12.5px;">posting</a> <a href="/tags/scaffolds/" style="font-size: 12.5px;">scaffolds</a> <a href="/tags/scope/" style="font-size: 10px;">scope</a> <a href="/tags/set/" style="font-size: 10px;">set</a> <a href="/tags/setting/" style="font-size: 15px;">setting</a> <a href="/tags/study/" style="font-size: 17.5px;">study</a> <a href="/tags/themes/" style="font-size: 10px;">themes</a> <a href="/tags/time/" style="font-size: 10px;">time</a> <a href="/tags/timezone/" style="font-size: 10px;">timezone</a> <a href="/tags/try/" style="font-size: 10px;">try</a> <a href="/tags/zsh/" style="font-size: 10px;">zsh</a> <a href="/tags/개발도구/" style="font-size: 10px;">개발도구</a> <a href="/tags/객체/" style="font-size: 10px;">객체</a> <a href="/tags/객체지향프로그래밍/" style="font-size: 10px;">객체지향프로그래밍</a> <a href="/tags/공부/" style="font-size: 10px;">공부</a> <a href="/tags/날짜/" style="font-size: 10px;">날짜</a> <a href="/tags/단일스레드/" style="font-size: 10px;">단일스레드</a> <a href="/tags/댓글/" style="font-size: 10px;">댓글</a> <a href="/tags/데이터타입/" style="font-size: 10px;">데이터타입</a> <a href="/tags/리터널/" style="font-size: 10px;">리터널</a> <a href="/tags/마크다운/" style="font-size: 10px;">마크다운</a> <a href="/tags/맵/" style="font-size: 10px;">맵</a> <a href="/tags/명령어/" style="font-size: 10px;">명령어</a> <a href="/tags/반복문/" style="font-size: 10px;">반복문</a> <a href="/tags/배열/" style="font-size: 10px;">배열</a> <a href="/tags/배열메서드/" style="font-size: 10px;">배열메서드</a> <a href="/tags/백업/" style="font-size: 10px;">백업</a> <a href="/tags/변수/" style="font-size: 10px;">변수</a> <a href="/tags/블로그/" style="font-size: 12.5px;">블로그</a> <a href="/tags/비동기/" style="font-size: 10px;">비동기</a> <a href="/tags/상수/" style="font-size: 10px;">상수</a> <a href="/tags/설정/" style="font-size: 10px;">설정</a> <a href="/tags/설치방법/" style="font-size: 10px;">설치방법</a> <a href="/tags/세팅/" style="font-size: 10px;">세팅</a> <a href="/tags/셋/" style="font-size: 10px;">셋</a> <a href="/tags/스코프/" style="font-size: 10px;">스코프</a> <a href="/tags/스터디/" style="font-size: 10px;">스터디</a> <a href="/tags/시간/" style="font-size: 10px;">시간</a> <a href="/tags/에러/" style="font-size: 10px;">에러</a> <a href="/tags/연산자/" style="font-size: 10px;">연산자</a> <a href="/tags/예외/" style="font-size: 10px;">예외</a> <a href="/tags/원시타입/" style="font-size: 10px;">원시타입</a> <a href="/tags/이터레이터/" style="font-size: 10px;">이터레이터</a> <a href="/tags/제너레이터/" style="font-size: 12.5px;">제너레이터</a> <a href="/tags/제어문/" style="font-size: 10px;">제어문</a> <a href="/tags/주석/" style="font-size: 10px;">주석</a> <a href="/tags/추상적사고/" style="font-size: 10px;">추상적사고</a> <a href="/tags/추상화/" style="font-size: 10px;">추상화</a> <a href="/tags/추천/" style="font-size: 10px;">추천</a> <a href="/tags/콜백/" style="font-size: 10px;">콜백</a> <a href="/tags/쿠팡/" style="font-size: 10px;">쿠팡</a> <a href="/tags/쿠팡파트너스/" style="font-size: 10px;">쿠팡파트너스</a> <a href="/tags/터미널/" style="font-size: 10px;">터미널</a> <a href="/tags/템플릿문자열/" style="font-size: 10px;">템플릿문자열</a> <a href="/tags/파트너스/" style="font-size: 10px;">파트너스</a> <a href="/tags/편집기/" style="font-size: 10px;">편집기</a> <a href="/tags/표현식/" style="font-size: 10px;">표현식</a> <a href="/tags/프라미스/" style="font-size: 10px;">프라미스</a> <a href="/tags/함수/" style="font-size: 12.5px;">함수</a> <a href="/tags/호이스팅/" style="font-size: 10px;">호이스팅</a> <a href="/tags/확장프로그램/" style="font-size: 10px;">확장프로그램</a> <a href="/tags/회고/" style="font-size: 10px;">회고</a>
+    </div>
+</div>
+
+        
+    
+    
+<!-- 사이드 광고 -->
+    <ins class="adsbygoogle card" style="display:block" data-ad-client="ca-pub-7669354135137434" data-ad-slot="7664684139" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    <script class="card">
+        (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+    
+<div class="card widget">
+        <script src="https://ads-partners.coupang.com/g.js"></script>
+        <script>
+            new PartnersCoupang.G({ id:4765 });
+        </script>
+        <iframe src="https://ads-partners.coupang.com/iframe/search-bar?id=19062111274125404211001917-l1&type=l1&trackingCode=AF3074287" width="100%" height="75" frameborder="0" scrolling="no"></iframe>
+</div>
+    
+</div>
+
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+    <div class="container">
+        <div class="level">
+            <div class="level-start has-text-centered-mobile">
+                <a class="footer-logo is-block has-mb-6" href="/">
+                
+                    <img src="/images/blog_logo.png" alt="러닝 자바스크립트 스터디 자료 - CHAPTER 13. 함수와 추상적 사고" height="28">
+                
+                </a>
+                <p class="is-size-7">
+                &copy; 2019 Mishka&nbsp;
+                Powered by <a href="https://hexo.io/" target="_blank" rel="external nofollow noopener noreferrer">Hexo</a> & <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="external nofollow noopener noreferrer">Icarus</a>
+                
+                </p>
+            </div>
+            <div class="level-end">
+            
+                <div class="field has-addons is-flex-center-mobile has-mt-5-mobile is-flex-wrap is-flex-middle">
+                
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" title="Creative Commons" href="https://creativecommons.org/" rel="external nofollow noopener noreferrer">
+                        
+                        <i class="fab fa-creative-commons"></i>
+                        
+                    </a>
+                </p>
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/" rel="external nofollow noopener noreferrer">
+                        
+                        <i class="fab fa-creative-commons-by"></i>
+                        
+                    </a>
+                </p>
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" title="Download on GitHub" href="https://github.com/mishka86" rel="external nofollow noopener noreferrer">
+                        
+                        <i class="fab fa-github"></i>
+                        
+                    </a>
+                </p>
+                
+                </div>
+            
+            </div>
+        </div>
+    </div>
+</footer>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script>
+<script>moment.locale("ko");</script>
+
+
+    
+    
+    
+    <script src="/js/animation.js"></script>
+    
+
+    
+    
+    
+    <script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js" defer></script>
+    <script src="/js/gallery.js" defer></script>
+    
+
+    
+    
+
+<div id="outdated">
+    <h6>Your browser is out-of-date!</h6>
+    <p>Update your browser to view this website correctly. <a id="btnUpdateBrowser" href="http://outdatedbrowser.com/" rel="external nofollow noopener noreferrer" target="_blank">Update
+            my browser now </a></p>
+    <p class="last"><a href="#" id="btnCloseUpdateBrowser" title="Close">&times;</a></p>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.js" defer></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        outdatedBrowser({
+            bgColor: '#f25648',
+            color: '#ffffff',
+            lowerThan: 'flex'
+        });
+    });
+</script>
+
+
+    
+    
+<script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/unpacked/MathJax.js?config=TeX-MML-AM_CHTML" defer></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    MathJax.Hub.Config({
+        'HTML-CSS': {
+            matchFontHeight: false
+        },
+        SVG: {
+            matchFontHeight: false
+        },
+        CommonHTML: {
+            matchFontHeight: false
+        },
+        tex2jax: {
+            inlineMath: [
+                ['$','$'],
+                ['\\(','\\)']
+            ]
+        }
+    });
+});
+</script>
+
+    
+    
+
+<a id="back-to-top" title="Back to Top" href="javascript:;">
+    <i class="fas fa-chevron-up"></i>
+</a>
+<script src="/js/back-to-top.js" defer></script>
+
+
+    
+    
+
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    <script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script>
+    <script src="/js/clipboard.js" defer></script>
+    
+
+    
+    
+    
+
+
+<script src="/js/main.js" defer></script>
+
+    
+    <div class="searchbox ins-search">
+    <div class="searchbox-container ins-search-container">
+        <div class="searchbox-input-wrapper">
+            <input type="text" class="searchbox-input ins-search-input" placeholder="입력 하세요...">
+            <span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="searchbox-result-wrapper ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+    (function (window) {
+        var INSIGHT_CONFIG = {
+            TRANSLATION: {
+                POSTS: '포스트',
+                PAGES: '페이지',
+                CATEGORIES: '카테고리',
+                TAGS: '태그',
+                UNTITLED: '(제목없음)',
+            },
+            CONTENT_URL: '/content.json',
+        };
+        window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+    })(window);
+</script>
+<script src="/js/insight.js" defer></script>
+<link rel="stylesheet" href="/css/search.css">
+<link rel="stylesheet" href="/css/insight.css">
+    
+</body>
+</html>

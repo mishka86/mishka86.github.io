@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+<title>러닝 자바스크립트 스터디 자료 - CHAPTER 7. 스코프 - Mishka&#39;s Blog</title>
+<meta name="Description" content="미슈카의 개발 블로그 입니다. 포스팅에 대한 공유, 논의, 수정, 댓글 등은 언제든 환영합니다.">
+<meta name="Keywords" content="미슈카,Mishka,mishka,개발블로그,미슈카개발블로그">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+<link rel="canonical" href="http://mishka86.github.io/2019/07/12/learning-javascript-chapter7/">
+<meta property="og:title" content="Mishka's blog">
+<meta property="og:description" content="미슈카의 개발 블로그 입니다. 포스팅에 대한 공유, 논의, 수정, 댓글 등은 언제든 환영합니다.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://mishka86.github.io/">
+<meta property="og:image" content="/images/meta_logo.png">
+
+
+
+
+
+<link rel="alternative" href="rss2.xml" title="러닝 자바스크립트 스터디 자료 - CHAPTER 7. 스코프" type="application/atom+xml">
+
+
+
+<link rel="icon" href="/images/favicon.ico">
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.7.2/css/bulma.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:400,600|Source+Code+Pro">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/vs2015.css">
+
+
+    
+    
+    
+    <style>body>.footer,body>.navbar,body>.section{opacity:0}</style>
+    
+
+    
+    
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css">
+    
+
+    
+    
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.css">
+
+
+    
+    
+    
+    
+
+<link rel="stylesheet" href="/css/back-to-top.css">
+
+
+    
+    
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-141930873-1"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-141930873-1');
+</script>
+
+
+    
+    
+    
+    
+
+    
+    
+<link rel="stylesheet" href="/css/progressbar.css">
+<script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
+
+    
+    
+    
+
+    
+    
+    
+
+
+<link rel="stylesheet" href="/css/style.css">
+
+<!-- 구글 AdSense -->
+
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: 'ca-pub-7669354135137434',
+            enable_page_level_ads: true
+        });
+    </script>
+
+</head>
+<body class="is-2-column">
+    <nav class="navbar navbar-main">
+    <div class="container">
+        <div class="navbar-brand is-flex-center">
+            <a class="navbar-item navbar-logo" href="/">
+            
+                <img src="/images/blog_logo.png" alt="러닝 자바스크립트 스터디 자료 - CHAPTER 7. 스코프" height="28">
+            
+            </a>
+        </div>
+        <div class="navbar-menu">
+            
+            <div class="navbar-start">
+                
+                <a class="navbar-item" href="/">Home</a>
+                
+                <a class="navbar-item" href="/archives">Archives</a>
+                
+                <a class="navbar-item" href="/categories">Categories</a>
+                
+                <a class="navbar-item" href="/tags">Tags</a>
+                
+                <a class="navbar-item" href="/about">About</a>
+                
+            </div>
+            
+            <div class="navbar-end">
+                
+                    
+                    
+                    <a class="navbar-item" target="_blank" title="Download on GitHub" href="https://github.com/mishka86" rel="external nofollow noopener noreferrer">
+                        
+                        <i class="fab fa-github"></i>
+                        
+                    </a>
+                    
+                
+                
+                <a class="navbar-item is-hidden-tablet catalogue" title="카탈로그" href="javascript:;">
+                    <i class="fas fa-list-ul"></i>
+                </a>
+                
+                
+                <a class="navbar-item search" title="검색" href="javascript:;">
+                    <i class="fas fa-search"></i>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+</nav>
+    
+    <section class="section">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-8-tablet is-8-desktop is-10-widescreen has-order-2 column-main">
+    <!-- 아티클 위 광고 -->
+    <ins class="adsbygoogle card" style="display:block" data-ad-client="ca-pub-7669354135137434" data-ad-slot="1722092316" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    <script class="card">
+        (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+
+
+
+<div class="card">
+    <!-- 
+    <div class="card-image">
+        <span  class="image is-7by1">
+            <img class="thumbnail" src="/img/learning-thumbnail.jpg" alt="러닝 자바스크립트 스터디 자료 - CHAPTER 7. 스코프">
+        </span>
+    </div>
+     -->
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-07-12T12:40:22.000Z">2019-07-12</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/Learning-JavaScript/">Learning-JavaScript</a>
+                </div>
+                
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                러닝 자바스크립트 스터디 자료 - CHAPTER 7. 스코프
+            
+        </h1>
+        <div class="content">
+            <p>스코프는 변수와 상수, 매개변수가 언제 어디서 정의되는지 결정합니다.</p>
+<p>변수가 존재하지 않으면 그 변수는 스코프안에 <strong>‘있지않음’</strong>을 직관적으로 알수 있다.<br>즉 아직 선언하지 않은 변수나 함수가 종료되면서 존재하지 않게 된 변수는 분명 스코프안에 <strong>‘있지 않다’</strong></p>
+<p><code>스코프</code>와 <code>존재</code>를 구별해야 한다.<br>가시성이라고도 불리는 <code>스코프</code>는 프로그램의 현재 실행 중인 부분, 즉 실행 컨텍스트에서 현재 보이고 접근 할 수 있는 식별자들을 말한다. 반면 <code>존재</code>한다는 말은 식별자가 메모리에 할당된 무언가를 가리키고 있다는 뜻이다.</p>
+<a id="more"></a>
+<h2 id="정적스코프와-동적스코프"><a href="#정적스코프와-동적스코프" class="headerlink" title="정적스코프와 동적스코프"></a>정적스코프와 동적스코프</h2><p>자바스크립트의 스코프는 <code>정적</code>이다. 소스코드만 봐도 변수가 스코프에 있는지 판단 할 수 있다.<br>다만 소스코드만 봐도 즉시 스코프를 분명히 알 수 있다는 뜻은 아니다.</p>
+<h3 id="정적스코프"><a href="#정적스코프" class="headerlink" title="정적스코프"></a>정적스코프</h3><p>어떤 변수가 함수 스코프 안에 잇는지 함수를 <code>정의</code> 할 때 알 수 있다는 뜻 이다. <strong>호출할 때 알 수 있는 것은 아니다.</strong><br>자신이 정의 될 때 접근 할 수 있었던 식별자에는 여전히 접근 할 수 있지만, 호출 할 때 스코프에 있는 식별자에는 접근 할 수 없다.</p>
+<h2 id="전역스코프"><a href="#전역스코프" class="headerlink" title="전역스코프"></a>전역스코프</h2><p>전역스코프에서 선언한 것은 무엇이든 프로그램의 모든 스코프에서 볼 수 있다.<br>전역스코프에서 선언된 것들을 <code>전역변수(global)</code>라고 합니다.<br>전역스코프에 의존하는 것은 피해야한다.</p>
+<h2 id="블록스코프"><a href="#블록스코프" class="headerlink" title="블록스코프"></a>블록스코프</h2><p><code>let</code> 과 <code>const</code> 는 식별자를 블록스코프에서 선언합니다.<br>블록스코프는 블록(문을 중괄호로 묶은것)의 스코프에서만 보이는 식별자를 의미한다.</p>
+<h2 id="변수-숨기기"><a href="#변수-숨기기" class="headerlink" title="변수 숨기기"></a>변수 숨기기</h2><figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="hljs-comment">// 외부블록</span></span><br><span class="line">    <span class="hljs-keyword">let</span> x = <span class="hljs-string">'blue'</span>;</span><br><span class="line">    <span class="hljs-built_in">console</span>.log(x);       <span class="hljs-comment">// "blue"</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="hljs-comment">// 내부블록</span></span><br><span class="line">        <span class="hljs-keyword">let</span> x = <span class="hljs-number">3</span>;</span><br><span class="line">        <span class="hljs-built_in">console</span>.log(x)    <span class="hljs-comment">// "3"</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="hljs-built_in">console</span>.log(x);       <span class="hljs-comment">// "blue"</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="hljs-built_in">console</span>.log(<span class="hljs-keyword">typeof</span> x);    <span class="hljs-comment">// "undefined"; x는 스코프에 있지 않습니다.</span></span><br></pre></td></tr></table></figure>
+
+<p>내부블럭의 x는 외부 블록에서 정의한 x와 이름만 같을 뿐 다른 변수이므로 외부 스코프의 x를 숨기는 효과가 있다.<br>실행 흐름이 내부 블록에 들어가 새 변수 x를 정의 하는 순간 두 변수는 모두 스코프안에 있다.(외부 변수가 숨겨짐)<br>변수의 이름이 같으므로 외부 스코프에 있는 변수에 접근할 방법이 없다.</p>
+<h3 id="스코프-체인"><a href="#스코프-체인" class="headerlink" title="스코프 체인"></a>스코프 체인</h3><p>스코프가 계속 연결됨(중첩), 스코프안에 스코프가 있는 형태<br>내부 함수에서는 외부 함수의 변수에 접근이 가능하지만 외부 함수에서는 내부 함수의 변수에 접근 할수 없다.<br>모든 함수들은 전역 객체에 접근 할 수 있다.</p>
+<h2 id="함수-클로저-정적스코프"><a href="#함수-클로저-정적스코프" class="headerlink" title="함수, 클로저, 정적스코프"></a>함수, 클로저, 정적스코프</h2><p><strong>클로저</strong>는 함수가 특정 스코프에 접근 할 수 있도록 의도적으로 그 스코프에서 정의 하는 경우, 스코프를 함수 주변으로 좁히는 것을 말한다.</p>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">let</span> globalFunc;                   <span class="hljs-comment">// 정의 되지 않는 전역 함수</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="hljs-keyword">let</span> blockVar = <span class="hljs-string">"a"</span>            <span class="hljs-comment">// 블록 스코프에 있는 변수</span></span><br><span class="line">    globalFunc = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>&#123;</span><br><span class="line">        <span class="hljs-built_in">console</span>.log(blockVar);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">globalFunc();                     <span class="hljs-comment">// "a"</span></span><br></pre></td></tr></table></figure>
+
+<p>globalFunc는 블록 안에서 값을 할당받았습니다. 이 블록 스크로와 그 부모인 전역 스코프가 <code>클로저</code>를 형성합니다.<br>globalFunc를 어디서 호출하든 이 함수는 클로저에 들어있는 식별자에 접근 할수 있다.<br>globalFunc을 호출하면, 이 함수는 스코프에서 빠져나왔음에도 불구하고 blockVar에 접근 할 수 있습니다.</p>
+<h2 id="즉시실행함수"><a href="#즉시실행함수" class="headerlink" title="즉시실행함수"></a>즉시실행함수</h2><p><strong>IIFE(즉시실행함수)</strong>는 함수를 선언하고 즉시 실행합니다.</p>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>&#123;</span><br><span class="line">    <span class="hljs-comment">// 즉시실행함수 바디</span></span><br><span class="line">&#125;)();</span><br></pre></td></tr></table></figure>
+
+<p>IIFE의 장점은 내부에 있는 것들이 모두 자신만의 스코프를 가지지만 IIFE 자체는 함수이므로 그 <code>스코프 밖으로</code> 무언가를 내보낼 수 있는 것이다.</p>
+<p>내부 변수는 IIFE안에 안전하게 보관되어 있으므로 손댈 방법이 없다.<br>ES6에서 블록스코프 변수를 도입하면서 IIFE가 필요한 경우가 줄긴 했지만 여전히 널리 쓰인다.<br>클로저를 만들고 클로저에서 무언가 반환 받을 때에는 유용하게 쓸 수 있다.</p>
+<h2 id="함수스코프와-호이스팅"><a href="#함수스코프와-호이스팅" class="headerlink" title="함수스코프와 호이스팅"></a>함수스코프와 호이스팅</h2><p><code>var로 선언된 변수</code>들은 <code>함수스코프</code>라 불리는 스코프를 가진다.<br>var로 선언한 전역 변수는 명시적인 함수 안에 있지 않지만 함수 스코프와 똑같이 동작한다.</p>
+<p>let으로 변수를 선언하면, 그 변수는 선언하지 전에는 존재하지 않습니다.<br>var로 선언한 변수는 현재 스코프 안이라면 어디서든 사용 할 수 있으며, 심지어 선언하기도 전에 사용할 수 있습니다.</p>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">let</span> var1;</span><br><span class="line"><span class="hljs-keyword">let</span> var2 = <span class="hljs-literal">undefined</span>;</span><br><span class="line">var1;   <span class="hljs-comment">// undefined;</span></span><br><span class="line">var2;   <span class="hljs-comment">// undefinde;</span></span><br><span class="line">undefinedVar;    <span class="hljs-comment">// ReferenceError:undefinedVar is not defined</span></span><br></pre></td></tr></table></figure>
+
+<p>let을 쓰면 변수를 선언하기 전에 사용하려 할때 에러가 일어 납니다.<br>반면 var로 변수를 선언하면 선언하기도 전에 사용 할 수 있습니다.</p>
+<h3 id="호이스팅"><a href="#호이스팅" class="headerlink" title="호이스팅"></a>호이스팅</h3><p>var로 선언한 변수는 <code>호이스팅</code>이라는 메커니즘을 따릅니다.<br>자바스크립트는 함수나 전역스코프 전체를 살펴보고 var로 선언한 변수를 <code>맨 위</code>로 끌어올립니다.(여기서 중요한 것은 <strong>선언만 끌어올려진다는 것</strong>이며, 할당을 끌어 올려지지 않는다는 것이다.)</p>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">// 원래코드</span></span><br><span class="line"><span class="hljs-keyword">var</span> x = <span class="hljs-number">3</span>;</span><br><span class="line"><span class="hljs-keyword">if</span>(x ===<span class="hljs-number">3</span>)&#123;</span><br><span class="line">    <span class="hljs-keyword">var</span> x = <span class="hljs-number">2</span>;</span><br><span class="line">    <span class="hljs-built_in">console</span>.log(x);</span><br><span class="line">&#125; </span><br><span class="line"><span class="hljs-built_in">console</span>.log(x);</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// 자바스크립트가 해석한 코드</span></span><br><span class="line"><span class="hljs-keyword">var</span> x;</span><br><span class="line">x = <span class="hljs-number">3</span>;</span><br><span class="line"><span class="hljs-keyword">if</span>(x === <span class="hljs-number">3</span>)&#123;</span><br><span class="line">    x = <span class="hljs-number">2</span>;</span><br><span class="line">    <span class="hljs-built_in">console</span>.log(x);</span><br><span class="line">&#125;</span><br><span class="line"><span class="hljs-built_in">console</span>.log(x);</span><br></pre></td></tr></table></figure>
+
+<p>위의 예제를 보면 같은 함수나 전역스코프 안에서는 var로 <code>새 변수</code>를 만들수 없으며 let으로 가능 했던 변수숨김도 불가능하다.<br>(블록 안에서 두번째 var문을 썻지만 변수x는 하나뿐이다.)</p>
+<h2 id="함수-호이스팅"><a href="#함수-호이스팅" class="headerlink" title="함수 호이스팅"></a>함수 호이스팅</h2><p>함수 선언도 스코프 맨 위로 끌어올려집니다.<br>따라서 함수를 언언하기 전에 호출 할 수 있습니다.</p>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">f();                   <span class="hljs-comment">// 'f'</span></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">f</span>(<span class="hljs-params"></span>)</span>&#123;</span><br><span class="line">    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'f'</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>단, 변수에 할당한 함수 표현식은 끌어올려지지 않습니다. 이들은 변수의 스코프 규칙을 그래도 따릅니다.</p>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">f();                   <span class="hljs-comment">// ReferrenceError: f 는 정의되지 않았습니다.</span></span><br><span class="line"><span class="hljs-keyword">let</span> f = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>&#123;</span><br><span class="line">    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'f'</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="사각지대"><a href="#사각지대" class="headerlink" title="사각지대"></a>사각지대</h2><p>스코프안에서 변수의 사각지대는 변수가 선언되기 전의 코드입니다. ES6 이전에 주의 해야한다.</p>
+<h2 id="스트릭트-모드"><a href="#스트릭트-모드" class="headerlink" title="스트릭트 모드"></a>스트릭트 모드</h2><p>스트릭트 모드에서는 암시적 전역 변수를 허용하지 않습니다.<br>스트릭트 모드를 사용하려면 문자열 <strong>“use strict”(작은 따옴표도 가능)</strong> 하나만으로 이루언진 행을 <strong>코드 맨 앞</strong>에 쓰면 됩니다.<br>전역스코프에서 사용하면 스크립트 전체가 스트릭트 모드로 실행되고, 함수 안에서 사용하면 해당 함수만 스트릭트 모드로 실행됩니다.</p>
+
+        </div>
+        
+        <div class="level is-size-7 is-uppercase">
+            <div class="level-start">
+                <div class="level-item">
+                    <span class="is-size-6 has-text-grey has-mr-7">#</span>
+                    <a class="has-link-grey -link" href="/tags/scope/">scope</a>, <a class="has-link-grey -link" href="/tags/스코프/">스코프</a>, <a class="has-link-grey -link" href="/tags/호이스팅/">호이스팅</a>
+                </div>
+            </div>
+        </div>
+        
+        
+        
+        
+<div class="sharethis-inline-share-buttons"></div>
+<script type="text/javascript" src="https://platform-api.sharethis.com/js/sharethis.js#property=5d11bc2de1239400125e3dc9&amp;product=inline-share-buttons" async="async"></script>
+
+        
+    </div>
+</div>
+
+
+
+
+
+    <!-- 댓글 위 광고 -->
+    <ins class="adsbygoogle card" style="display:block" data-ad-client="ca-pub-7669354135137434" data-ad-slot="8992996108" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    <script class="card">
+        (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+
+
+
+
+<div class="card card-transparent">
+    <div class="level post-navigation is-flex-wrap is-mobile">
+        
+        <div class="level-start">
+            <a class="level level-item has-link-grey  article-nav-prev" href="/2019/07/13/Learning-JavaScript-chapter8/">
+                <i class="level-item fas fa-chevron-left"></i>
+                <span class="level-item">러닝 자바스크립트 스터디 자료 - CHAPTER 8. 배열과 배열처리</span>
+            </a>
+        </div>
+        
+        
+        <div class="level-end">
+            <a class="level level-item has-link-grey  article-nav-next" href="/2019/07/05/Learning-JavaScript-chapter6/">
+                <span class="level-item">러닝 자바스크립트 스터디 자료 - CHAPTER 6. 함수</span>
+                <i class="level-item fas fa-chevron-right"></i>
+            </a>
+        </div>
+        
+    </div>
+</div>
+
+
+
+<div class="card">
+    <div class="card-content">
+        <h3 class="title is-5 has-text-weight-normal">댓글</h3>
+        <div id="disqus_thread"></div>
+<script>
+
+/**
+*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+/*
+var disqus_config = function () {
+this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+*/
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = 'https://https-mishka86-github-io.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="external nofollow noopener noreferrer" target="_blank">comments powered by Disqus.</a></noscript>
+    </div>
+</div>
+
+
+</div>
+                
+                
+
+
+
+
+<div class="column is-4-tablet is-4-desktop is-3-widescreen  has-order-3 column-right is-sticky">
+    
+        
+<div class="card widget" id="toc">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                카탈로그
+            </h3>
+            <ul class="menu-list"><li>
+        <a class="is-flex" href="#정적스코프와-동적스코프">
+        <span class="has-mr-6">1</span>
+        <span>정적스코프와 동적스코프</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#정적스코프">
+        <span class="has-mr-6">1.1</span>
+        <span>정적스코프</span>
+        </a></li></ul></li><li>
+        <a class="is-flex" href="#전역스코프">
+        <span class="has-mr-6">2</span>
+        <span>전역스코프</span>
+        </a></li><li>
+        <a class="is-flex" href="#블록스코프">
+        <span class="has-mr-6">3</span>
+        <span>블록스코프</span>
+        </a></li><li>
+        <a class="is-flex" href="#변수-숨기기">
+        <span class="has-mr-6">4</span>
+        <span>변수 숨기기</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#스코프-체인">
+        <span class="has-mr-6">4.1</span>
+        <span>스코프 체인</span>
+        </a></li></ul></li><li>
+        <a class="is-flex" href="#함수-클로저-정적스코프">
+        <span class="has-mr-6">5</span>
+        <span>함수, 클로저, 정적스코프</span>
+        </a></li><li>
+        <a class="is-flex" href="#즉시실행함수">
+        <span class="has-mr-6">6</span>
+        <span>즉시실행함수</span>
+        </a></li><li>
+        <a class="is-flex" href="#함수스코프와-호이스팅">
+        <span class="has-mr-6">7</span>
+        <span>함수스코프와 호이스팅</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#호이스팅">
+        <span class="has-mr-6">7.1</span>
+        <span>호이스팅</span>
+        </a></li></ul></li><li>
+        <a class="is-flex" href="#함수-호이스팅">
+        <span class="has-mr-6">8</span>
+        <span>함수 호이스팅</span>
+        </a></li><li>
+        <a class="is-flex" href="#사각지대">
+        <span class="has-mr-6">9</span>
+        <span>사각지대</span>
+        </a></li><li>
+        <a class="is-flex" href="#스트릭트-모드">
+        <span class="has-mr-6">10</span>
+        <span>스트릭트 모드</span>
+        </a></li></ul>
+        </div>
+    </div>
+</div>
+
+        
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                카테고리
+            </h3>
+            <ul class="menu-list">
+            <li>
+        <a class="level is-marginless" href="/categories/Learning-JavaScript/">
+            <span class="level-start">
+                <span class="level-item">Learning-JavaScript</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">16</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/Markdown/">
+            <span class="level-start">
+                <span class="level-item">Markdown</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/VScode/">
+            <span class="level-start">
+                <span class="level-item">VScode</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">2</span>
+            </span>
+        </a><ul><li>
+        <a class="level is-marginless" href="/categories/VScode/Extension/">
+            <span class="level-start">
+                <span class="level-item">Extension</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/VScode/gitbash/">
+            <span class="level-start">
+                <span class="level-item">gitbash</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li></ul></li><li>
+        <a class="level is-marginless" href="/categories/git/">
+            <span class="level-start">
+                <span class="level-item">git</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/hexo/">
+            <span class="level-start">
+                <span class="level-item">hexo</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">8</span>
+            </span>
+        </a><ul><li>
+        <a class="level is-marginless" href="/categories/hexo/SEO/">
+            <span class="level-start">
+                <span class="level-item">SEO</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/hexo/ad/">
+            <span class="level-start">
+                <span class="level-item">ad</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/hexo/backup/">
+            <span class="level-start">
+                <span class="level-item">backup</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/hexo/comment/">
+            <span class="level-start">
+                <span class="level-item">comment</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/hexo/setting/">
+            <span class="level-start">
+                <span class="level-item">setting</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/hexo/themes/">
+            <span class="level-start">
+                <span class="level-item">themes</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li></ul></li><li>
+        <a class="level is-marginless" href="/categories/zsh/">
+            <span class="level-start">
+                <span class="level-item">zsh</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/회고/">
+            <span class="level-start">
+                <span class="level-item">회고</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+        
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            태그 클라우드
+        </h3>
+        <a href="/tags/1년6개월/" style="font-size: 10px;">1년6개월</a> <a href="/tags/ERROR/" style="font-size: 10px;">ERROR</a> <a href="/tags/Function/" style="font-size: 10px;">Function</a> <a href="/tags/Github/" style="font-size: 10px;">Github</a> <a href="/tags/LSP/" style="font-size: 10px;">LSP</a> <a href="/tags/Learning-JavaScript/" style="font-size: 17.5px;">Learning-JavaScript</a> <a href="/tags/Mac/" style="font-size: 10px;">Mac</a> <a href="/tags/MarkDown/" style="font-size: 10px;">MarkDown</a> <a href="/tags/Math/" style="font-size: 10px;">Math</a> <a href="/tags/OOP/" style="font-size: 10px;">OOP</a> <a href="/tags/SEO/" style="font-size: 10px;">SEO</a> <a href="/tags/Terminal/" style="font-size: 10px;">Terminal</a> <a href="/tags/VScode/" style="font-size: 12.5px;">VScode</a> <a href="/tags/VisualStudioCode/" style="font-size: 10px;">VisualStudioCode</a> <a href="/tags/Wiriting/" style="font-size: 12.5px;">Wiriting</a> <a href="/tags/ad/" style="font-size: 10px;">ad</a> <a href="/tags/array/" style="font-size: 10px;">array</a> <a href="/tags/babel/" style="font-size: 10px;">babel</a> <a href="/tags/backup/" style="font-size: 10px;">backup</a> <a href="/tags/blog/" style="font-size: 12.5px;">blog</a> <a href="/tags/catch/" style="font-size: 10px;">catch</a> <a href="/tags/commend/" style="font-size: 10px;">commend</a> <a href="/tags/comment/" style="font-size: 10px;">comment</a> <a href="/tags/date/" style="font-size: 10px;">date</a> <a href="/tags/deploy/" style="font-size: 10px;">deploy</a> <a href="/tags/disqus/" style="font-size: 10px;">disqus</a> <a href="/tags/draft/" style="font-size: 10px;">draft</a> <a href="/tags/eslint/" style="font-size: 10px;">eslint</a> <a href="/tags/extension/" style="font-size: 10px;">extension</a> <a href="/tags/finally/" style="font-size: 10px;">finally</a> <a href="/tags/for문/" style="font-size: 10px;">for문</a> <a href="/tags/function/" style="font-size: 10px;">function</a> <a href="/tags/git/" style="font-size: 15px;">git</a> <a href="/tags/gitbash/" style="font-size: 10px;">gitbash</a> <a href="/tags/github/" style="font-size: 10px;">github</a> <a href="/tags/gulp/" style="font-size: 10px;">gulp</a> <a href="/tags/hexo/" style="font-size: 20px;">hexo</a> <a href="/tags/icarus/" style="font-size: 10px;">icarus</a> <a href="/tags/icarus테마/" style="font-size: 10px;">icarus테마</a> <a href="/tags/if문/" style="font-size: 10px;">if문</a> <a href="/tags/map/" style="font-size: 10px;">map</a> <a href="/tags/moment/" style="font-size: 10px;">moment</a> <a href="/tags/node/" style="font-size: 10px;">node</a> <a href="/tags/post/" style="font-size: 12.5px;">post</a> <a href="/tags/posting/" style="font-size: 12.5px;">posting</a> <a href="/tags/scaffolds/" style="font-size: 12.5px;">scaffolds</a> <a href="/tags/scope/" style="font-size: 10px;">scope</a> <a href="/tags/set/" style="font-size: 10px;">set</a> <a href="/tags/setting/" style="font-size: 15px;">setting</a> <a href="/tags/study/" style="font-size: 17.5px;">study</a> <a href="/tags/themes/" style="font-size: 10px;">themes</a> <a href="/tags/time/" style="font-size: 10px;">time</a> <a href="/tags/timezone/" style="font-size: 10px;">timezone</a> <a href="/tags/try/" style="font-size: 10px;">try</a> <a href="/tags/zsh/" style="font-size: 10px;">zsh</a> <a href="/tags/개발도구/" style="font-size: 10px;">개발도구</a> <a href="/tags/객체/" style="font-size: 10px;">객체</a> <a href="/tags/객체지향프로그래밍/" style="font-size: 10px;">객체지향프로그래밍</a> <a href="/tags/공부/" style="font-size: 10px;">공부</a> <a href="/tags/날짜/" style="font-size: 10px;">날짜</a> <a href="/tags/단일스레드/" style="font-size: 10px;">단일스레드</a> <a href="/tags/댓글/" style="font-size: 10px;">댓글</a> <a href="/tags/데이터타입/" style="font-size: 10px;">데이터타입</a> <a href="/tags/리터널/" style="font-size: 10px;">리터널</a> <a href="/tags/마크다운/" style="font-size: 10px;">마크다운</a> <a href="/tags/맵/" style="font-size: 10px;">맵</a> <a href="/tags/명령어/" style="font-size: 10px;">명령어</a> <a href="/tags/반복문/" style="font-size: 10px;">반복문</a> <a href="/tags/배열/" style="font-size: 10px;">배열</a> <a href="/tags/배열메서드/" style="font-size: 10px;">배열메서드</a> <a href="/tags/백업/" style="font-size: 10px;">백업</a> <a href="/tags/변수/" style="font-size: 10px;">변수</a> <a href="/tags/블로그/" style="font-size: 12.5px;">블로그</a> <a href="/tags/비동기/" style="font-size: 10px;">비동기</a> <a href="/tags/상수/" style="font-size: 10px;">상수</a> <a href="/tags/설정/" style="font-size: 10px;">설정</a> <a href="/tags/설치방법/" style="font-size: 10px;">설치방법</a> <a href="/tags/세팅/" style="font-size: 10px;">세팅</a> <a href="/tags/셋/" style="font-size: 10px;">셋</a> <a href="/tags/스코프/" style="font-size: 10px;">스코프</a> <a href="/tags/스터디/" style="font-size: 10px;">스터디</a> <a href="/tags/시간/" style="font-size: 10px;">시간</a> <a href="/tags/에러/" style="font-size: 10px;">에러</a> <a href="/tags/연산자/" style="font-size: 10px;">연산자</a> <a href="/tags/예외/" style="font-size: 10px;">예외</a> <a href="/tags/원시타입/" style="font-size: 10px;">원시타입</a> <a href="/tags/이터레이터/" style="font-size: 10px;">이터레이터</a> <a href="/tags/제너레이터/" style="font-size: 12.5px;">제너레이터</a> <a href="/tags/제어문/" style="font-size: 10px;">제어문</a> <a href="/tags/주석/" style="font-size: 10px;">주석</a> <a href="/tags/추상적사고/" style="font-size: 10px;">추상적사고</a> <a href="/tags/추상화/" style="font-size: 10px;">추상화</a> <a href="/tags/추천/" style="font-size: 10px;">추천</a> <a href="/tags/콜백/" style="font-size: 10px;">콜백</a> <a href="/tags/쿠팡/" style="font-size: 10px;">쿠팡</a> <a href="/tags/쿠팡파트너스/" style="font-size: 10px;">쿠팡파트너스</a> <a href="/tags/터미널/" style="font-size: 10px;">터미널</a> <a href="/tags/템플릿문자열/" style="font-size: 10px;">템플릿문자열</a> <a href="/tags/파트너스/" style="font-size: 10px;">파트너스</a> <a href="/tags/편집기/" style="font-size: 10px;">편집기</a> <a href="/tags/표현식/" style="font-size: 10px;">표현식</a> <a href="/tags/프라미스/" style="font-size: 10px;">프라미스</a> <a href="/tags/함수/" style="font-size: 12.5px;">함수</a> <a href="/tags/호이스팅/" style="font-size: 10px;">호이스팅</a> <a href="/tags/확장프로그램/" style="font-size: 10px;">확장프로그램</a> <a href="/tags/회고/" style="font-size: 10px;">회고</a>
+    </div>
+</div>
+
+        
+    
+    
+<!-- 사이드 광고 -->
+    <ins class="adsbygoogle card" style="display:block" data-ad-client="ca-pub-7669354135137434" data-ad-slot="7664684139" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    <script class="card">
+        (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+    
+<div class="card widget">
+        <script src="https://ads-partners.coupang.com/g.js"></script>
+        <script>
+            new PartnersCoupang.G({ id:4765 });
+        </script>
+        <iframe src="https://ads-partners.coupang.com/iframe/search-bar?id=19062111274125404211001917-l1&type=l1&trackingCode=AF3074287" width="100%" height="75" frameborder="0" scrolling="no"></iframe>
+</div>
+    
+</div>
+
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+    <div class="container">
+        <div class="level">
+            <div class="level-start has-text-centered-mobile">
+                <a class="footer-logo is-block has-mb-6" href="/">
+                
+                    <img src="/images/blog_logo.png" alt="러닝 자바스크립트 스터디 자료 - CHAPTER 7. 스코프" height="28">
+                
+                </a>
+                <p class="is-size-7">
+                &copy; 2019 Mishka&nbsp;
+                Powered by <a href="https://hexo.io/" target="_blank" rel="external nofollow noopener noreferrer">Hexo</a> & <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="external nofollow noopener noreferrer">Icarus</a>
+                
+                </p>
+            </div>
+            <div class="level-end">
+            
+                <div class="field has-addons is-flex-center-mobile has-mt-5-mobile is-flex-wrap is-flex-middle">
+                
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" title="Creative Commons" href="https://creativecommons.org/" rel="external nofollow noopener noreferrer">
+                        
+                        <i class="fab fa-creative-commons"></i>
+                        
+                    </a>
+                </p>
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/" rel="external nofollow noopener noreferrer">
+                        
+                        <i class="fab fa-creative-commons-by"></i>
+                        
+                    </a>
+                </p>
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" title="Download on GitHub" href="https://github.com/mishka86" rel="external nofollow noopener noreferrer">
+                        
+                        <i class="fab fa-github"></i>
+                        
+                    </a>
+                </p>
+                
+                </div>
+            
+            </div>
+        </div>
+    </div>
+</footer>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script>
+<script>moment.locale("ko");</script>
+
+
+    
+    
+    
+    <script src="/js/animation.js"></script>
+    
+
+    
+    
+    
+    <script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js" defer></script>
+    <script src="/js/gallery.js" defer></script>
+    
+
+    
+    
+
+<div id="outdated">
+    <h6>Your browser is out-of-date!</h6>
+    <p>Update your browser to view this website correctly. <a id="btnUpdateBrowser" href="http://outdatedbrowser.com/" rel="external nofollow noopener noreferrer" target="_blank">Update
+            my browser now </a></p>
+    <p class="last"><a href="#" id="btnCloseUpdateBrowser" title="Close">&times;</a></p>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.js" defer></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        outdatedBrowser({
+            bgColor: '#f25648',
+            color: '#ffffff',
+            lowerThan: 'flex'
+        });
+    });
+</script>
+
+
+    
+    
+<script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/unpacked/MathJax.js?config=TeX-MML-AM_CHTML" defer></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    MathJax.Hub.Config({
+        'HTML-CSS': {
+            matchFontHeight: false
+        },
+        SVG: {
+            matchFontHeight: false
+        },
+        CommonHTML: {
+            matchFontHeight: false
+        },
+        tex2jax: {
+            inlineMath: [
+                ['$','$'],
+                ['\\(','\\)']
+            ]
+        }
+    });
+});
+</script>
+
+    
+    
+
+<a id="back-to-top" title="Back to Top" href="javascript:;">
+    <i class="fas fa-chevron-up"></i>
+</a>
+<script src="/js/back-to-top.js" defer></script>
+
+
+    
+    
+
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    <script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script>
+    <script src="/js/clipboard.js" defer></script>
+    
+
+    
+    
+    
+
+
+<script src="/js/main.js" defer></script>
+
+    
+    <div class="searchbox ins-search">
+    <div class="searchbox-container ins-search-container">
+        <div class="searchbox-input-wrapper">
+            <input type="text" class="searchbox-input ins-search-input" placeholder="입력 하세요...">
+            <span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="searchbox-result-wrapper ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+    (function (window) {
+        var INSIGHT_CONFIG = {
+            TRANSLATION: {
+                POSTS: '포스트',
+                PAGES: '페이지',
+                CATEGORIES: '카테고리',
+                TAGS: '태그',
+                UNTITLED: '(제목없음)',
+            },
+            CONTENT_URL: '/content.json',
+        };
+        window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+    })(window);
+</script>
+<script src="/js/insight.js" defer></script>
+<link rel="stylesheet" href="/css/search.css">
+<link rel="stylesheet" href="/css/insight.css">
+    
+</body>
+</html>
