@@ -8,6 +8,20 @@
     </url>
 
     <url>
+        <loc>http://mishka86.github.io/categories/Programming/hexo/</loc>
+        <lastmod>2019-10-18T07:29:10.917Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://mishka86.github.io/categories/Programming/</loc>
+        <lastmod>2019-10-18T07:29:10.917Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
         <loc>http://mishka86.github.io/categories/Setting/SSH/</loc>
         <lastmod>2019-10-18T06:56:58.767Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -23,20 +37,6 @@
 
     <url>
         <loc>http://mishka86.github.io/categories/Programming/hexo/backup/</loc>
-        <lastmod>2019-10-09T05:31:41.032Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://mishka86.github.io/categories/Programming/hexo/</loc>
-        <lastmod>2019-10-09T05:31:41.032Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://mishka86.github.io/categories/Programming/</loc>
         <lastmod>2019-10-09T05:31:41.032Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>

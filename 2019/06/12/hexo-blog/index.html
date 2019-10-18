@@ -238,6 +238,9 @@
 <p>public 폴더가 생성되어 배포가 가능하다.</p>
 <h3 id="배포하기"><a href="#배포하기" class="headerlink" title="배포하기"></a>배포하기</h3><figure class="highlight bash hljs"><figcaption><span>bash</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo deploy</span><br><span class="line">hexo d  <span class="hljs-comment">#단축 명령어</span></span><br></pre></td></tr></table></figure>
 
+<blockquote>
+<p>배포 중 <strong>오류</strong>가 발생 하면 아래 <a href="#이슈체크">이슈체크</a>를 확인</p>
+</blockquote>
 <h3 id="Generate와-Deploy-동시실행"><a href="#Generate와-Deploy-동시실행" class="headerlink" title="Generate와 Deploy 동시실행"></a>Generate와 Deploy 동시실행</h3><p>아래와 같이 Generate와 Deploy를 동시실행 할 수도 있다.</p>
 <figure class="highlight bash hljs"><figcaption><span>bash</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">hexo deploy --generate  <span class="hljs-comment">#Deploy 전에 Generate를 해준다.</span></span><br><span class="line">hexo d -g  <span class="hljs-comment">#단축 명령어</span></span><br><span class="line"></span><br><span class="line">hexo generate --deploy  <span class="hljs-comment">#Generate 후에 Deploy를 해준다.</span></span><br><span class="line">hexo g -d  <span class="hljs-comment">#단축 명령어</span></span><br></pre></td></tr></table></figure>
 
