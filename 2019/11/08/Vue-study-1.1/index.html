@@ -1,0 +1,750 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+<title>1. 프로그레시브 프레임워크 Vue.js - part 2 - Mishka&#39;s Blog</title>
+<meta name="Description" content="미슈카의 개발 블로그 입니다. 포스팅에 대한 공유, 논의, 수정, 댓글 등은 언제든 환영합니다.">
+<meta name="Keywords" content="미슈카,Mishka,mishka,개발블로그,미슈카개발블로그">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+<link rel="canonical" href="http://mishka86.github.io/2019/11/08/vue-study-1.1/">
+<meta property="og:title" content="Mishka's blog">
+<meta property="og:description" content="미슈카의 개발 블로그 입니다. 포스팅에 대한 공유, 논의, 수정, 댓글 등은 언제든 환영합니다.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://mishka86.github.io/">
+<meta property="og:image" content="/images/meta_logo.png">
+
+
+
+
+
+<link rel="alternative" href="rss2.xml" title="1. 프로그레시브 프레임워크 Vue.js - part 2" type="application/atom+xml">
+
+
+
+<link rel="icon" href="/images/favicon.ico">
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.7.2/css/bulma.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:400,600|Source+Code+Pro">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/vs2015.css">
+
+
+    
+    
+    
+    <style>body>.footer,body>.navbar,body>.section{opacity:0}</style>
+    
+
+    
+    
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css">
+    
+
+    
+    
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.css">
+
+
+    
+    
+    
+    
+
+<link rel="stylesheet" href="/css/back-to-top.css">
+
+
+    
+    
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-141930873-1"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-141930873-1');
+</script>
+
+
+    
+    
+    
+    
+
+    
+    
+<link rel="stylesheet" href="/css/progressbar.css">
+<script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
+
+    
+    
+    
+
+    
+    
+    
+
+
+<link rel="stylesheet" href="/css/style.css">
+
+<!-- 구글 AdSense -->
+
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: 'ca-pub-7669354135137434',
+            enable_page_level_ads: true
+        });
+    </script>
+
+</head>
+<body class="is-2-column">
+    <nav class="navbar navbar-main">
+    <div class="container">
+        <div class="navbar-brand is-flex-center">
+            <a class="navbar-item navbar-logo" href="/">
+            
+                <img src="/images/blog_logo.png" alt="1. 프로그레시브 프레임워크 Vue.js - part 2" height="28">
+            
+            </a>
+        </div>
+        <div class="navbar-menu">
+            
+            <div class="navbar-start">
+                
+                <a class="navbar-item" href="/">Home</a>
+                
+                <a class="navbar-item" href="/archives">Archives</a>
+                
+                <a class="navbar-item" href="/categories">Categories</a>
+                
+                <a class="navbar-item" href="/tags">Tags</a>
+                
+                <a class="navbar-item" href="/about">About</a>
+                
+            </div>
+            
+            <div class="navbar-end">
+                
+                    
+                    
+                    <a class="navbar-item" target="_blank" title="Download on GitHub" href="https://github.com/mishka86" rel="external nofollow noopener noreferrer">
+                        
+                        <i class="fab fa-github"></i>
+                        
+                    </a>
+                    
+                
+                
+                <a class="navbar-item is-hidden-tablet catalogue" title="카탈로그" href="javascript:;">
+                    <i class="fas fa-list-ul"></i>
+                </a>
+                
+                
+                <a class="navbar-item search" title="검색" href="javascript:;">
+                    <i class="fas fa-search"></i>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+</nav>
+    
+    <section class="section">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-8-tablet is-8-desktop is-10-widescreen has-order-2 column-main">
+    <!-- 아티클 위 광고 -->
+    <ins class="adsbygoogle card" style="display:block" data-ad-client="ca-pub-7669354135137434" data-ad-slot="1722092316" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    <script class="card">
+        (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+
+
+
+<div class="card">
+    <!-- 
+    <div class="card-image">
+        <span  class="image is-7by1">
+            <img class="thumbnail" src="/img/vue_js/vuejs_img.png" alt="1. 프로그레시브 프레임워크 Vue.js - part 2">
+        </span>
+    </div>
+     -->
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-11-08T09:11:05.000Z">2019-11-08</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/Study/">Study</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/Study/Vue-js-철저입문/">Vue.js 철저입문</a>
+                </div>
+                
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                1. 프로그레시브 프레임워크 Vue.js - part 2
+            
+        </h1>
+        <div class="content">
+            <h2 id="Vue-js-의-특징"><a href="#Vue-js-의-특징" class="headerlink" title="Vue.js 의 특징"></a>Vue.js 의 특징</h2><p><code>Vue.js</code>는 그 자체로는 뷰만을 다루는 단순한 라이브러리다. Vue.js 본체 뿐만 아니라 관련 라이브러리도 Vue.js 공식 프로젝트의 일부로서 개발 및 관리 된다. 이 때문에 몇가지 라이브러리를 조합하면 마치 종합적인 <strong>프레임워크</strong>처럼 사용 할 수 있다.</p>
+<h3 id="낮은-학습-비용"><a href="#낮은-학습-비용" class="headerlink" title="낮은 학습 비용"></a>낮은 학습 비용</h3><p>Vue.js 가 제공하는 API는 매운 단순하다. UI를 구성하는 데는 HTML을 기반으로 하는 평범한 템플릿을 사용한다. HTML이나 자바스크립트에 이미 익숙하면 Vue.js 에 대해 특별히 더 배우지 않고서도 라이브러리를 사용할 수 있다. 기본적인 사용만 한다면 빌드 도구나 패키징, EC2015 이후 문법에 대한 지식이 없어도 바로 동작하는 코드를 작성할 수 있다. Vue.js 는 앞서 언급한 모던 웹 프런트 엔드 개발의 어려움을 잘 극복했다. HTML5 이후 고도화된 개발 스타일에 부응하면서도 개발 환경 구축이 쉬워서 개발을 바로 시작할 수 있으며 자바스크립트에 대한 사전지식과 라이브러리 고유의 문법을 학습하지 않아도 라이브러리를 사용할 수 있다.</p>
+<a id="more"></a>
+
+<h3 id="컴포넌트-지향을-통한-UI-구조화"><a href="#컴포넌트-지향을-통한-UI-구조화" class="headerlink" title="컴포넌트 지향을 통한 UI 구조화"></a>컴포넌트 지향을 통한 UI 구조화</h3><p>Vue.js 는 구조화해 <code>컴포넌트로 재사용</code>할 수 있다. UI 구성 요소를 컴포넌트로 만들면 시스템 전체를 컴포넌트의 집합 형태로 개발 할 수 있다. 개발에 컴포넌트를 적용하면 컴포넌트 분리에서 오는 유지보수성 개선 및 컴포넌트 재사용 등 여러 장점이 있다.</p>
+<h3 id="리액티브-데이터-바인딩"><a href="#리액티브-데이터-바인딩" class="headerlink" title="리액티브 데이터 바인딩"></a>리액티브 데이터 바인딩</h3><p>Vue.js 는 DOM요소와 <strong>리액티브 데이터 바인딩</strong>을 통해 자바스크립트 데이터를 연결해 준다. <code>리액티브 데이터 바인딩</code>이란 HTML 템플릿 안에서 대상 DOM 요소에 바인딩 을 지정해 Vue.js 가 해당 데이터의 변화를 감지할 때마다 바인딩된 DOM 요소에 표시되는 내용도 함께 업데이트하는 것을 말한다. 값은 자바스크립트에서 DOM요소로 일방적으로 전달된다. 이것을 <strong>단방향 바인딩</strong>이라고 한다. 자바스크립트쪽에서 위치한 데이터 값이 변경되면 변경된 값이 웹 페이지에도 자동으로 반영되는 기능이다. input 요소등 사용자의 입력을 받는 DOM요소는 요소에서 받아온 데이터와 자바스크립트 데이터를 서로동기화하는 바인딩을 지정한다. 이런 경우 자바스크립트의 데이터 값이 변경될때마다 DOM요소의 표시 내용이 수정되며, 사용자의 입력이 감지될때마다 자바스크립트 데이터가 수정된다. 이런 방법으로 자바스크립트 데이터와 DOM요소 데이터의 동기화 상태를 유지한다. 이 방법은 자바스크립트와 DOM요소가 서로 최신 데이터를 주고받으므로 양방향 바인딩이라고 한다. 바인딩을 이용함으로써 귀찮은 표시 내용 업데이트 처리와 DOM 요소와 자바스크립트 간 데이터 동기화 상태 유지로부터 해당됐으며 데이터 중심 웹 애플리케이션 설계 및 구현이 가능해졌다.</p>
+<h2 id="Vue-js의-설계사상"><a href="#Vue-js의-설계사상" class="headerlink" title="Vue.js의 설계사상"></a>Vue.js의 설계사상</h2><p>Vue.js는 사용성 면에서도 뛰어난 라이브러리지만, 성능적인 측면을 비롯해 다른 장점도 많은 라이브러리다. 그러나 이와 비슷한 장점이 많은 라이브러리도 있다. Vue.js 가 이런 다른 라이브러리와 분명이 차별화 되는 점이 있다. 바로 밑바탕이 되는 설계사상이다. Vue.js의 설계 밑 바탕에는 <code>프로그래시브 프레임워크(Progressive framework)</code> 라는 아이디어가 깔려있다.<br>‘프레임워크는 어떤 경우든지 규모와 상관없이 단계적으로 유연하게 사용할 수 있어야 한다.’ 라고 Vue.js를 만든 에반유가 처음 주창했다.</p>
+<h3 id="프레임워크의-복잡성"><a href="#프레임워크의-복잡성" class="headerlink" title="프레임워크의 복잡성"></a>프레임워크의 복잡성</h3><p>웹 프런트 엔트 분야에는 React와 Angular 등 라이브러리와 프레임워크가 여러 가지 있다. 프레임워크는 애플리케이션 개발의 복잡성을 해소해주는 도구다. 그러나 애플리케이션과 마찬가지로 프레임워크에도 프레임워크 자체의 복잡성이 있다. 프레임워크라는 도구를 사용하려면 도구 자체의 복잡성에서 오는 비용과 애플리케이션 개발의 복잡성에서 오는 비용이 균형을 이루도록 적합한 프레임워크를 선택하는 것이 중요하다.</p>
+<h3 id="요구-사항의-변화를-수용할수-있는-프레임워크"><a href="#요구-사항의-변화를-수용할수-있는-프레임워크" class="headerlink" title="요구 사항의 변화를 수용할수 있는 프레임워크"></a>요구 사항의 변화를 수용할수 있는 프레임워크</h3><p>사이트 및 애플리케이션의 요규사항은 끊임없이 변화한다. 프레임워크도 이렇게 변화하는 요구사항에 맞춰 가치를 제공하려면 그만큼 유연하지 않으면 안 된다. 애플리케이션이 최초 완성되고 나면 변화하는 요구사항에 대응하기 위해 애플리케이션의 규모가 지족해서 커지게 마련이다. 대부분 애플리케이션 개발을 지원하는 라이브러리나 도구를 추가로 도입해 새로운 비즈니스 요구사항을 만족시키게 된다. 그러나 이렇게 새로운 요소를 덧붙이는 방법은 생각대로 되지 않는 경우가 많다. 웹 프런트엔드 생태계는 최근 끊임없이 변화하고 있기 때문에 애플리케이션에 도입한 프레임워크나 개발 환경이 얼마 지나지 않아 시대에 뒤떨어지게 되고 다시 어떤 프레임워크로 갈아타야 하는지조차 알 수 없는 상황에 직면하게 된다. 이런 상황에 대처하려면 요구 사항 변과에 단계적으로 대응해야 한다. 이러한 아이디어를 반영한 것이 바로 프로그래시브 프레임워크다. 프로그래시브 프레임워크는 무제를 해결할 수 있는 적합한 라이브러리를 적시에 도입해 문제를 해결한다. Vue.js는 <strong>뷰 계층에 초점을 맞춘 라이브러리</strong>다. Vue.js 프로젝트가 제공하는 부가적인 라이브러리와 개발환경 도구를 사용하면 프로그래시브 프레임워크가 된다.</p>
+<h2 id="프로그레시브-프레임워크가-제공하는-단계적-영역"><a href="#프로그레시브-프레임워크가-제공하는-단계적-영역" class="headerlink" title="프로그레시브 프레임워크가 제공하는 단계적 영역"></a>프로그레시브 프레임워크가 제공하는 단계적 영역</h2><h3 id="선언적-렌더링"><a href="#선언적-렌더링" class="headerlink" title="선언적 렌더링"></a>선언적 렌더링</h3><p>이 영역은 선언적 DOM 렌더링과 관련된 영역이다. HTML 템플릿에 렌더링 대상을 선언적으로 기술해 데이터가 변경될 때마다 DOM을 반응적으로 렌더링하고 사용자 입력 데이터를 동기화 할 수 있다,<br>Vue.js 본체가 제공하는 기능이다.</p>
+<h3 id="컴포넌트-시스템"><a href="#컴포넌트-시스템" class="headerlink" title="컴포넌트 시스템"></a>컴포넌트 시스템</h3><p>UI를 모듈화해 재사용할수 있게 해주는 영역 이 영역 역시 UI 를 컴포넌트로 만들어주는 Vue.js 본체가 제공하는 기능이다.</p>
+<h3 id="클라이언트-사이드-라우팅"><a href="#클라이언트-사이드-라우팅" class="headerlink" title="클라이언트 사이드 라우팅"></a>클라이언트 사이드 라우팅</h3><p>단일 페이지 애플리케이션이 동작하기 위해 필요한 영역이다. 라우팅이란 간단히 말해 애플리케이션의 URL 설계, 지시와 같은 것이다. Vue.js의 공식 라우팅 라이브러리인 Vue Router를 사용하면 기존에 개발한 컴포넌트로 당일 페이지 애플리케이션을 만들 수 있다.</p>
+<h3 id="대규모-상태관리"><a href="#대규모-상태관리" class="headerlink" title="대규모 상태관리"></a>대규모 상태관리</h3><p>컴포넌트 간에 상태를 고유하는 방법을 필요로 하는 영역이다. Vue.js의 공식 데이터플로 아키텍처를 따라 만든 상태관리 라이브러리인 VUEX 를 사용하면 이 영역의 문제를 해결할 수 있다, 기존 컴포넌트를 확장하는 형태로 상태를 중앙에서 관리 할 수 있다.</p>
+<h3 id="빌드시스템"><a href="#빌드시스템" class="headerlink" title="빌드시스템"></a>빌드시스템</h3><p>웹 애플리케이션을 구성하는 컴포넌트 관리, 운영환경배포, 프로젝트 구성등과 관련된 영역이다. Vue.js의 공식 개발지원 도구를 이용해 이 영역의 문제를 해결할 수 있다, 프로젝트의 환경구축, 구성관리에 수고를 들이는 대신 개발에 집중할 수 있다. (Vue Cli)</p>
+<h3 id="클라이언트-서버데이터-퍼시스턴스"><a href="#클라이언트-서버데이터-퍼시스턴스" class="headerlink" title="클라이언트-서버데이터 퍼시스턴스"></a>클라이언트-서버데이터 퍼시스턴스</h3><p>웹애프리케이션의 복잡한 데이터는 클라이언트 사이드와 서버사이트 양쪽 모두에서 퍼시스턴스 데이터로 유지돼야 한다. 이 책을 쓰는 시점에는 이러한 분야의 문제를 해결해 주는 Vue.js공식 라이브러리가 아직 없으며 서드파티 라이브러리 사용자들이 직접 작성한 라이브러리를 사용해 구현한다.</p>
+<h2 id="Vue-js의-기반-기술"><a href="#Vue-js의-기반-기술" class="headerlink" title="Vue.js의 기반 기술"></a>Vue.js의 기반 기술</h2><h3 id="컴포넌트-시스템-1"><a href="#컴포넌트-시스템-1" class="headerlink" title="컴포넌트 시스템"></a>컴포넌트 시스템</h3><p>Vue.js는 컴포넌트를 쉽게 다루기 위한 라이브러리다. 컴포넌트 시스템에서 특기할 만한 기능은 단일 파일 컴포넌트다. Vue.js는 단일 파일에 HTML과 유사한 방식으로 컴포넌트를 작성할 수 있다. 이 파일은 .vue라는 독자적인 확장자를 사용한다. Vue.js 컴포넌트는 기존 웹 표준을 구성하는 기술과 유사한 형태로 정의되기 때문에 학습비용이 매우 낮은것이 특정이다. 파일하나에 컴포넌트의 모든 요소를 함께 담을 수 있다는 점은 큰 장점이다. 컴포넌트의 요점은 언어의 역할과는 별도로 기능이나 관심사를 기준으로 코드를 분리하는 것이기 때문이다. 하나의 관심사만을 같은 GUI 컴포넌트를 분리하려고 할때 HTML/CSS/JavaScript 3가지 요소를 하나의 파일로 합쳐 컴포넌트로 분리 할 수 있으므로 이해하기 쉽다.</p>
+<h3 id="리액티브-시스템"><a href="#리액티브-시스템" class="headerlink" title="리액티브 시스템"></a>리액티브 시스템</h3><p>Vue.js의 리액티브 시스템은 옵저버 패턴을 기반으로 구현 좀더 쉽게 셜명하면 상태의 변화를 Vue.js가 감지해 자동으로 그 변화를 DOM에 반영하는 구조라고 할 수 있다. DOM 을 더욱 정교하고 잦은 비도로 조작해야 하는 애플리케이션에서는 데이터 바인딩이 매우 유용하다. 라이브러리에 이러한 기능이 없다면 값의 변화에 따라 변화해야 하는 곳을 직접 변경하거나 갑의 변경에 따른 사이드 이펙트를 완전히 파악하지 못하고 임시변통으로 틀어막게 되기 쉽다. 뒤에 설명할 계산 프로퍼티는 이러한 리액티브 시스템 덕을 가장 크게보는 사례다. 계산 프로퍼티란 값의 변화를 탐지해 자동으로 업데이트 되는 프로퍼티를 말한다. Vue.js 템플릿에서 빼놓을 수 없는 기능이다. 리액티브 시트템은 리액티브 프로퍼티와 와처가 한 쌍을 이뤄 구현된다.</p>
+<h3 id="리액티브-시스템의-내부"><a href="#리액티브-시스템의-내부" class="headerlink" title="리액티브 시스템의 내부"></a>리액티브 시스템의 내부</h3><p>계산프로퍼티에서는 와처 내부의 게터가 계산 프로터티로 정의하는 함수 역할을 한다. 계산프로퍼티를 처음 참조하면 와처내부에 잇는 게터를 거쳐 리액티브 프ㄹ퍼티의 계산 결과가 와처에 캐싱되며 이와 함께 리액티브 프로퍼티의 의존관계 추적도 완료된다. 그 다음 이 계산 프로퍼티가 다시 참조될 때는 캐싱된 값을 반환해 계산 비용을 절약할 수 있다, 이후에 계산 프로퍼티에서 이 값이 의존하는 리액티브 프로퍼티의 일부가 대입 등의 이유로 변경되면 후크 처리를 통해 와처에 이 변경이 통지되면 내부 게터가 이 통지를 전달받아 프로퍼티 값을 다시 계산해 그 결과가 와처에 새로 캐싱된다. 반면 컴포넌트 렌더링에서는 와처 내부의 게터가 컴포넌트를 렌더링하는 함수 역할을 한다. 모든 컴포넌트가 와처를 갖고 있기 때문에 컴포넌트의 모든 데이터를 래액티브 프로퍼티로 모니터링 한다. 컴포넌트 렌더링은 모니터링 대상 중 어떤 리액티브 프로퍼티가 값이 변경됐다는 통지를 보내면 그때마다 와처의 게터가 실행돼 컴포넌트가 렌더링되는 구조다.</p>
+<h3 id="렌더링시스템"><a href="#렌더링시스템" class="headerlink" title="렌더링시스템"></a>렌더링시스템</h3><p>Vue.js는 가장 DOM을 이용해 DOM을 고속으로 렌더링한다. 가상 DOM은 DOM을 간편하고 빠르게 제어하기 위한 기술이다. 더 편리하고 빠르게 다룰 수 있는 DOM 구조의 대체물을 만든 다음 이 대체물을 조작하고 그 결과를 실제 DOM에 반영한다. 다른라이브러리와 다른 점은 템플릿이 HTML과 유사해 개발이 쉽고 최적화가 잘 돼 있어 빠른 렌더링이 가능하다는 점이다.</p>
+<h2 id="Vue-js의-생태계"><a href="#Vue-js의-생태계" class="headerlink" title="Vue.js의 생태계"></a>Vue.js의 생태계</h2><p>Vue.js는 뷰 계층에 초점을 맞춘 라이브러리이므로 엄밀히 말해 프레임워크는 아니다. 단일 페이지 애플리케이션을 구현하기 위한 라우팅 기능처럼 UI외적인 기능을 이용하는 웹애플리케이션을 개발하려면 추가 라이브러리가 필요하다. 웹애플리케이션 테스트 및 빌드, 개발 환경역시 직접 구축하지 않으면 안 된다.</p>
+<ul>
+<li>Vue Router : 단일 페이지 애플리케이션을 구현하기 위한 라우팅 기능을 제공하는 플러그인</li>
+<li>Vuex : 대규모 웹 애플리케이션을 구축하기 위한 상태 관리 플러그인</li>
+<li>Vue Loader : 컴포넌트의 고급 기능을 이용하기 위한 webpack 용 로더 라이브러리</li>
+<li>Vue CLI : 웹 애플리케이션을 구축하기 위한 템플릿 프로젝트 생성 및 프로토타입을 추가 설정없이 빌드하기 위한 명령해</li>
+<li>Vue DevToolls : Vue.js 애플리케이션을 브라우저의 개발자 도구로 디버깅할 수 있게 해주는 도구</li>
+<li>Nuxt.js : 단일 페이지 애플리케이션과 서버 사이드 렌더링을 지원하는 Vue.js 애플리케이션을 개발하기 위한 프레임워크</li>
+<li>Weex : Vue.js 문법을 사용해 IOS 및 안드로이드 애플리케이션을 개발할 수 있는 프레임워크</li>
+<li>Onsen UI : 모바일 웹 애플리케이션을 개발하기 위한 프레임워크</li>
+</ul>
+<p>커뮤니티에서 추천 플러그인, 라이브러리, 도구 등의 정보를 얻을 수 있다.</p>
+<ul>
+<li>Awesome Vue : Vue.js와 관련된 오픈 소스 프로젝트나 Vue.js가 사용된 웹 사이트 및 애플리케이션 정보를 공유하는 사이트</li>
+<li>Vue Curated : Vue.js 코어 팀에서 엄선한 플러그인, 라이브러리, 프레임워크 등을 검색 할수 있는 공식 사이트</li>
+</ul>
+<h2 id="Vue-js-첫걸음"><a href="#Vue-js-첫걸음" class="headerlink" title="Vue.js 첫걸음"></a>Vue.js 첫걸음</h2><figure class="highlight html hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-tag">&lt;<span class="hljs-name">DOCTYPE</span> <span class="hljs-attr">html</span>&gt;</span></span><br><span class="line">  <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>Vue.js 시작하기<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span></span><br><span class="line">  <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">“https://unpkg.comvue@2.5.17”</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></span><br><span class="line">  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">“app”</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span></span><br><span class="line"><span class="hljs-javascript">  <span class="hljs-keyword">new</span> Vue(&#123;</span></span><br><span class="line"><span class="hljs-xml">    template: ‘<span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>&#123;&#123; msg &#125;&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>’,</span></span><br><span class="line">    data : &#123; msg: ‘hello world!’ &#125;</span><br><span class="line">  &#125;).$mount(‘app’)</span><br><span class="line"><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></span><br><span class="line"><span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>Vue.js 참조문서 - 공식사이트 참고(<a href="https://vuejs.org" rel="external nofollow noopener noreferrer" target="_blank">https://vuejs.org</a>)</li>
+<li>Vue.js 사용자 커뮤니티</li>
+<li>Vue.js 포럼 : Vue.js 를 사용하다가 발생하는 트러블이나 질문 사항을 논의하는 사이트</li>
+<li>Vue Land : Vue.js 사용자와 코어 팀 멤버 및 컨트리뷰터가 채팅을 커뮤니케이션 하는 커뮤니티</li>
+<li>Vue.js 밋업 : 한국 Vue.js 사용자들이 Vue.js 지식과 정보를 공유하는 밋업 이벤트</li>
+</ul>
+
+        </div>
+        
+        <div class="level is-size-7 is-uppercase">
+            <div class="level-start">
+                <div class="level-item">
+                    <span class="is-size-6 has-text-grey has-mr-7">#</span>
+                    <a class="has-link-grey -link" href="/tags/Vue/">Vue</a>, <a class="has-link-grey -link" href="/tags/뷰/">뷰</a>, <a class="has-link-grey -link" href="/tags/스터디/">스터디</a>, <a class="has-link-grey -link" href="/tags/프레임워크/">프레임워크</a>
+                </div>
+            </div>
+        </div>
+        
+        
+        
+        
+<div class="sharethis-inline-share-buttons"></div>
+<script type="text/javascript" src="https://platform-api.sharethis.com/js/sharethis.js#property=5d11bc2de1239400125e3dc9&amp;product=inline-share-buttons" async="async"></script>
+
+        
+    </div>
+</div>
+
+
+
+
+
+    <!-- 댓글 위 광고 -->
+    <ins class="adsbygoogle card" style="display:block" data-ad-client="ca-pub-7669354135137434" data-ad-slot="8992996108" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    <script class="card">
+        (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+
+
+
+
+<div class="card card-transparent">
+    <div class="level post-navigation is-flex-wrap is-mobile">
+        
+        
+        <div class="level-end">
+            <a class="level level-item has-link-grey  article-nav-next" href="/2019/11/08/Vue-study-1/">
+                <span class="level-item">1. 프로그레시브 프레임워크 Vue.js - part 1</span>
+                <i class="level-item fas fa-chevron-right"></i>
+            </a>
+        </div>
+        
+    </div>
+</div>
+
+
+
+<div class="card">
+    <div class="card-content">
+        <h3 class="title is-5 has-text-weight-normal">댓글</h3>
+        <div id="disqus_thread"></div>
+<script>
+
+/**
+*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+/*
+var disqus_config = function () {
+this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+*/
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = 'https://https-mishka86-github-io.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="external nofollow noopener noreferrer" target="_blank">comments powered by Disqus.</a></noscript>
+    </div>
+</div>
+
+
+</div>
+                
+                
+
+
+
+
+<div class="column is-4-tablet is-4-desktop is-3-widescreen  has-order-3 column-right is-sticky">
+    
+        
+<div class="card widget" id="toc">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                카탈로그
+            </h3>
+            <ul class="menu-list"><li>
+        <a class="is-flex" href="#Vue-js-의-특징">
+        <span class="has-mr-6">1</span>
+        <span>Vue.js 의 특징</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#낮은-학습-비용">
+        <span class="has-mr-6">1.1</span>
+        <span>낮은 학습 비용</span>
+        </a></li><li>
+        <a class="is-flex" href="#컴포넌트-지향을-통한-UI-구조화">
+        <span class="has-mr-6">1.2</span>
+        <span>컴포넌트 지향을 통한 UI 구조화</span>
+        </a></li><li>
+        <a class="is-flex" href="#리액티브-데이터-바인딩">
+        <span class="has-mr-6">1.3</span>
+        <span>리액티브 데이터 바인딩</span>
+        </a></li></ul></li><li>
+        <a class="is-flex" href="#Vue-js의-설계사상">
+        <span class="has-mr-6">2</span>
+        <span>Vue.js의 설계사상</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#프레임워크의-복잡성">
+        <span class="has-mr-6">2.1</span>
+        <span>프레임워크의 복잡성</span>
+        </a></li><li>
+        <a class="is-flex" href="#요구-사항의-변화를-수용할수-있는-프레임워크">
+        <span class="has-mr-6">2.2</span>
+        <span>요구 사항의 변화를 수용할수 있는 프레임워크</span>
+        </a></li></ul></li><li>
+        <a class="is-flex" href="#프로그레시브-프레임워크가-제공하는-단계적-영역">
+        <span class="has-mr-6">3</span>
+        <span>프로그레시브 프레임워크가 제공하는 단계적 영역</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#선언적-렌더링">
+        <span class="has-mr-6">3.1</span>
+        <span>선언적 렌더링</span>
+        </a></li><li>
+        <a class="is-flex" href="#컴포넌트-시스템">
+        <span class="has-mr-6">3.2</span>
+        <span>컴포넌트 시스템</span>
+        </a></li><li>
+        <a class="is-flex" href="#클라이언트-사이드-라우팅">
+        <span class="has-mr-6">3.3</span>
+        <span>클라이언트 사이드 라우팅</span>
+        </a></li><li>
+        <a class="is-flex" href="#대규모-상태관리">
+        <span class="has-mr-6">3.4</span>
+        <span>대규모 상태관리</span>
+        </a></li><li>
+        <a class="is-flex" href="#빌드시스템">
+        <span class="has-mr-6">3.5</span>
+        <span>빌드시스템</span>
+        </a></li><li>
+        <a class="is-flex" href="#클라이언트-서버데이터-퍼시스턴스">
+        <span class="has-mr-6">3.6</span>
+        <span>클라이언트-서버데이터 퍼시스턴스</span>
+        </a></li></ul></li><li>
+        <a class="is-flex" href="#Vue-js의-기반-기술">
+        <span class="has-mr-6">4</span>
+        <span>Vue.js의 기반 기술</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#컴포넌트-시스템-1">
+        <span class="has-mr-6">4.1</span>
+        <span>컴포넌트 시스템</span>
+        </a></li><li>
+        <a class="is-flex" href="#리액티브-시스템">
+        <span class="has-mr-6">4.2</span>
+        <span>리액티브 시스템</span>
+        </a></li><li>
+        <a class="is-flex" href="#리액티브-시스템의-내부">
+        <span class="has-mr-6">4.3</span>
+        <span>리액티브 시스템의 내부</span>
+        </a></li><li>
+        <a class="is-flex" href="#렌더링시스템">
+        <span class="has-mr-6">4.4</span>
+        <span>렌더링시스템</span>
+        </a></li></ul></li><li>
+        <a class="is-flex" href="#Vue-js의-생태계">
+        <span class="has-mr-6">5</span>
+        <span>Vue.js의 생태계</span>
+        </a></li><li>
+        <a class="is-flex" href="#Vue-js-첫걸음">
+        <span class="has-mr-6">6</span>
+        <span>Vue.js 첫걸음</span>
+        </a></li></ul>
+        </div>
+    </div>
+</div>
+
+        
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                카테고리
+            </h3>
+            <ul class="menu-list">
+            <li>
+        <a class="level is-marginless" href="/categories/Programming/">
+            <span class="level-start">
+                <span class="level-item">Programming</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">10</span>
+            </span>
+        </a><ul><li>
+        <a class="level is-marginless" href="/categories/Programming/Markdown/">
+            <span class="level-start">
+                <span class="level-item">Markdown</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/Programming/git/">
+            <span class="level-start">
+                <span class="level-item">git</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/Programming/hexo/">
+            <span class="level-start">
+                <span class="level-item">hexo</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">8</span>
+            </span>
+        </a></li></ul></li><li>
+        <a class="level is-marginless" href="/categories/Setting/">
+            <span class="level-start">
+                <span class="level-item">Setting</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">4</span>
+            </span>
+        </a><ul><li>
+        <a class="level is-marginless" href="/categories/Setting/SSH/">
+            <span class="level-start">
+                <span class="level-item">SSH</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/Setting/VScode/">
+            <span class="level-start">
+                <span class="level-item">VScode</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">2</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/Setting/zsh/">
+            <span class="level-start">
+                <span class="level-item">zsh</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li></ul></li><li>
+        <a class="level is-marginless" href="/categories/Study/">
+            <span class="level-start">
+                <span class="level-item">Study</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">18</span>
+            </span>
+        </a><ul><li>
+        <a class="level is-marginless" href="/categories/Study/Learning-JavaScript/">
+            <span class="level-start">
+                <span class="level-item">Learning-JavaScript</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">16</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/Study/Vue-js-철저입문/">
+            <span class="level-start">
+                <span class="level-item">Vue.js 철저입문</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">2</span>
+            </span>
+        </a></li></ul></li><li>
+        <a class="level is-marginless" href="/categories/회고/">
+            <span class="level-start">
+                <span class="level-item">회고</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+        
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            태그 클라우드
+        </h3>
+        <a href="/tags/1년6개월/" style="font-size: 10px;">1년6개월</a> <a href="/tags/ERROR/" style="font-size: 10px;">ERROR</a> <a href="/tags/Function/" style="font-size: 10px;">Function</a> <a href="/tags/Github/" style="font-size: 12px;">Github</a> <a href="/tags/LSP/" style="font-size: 10px;">LSP</a> <a href="/tags/Learning-JavaScript/" style="font-size: 18px;">Learning-JavaScript</a> <a href="/tags/Mac/" style="font-size: 10px;">Mac</a> <a href="/tags/MarkDown/" style="font-size: 10px;">MarkDown</a> <a href="/tags/Math/" style="font-size: 10px;">Math</a> <a href="/tags/OOP/" style="font-size: 10px;">OOP</a> <a href="/tags/SEO/" style="font-size: 10px;">SEO</a> <a href="/tags/SSH/" style="font-size: 10px;">SSH</a> <a href="/tags/Terminal/" style="font-size: 10px;">Terminal</a> <a href="/tags/VScode/" style="font-size: 12px;">VScode</a> <a href="/tags/VisualStudioCode/" style="font-size: 10px;">VisualStudioCode</a> <a href="/tags/Vue/" style="font-size: 12px;">Vue</a> <a href="/tags/Wiriting/" style="font-size: 12px;">Wiriting</a> <a href="/tags/ad/" style="font-size: 10px;">ad</a> <a href="/tags/array/" style="font-size: 10px;">array</a> <a href="/tags/babel/" style="font-size: 10px;">babel</a> <a href="/tags/backup/" style="font-size: 10px;">backup</a> <a href="/tags/blog/" style="font-size: 12px;">blog</a> <a href="/tags/catch/" style="font-size: 10px;">catch</a> <a href="/tags/commend/" style="font-size: 10px;">commend</a> <a href="/tags/comment/" style="font-size: 10px;">comment</a> <a href="/tags/date/" style="font-size: 10px;">date</a> <a href="/tags/deploy/" style="font-size: 10px;">deploy</a> <a href="/tags/disqus/" style="font-size: 10px;">disqus</a> <a href="/tags/draft/" style="font-size: 10px;">draft</a> <a href="/tags/eslint/" style="font-size: 10px;">eslint</a> <a href="/tags/extension/" style="font-size: 10px;">extension</a> <a href="/tags/finally/" style="font-size: 10px;">finally</a> <a href="/tags/for문/" style="font-size: 10px;">for문</a> <a href="/tags/function/" style="font-size: 10px;">function</a> <a href="/tags/git/" style="font-size: 16px;">git</a> <a href="/tags/gitbash/" style="font-size: 10px;">gitbash</a> <a href="/tags/github/" style="font-size: 10px;">github</a> <a href="/tags/gulp/" style="font-size: 10px;">gulp</a> <a href="/tags/hexo/" style="font-size: 20px;">hexo</a> <a href="/tags/icarus/" style="font-size: 10px;">icarus</a> <a href="/tags/icarus테마/" style="font-size: 10px;">icarus테마</a> <a href="/tags/if문/" style="font-size: 10px;">if문</a> <a href="/tags/map/" style="font-size: 10px;">map</a> <a href="/tags/moment/" style="font-size: 10px;">moment</a> <a href="/tags/node/" style="font-size: 10px;">node</a> <a href="/tags/post/" style="font-size: 12px;">post</a> <a href="/tags/posting/" style="font-size: 12px;">posting</a> <a href="/tags/scaffolds/" style="font-size: 12px;">scaffolds</a> <a href="/tags/scope/" style="font-size: 10px;">scope</a> <a href="/tags/set/" style="font-size: 10px;">set</a> <a href="/tags/setting/" style="font-size: 14px;">setting</a> <a href="/tags/study/" style="font-size: 18px;">study</a> <a href="/tags/themes/" style="font-size: 10px;">themes</a> <a href="/tags/time/" style="font-size: 10px;">time</a> <a href="/tags/timezone/" style="font-size: 10px;">timezone</a> <a href="/tags/try/" style="font-size: 10px;">try</a> <a href="/tags/zsh/" style="font-size: 10px;">zsh</a> <a href="/tags/개발도구/" style="font-size: 10px;">개발도구</a> <a href="/tags/객체/" style="font-size: 10px;">객체</a> <a href="/tags/객체지향프로그래밍/" style="font-size: 10px;">객체지향프로그래밍</a> <a href="/tags/공부/" style="font-size: 10px;">공부</a> <a href="/tags/깃/" style="font-size: 10px;">깃</a> <a href="/tags/깃허브/" style="font-size: 10px;">깃허브</a> <a href="/tags/날짜/" style="font-size: 10px;">날짜</a> <a href="/tags/단일스레드/" style="font-size: 10px;">단일스레드</a> <a href="/tags/댓글/" style="font-size: 10px;">댓글</a> <a href="/tags/데이터타입/" style="font-size: 10px;">데이터타입</a> <a href="/tags/리터널/" style="font-size: 10px;">리터널</a> <a href="/tags/마크다운/" style="font-size: 10px;">마크다운</a> <a href="/tags/맵/" style="font-size: 10px;">맵</a> <a href="/tags/명령어/" style="font-size: 10px;">명령어</a> <a href="/tags/반복문/" style="font-size: 10px;">반복문</a> <a href="/tags/배열/" style="font-size: 10px;">배열</a> <a href="/tags/배열메서드/" style="font-size: 10px;">배열메서드</a> <a href="/tags/백업/" style="font-size: 10px;">백업</a> <a href="/tags/변수/" style="font-size: 10px;">변수</a> <a href="/tags/뷰/" style="font-size: 12px;">뷰</a> <a href="/tags/블로그/" style="font-size: 12px;">블로그</a> <a href="/tags/비동기/" style="font-size: 10px;">비동기</a> <a href="/tags/상수/" style="font-size: 10px;">상수</a> <a href="/tags/설정/" style="font-size: 10px;">설정</a> <a href="/tags/설치방법/" style="font-size: 10px;">설치방법</a> <a href="/tags/세팅/" style="font-size: 12px;">세팅</a> <a href="/tags/셋/" style="font-size: 10px;">셋</a> <a href="/tags/스코프/" style="font-size: 10px;">스코프</a> <a href="/tags/스터디/" style="font-size: 14px;">스터디</a> <a href="/tags/시간/" style="font-size: 10px;">시간</a> <a href="/tags/에러/" style="font-size: 10px;">에러</a> <a href="/tags/연산자/" style="font-size: 10px;">연산자</a> <a href="/tags/예외/" style="font-size: 10px;">예외</a> <a href="/tags/원시타입/" style="font-size: 10px;">원시타입</a> <a href="/tags/이터레이터/" style="font-size: 10px;">이터레이터</a> <a href="/tags/제너레이터/" style="font-size: 12px;">제너레이터</a> <a href="/tags/제어문/" style="font-size: 10px;">제어문</a> <a href="/tags/주석/" style="font-size: 10px;">주석</a> <a href="/tags/추상적사고/" style="font-size: 10px;">추상적사고</a> <a href="/tags/추상화/" style="font-size: 10px;">추상화</a> <a href="/tags/추천/" style="font-size: 10px;">추천</a> <a href="/tags/콜백/" style="font-size: 10px;">콜백</a> <a href="/tags/쿠팡/" style="font-size: 10px;">쿠팡</a> <a href="/tags/쿠팡파트너스/" style="font-size: 10px;">쿠팡파트너스</a> <a href="/tags/터미널/" style="font-size: 10px;">터미널</a> <a href="/tags/템플릿문자열/" style="font-size: 10px;">템플릿문자열</a> <a href="/tags/파트너스/" style="font-size: 10px;">파트너스</a> <a href="/tags/편집기/" style="font-size: 10px;">편집기</a> <a href="/tags/표현식/" style="font-size: 10px;">표현식</a> <a href="/tags/프라미스/" style="font-size: 10px;">프라미스</a> <a href="/tags/프레임워크/" style="font-size: 12px;">프레임워크</a> <a href="/tags/함수/" style="font-size: 12px;">함수</a> <a href="/tags/호이스팅/" style="font-size: 10px;">호이스팅</a> <a href="/tags/확장프로그램/" style="font-size: 10px;">확장프로그램</a> <a href="/tags/회고/" style="font-size: 10px;">회고</a>
+    </div>
+</div>
+
+        
+    
+    
+<!-- 사이드 광고 -->
+    <ins class="adsbygoogle card" style="display:block" data-ad-client="ca-pub-7669354135137434" data-ad-slot="7664684139" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    <script class="card">
+        (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+    
+<div class="card widget">
+        <script src="https://ads-partners.coupang.com/g.js"></script>
+        <script>
+            new PartnersCoupang.G({ id:4765 });
+        </script>
+        <iframe src="https://ads-partners.coupang.com/iframe/search-bar?id=19062111274125404211001917-l1&type=l1&trackingCode=AF3074287" width="100%" height="75" frameborder="0" scrolling="no"></iframe>
+</div>
+    
+</div>
+
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+    <div class="container">
+        <div class="level">
+            <div class="level-start has-text-centered-mobile">
+                <a class="footer-logo is-block has-mb-6" href="/">
+                
+                    <img src="/images/blog_logo.png" alt="1. 프로그레시브 프레임워크 Vue.js - part 2" height="28">
+                
+                </a>
+                <p class="is-size-7">
+                &copy; 2019 Mishka&nbsp;
+                Powered by <a href="https://hexo.io/" target="_blank" rel="external nofollow noopener noreferrer">Hexo</a> & <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="external nofollow noopener noreferrer">Icarus</a>
+                
+                </p>
+            </div>
+            <div class="level-end">
+            
+                <div class="field has-addons is-flex-center-mobile has-mt-5-mobile is-flex-wrap is-flex-middle">
+                
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" title="Creative Commons" href="https://creativecommons.org/" rel="external nofollow noopener noreferrer">
+                        
+                        <i class="fab fa-creative-commons"></i>
+                        
+                    </a>
+                </p>
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/" rel="external nofollow noopener noreferrer">
+                        
+                        <i class="fab fa-creative-commons-by"></i>
+                        
+                    </a>
+                </p>
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" title="Download on GitHub" href="https://github.com/mishka86" rel="external nofollow noopener noreferrer">
+                        
+                        <i class="fab fa-github"></i>
+                        
+                    </a>
+                </p>
+                
+                </div>
+            
+            </div>
+        </div>
+    </div>
+</footer>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script>
+<script>moment.locale("ko");</script>
+
+
+    
+    
+    
+    <script src="/js/animation.js"></script>
+    
+
+    
+    
+    
+    <script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js" defer></script>
+    <script src="/js/gallery.js" defer></script>
+    
+
+    
+    
+
+<div id="outdated">
+    <h6>Your browser is out-of-date!</h6>
+    <p>Update your browser to view this website correctly. <a id="btnUpdateBrowser" href="http://outdatedbrowser.com/" rel="external nofollow noopener noreferrer" target="_blank">Update
+            my browser now </a></p>
+    <p class="last"><a href="#" id="btnCloseUpdateBrowser" title="Close">&times;</a></p>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.js" defer></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        outdatedBrowser({
+            bgColor: '#f25648',
+            color: '#ffffff',
+            lowerThan: 'flex'
+        });
+    });
+</script>
+
+
+    
+    
+<script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/unpacked/MathJax.js?config=TeX-MML-AM_CHTML" defer></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    MathJax.Hub.Config({
+        'HTML-CSS': {
+            matchFontHeight: false
+        },
+        SVG: {
+            matchFontHeight: false
+        },
+        CommonHTML: {
+            matchFontHeight: false
+        },
+        tex2jax: {
+            inlineMath: [
+                ['$','$'],
+                ['\\(','\\)']
+            ]
+        }
+    });
+});
+</script>
+
+    
+    
+
+<a id="back-to-top" title="Back to Top" href="javascript:;">
+    <i class="fas fa-chevron-up"></i>
+</a>
+<script src="/js/back-to-top.js" defer></script>
+
+
+    
+    
+
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    <script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script>
+    <script src="/js/clipboard.js" defer></script>
+    
+
+    
+    
+    
+
+
+<script src="/js/main.js" defer></script>
+
+    
+    <div class="searchbox ins-search">
+    <div class="searchbox-container ins-search-container">
+        <div class="searchbox-input-wrapper">
+            <input type="text" class="searchbox-input ins-search-input" placeholder="입력 하세요...">
+            <span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="searchbox-result-wrapper ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+    (function (window) {
+        var INSIGHT_CONFIG = {
+            TRANSLATION: {
+                POSTS: '포스트',
+                PAGES: '페이지',
+                CATEGORIES: '카테고리',
+                TAGS: '태그',
+                UNTITLED: '(제목없음)',
+            },
+            CONTENT_URL: '/content.json',
+        };
+        window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+    })(window);
+</script>
+<script src="/js/insight.js" defer></script>
+<link rel="stylesheet" href="/css/search.css">
+<link rel="stylesheet" href="/css/insight.css">
+    
+</body>
+</html>

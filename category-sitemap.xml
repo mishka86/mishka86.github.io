@@ -8,6 +8,20 @@
     </url>
 
     <url>
+        <loc>http://mishka86.github.io/categories/Study/Vue-js-%EC%B2%A0%EC%A0%80%EC%9E%85%EB%AC%B8/</loc>
+        <lastmod>2019-11-08T09:31:21.236Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://mishka86.github.io/categories/Study/</loc>
+        <lastmod>2019-11-08T09:31:21.236Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
         <loc>http://mishka86.github.io/categories/Setting/SSH/</loc>
         <lastmod>2019-10-18T07:53:15.763Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -135,13 +149,6 @@
 
     <url>
         <loc>http://mishka86.github.io/categories/Study/Learning-JavaScript/</loc>
-        <lastmod>2019-10-09T05:25:03.830Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://mishka86.github.io/categories/Study/</loc>
         <lastmod>2019-10-09T05:25:03.830Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
