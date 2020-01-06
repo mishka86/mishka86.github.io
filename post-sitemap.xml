@@ -8,6 +8,22 @@
     </url>
 
     <url>
+        <loc>http://mishka86.github.io/2020/01/02/execution_context/</loc>
+        <lastmod>2020-01-06T10:22:30.247Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://mishka86.github.io/2020/01/04/closure/</loc>
+        <lastmod>2020-01-06T10:22:26.465Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>http://mishka86.github.io/2019/11/08/Vue-study-1/</loc>
         <lastmod>2019-11-08T09:31:21.236Z</lastmod>
         <changefreq>weekly</changefreq>
