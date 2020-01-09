@@ -246,6 +246,9 @@
 <p>outer 함수를 종료할 때 inner 함수를 반환함으로써 outer 함수의 지역변수인 a의 값을 외부에서도 읽을 수 있게 됐습니다.<br>외부에서는 outer라는 변수를 통해 outer함수를 실행 할 수는 있지만 outer함수 내부에는 어떤한 개입도 할 수 없습니다.<br>외부에서는 오직 outer함수가 return한 정보에만 접 할수 있습니다.<br>그러니까 외부에 제공하고자 하는 정보들을 모아서 return하고, 내부에서만 사용 할 정보들은 return 하지 않는 것으로 접근 권한 제어가 가능한것입니다.<br>return한 변수들은 공개맴버(public member) 가 되고, 그렇지 않는 변수들은 비공개 멤버(private member)가 되는 것입니다.</p>
 <h2 id="부분-적용-함수-partially-applied-function"><a href="#부분-적용-함수-partially-applied-function" class="headerlink" title="부분 적용 함수 (partially applied function)"></a>부분 적용 함수 (partially applied function)</h2><p>부분 적용 함수란 n개의 인자를 받는 함수에 미리 m개의 인자만 넘겨 기억시켰다가,<br>나중에 (n-m) 개의 인자를 넘기면 비로소 원래 함수의 실행 결과를 얻을 수 있게끔 하는 함수 입니다.</p>
 <h2 id="커링-함수-currying-function"><a href="#커링-함수-currying-function" class="headerlink" title="커링 함수 (currying function)"></a>커링 함수 (currying function)</h2><p>커링 함수란 여러 개의 인자를 받는 함수를 하나의 인자만 받는 함수로 나눠서 순차적으로 호출될 수 있게 체인 형태로 구성한 것을 말합니다.<br>부분 적용 함수와 다른 접은 커링은 한 번에 하나의 인자만 전달하는 것을 원칙으로 합니다. 쪼한 중간 과성상의 함수를 실행한 결과는 그다음 인자를 받기 위해 대기만 할 뿐으로, 마지막 인자가 전달되기 전 까지는 원본 함수가 실행되지 않습니다(부분 적용 함수는 여러 개의 인자를 전달할 수 있고, 실행 결과를 재실행할때 원본 함수가 무조건 실행됩니다).</p>
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><ul>
+<li>코어 자바스크립트 (위키북스)</li>
+</ul>
 
         </div>
         
@@ -368,6 +371,10 @@ s.setAttribute('data-timestamp', +new Date());
         <a class="is-flex" href="#커링-함수-currying-function">
         <span class="has-mr-6">3.4</span>
         <span>커링 함수 (currying function)</span>
+        </a></li><li>
+        <a class="is-flex" href="#Reference">
+        <span class="has-mr-6">3.5</span>
+        <span>Reference</span>
         </a></li></ul></li></ul>
         </div>
     </div>
