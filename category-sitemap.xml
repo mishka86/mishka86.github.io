@@ -2,167 +2,167 @@
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
     <url>
-        <loc>http://mishka86.github.io</loc>
+        <loc>https://mishka.kr</loc>
         <changefreq>daily</changefreq>
         <priority>1</priority>
     </url>
 
     <url>
-        <loc>http://mishka86.github.io/categories/Study/%EC%8B%A4%ED%96%89%EC%BB%A8%ED%85%8D%EC%8A%A4%ED%8A%B8/</loc>
+        <loc>https://mishka.kr/categories/Study/%ED%81%B4%EB%A1%9C%EC%A0%80/</loc>
+        <lastmod>2020-01-09T00:33:52.746Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://mishka.kr/categories/Study/</loc>
+        <lastmod>2020-01-09T00:33:52.746Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://mishka.kr/categories/Study/%EC%8B%A4%ED%96%89%EC%BB%A8%ED%85%8D%EC%8A%A4%ED%8A%B8/</loc>
         <lastmod>2020-01-06T10:22:30.247Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://mishka86.github.io/categories/Study/</loc>
-        <lastmod>2020-01-06T10:22:30.247Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://mishka86.github.io/categories/Study/%ED%81%B4%EB%A1%9C%EC%A0%80/</loc>
-        <lastmod>2020-01-06T10:22:26.465Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://mishka86.github.io/categories/Study/Vue-js-%EC%B2%A0%EC%A0%80%EC%9E%85%EB%AC%B8/</loc>
+        <loc>https://mishka.kr/categories/Study/Vue-js-%EC%B2%A0%EC%A0%80%EC%9E%85%EB%AC%B8/</loc>
         <lastmod>2019-11-08T09:31:21.236Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://mishka86.github.io/categories/Setting/SSH/</loc>
+        <loc>https://mishka.kr/categories/Setting/SSH/</loc>
         <lastmod>2019-10-18T07:53:15.763Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://mishka86.github.io/categories/Setting/</loc>
+        <loc>https://mishka.kr/categories/Setting/</loc>
         <lastmod>2019-10-18T07:53:15.763Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://mishka86.github.io/categories/Programming/hexo/backup/</loc>
+        <loc>https://mishka.kr/categories/Programming/hexo/backup/</loc>
         <lastmod>2019-10-18T07:49:57.116Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://mishka86.github.io/categories/Programming/hexo/</loc>
+        <loc>https://mishka.kr/categories/Programming/hexo/</loc>
         <lastmod>2019-10-18T07:49:57.116Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://mishka86.github.io/categories/Programming/</loc>
+        <loc>https://mishka.kr/categories/Programming/</loc>
         <lastmod>2019-10-18T07:49:57.116Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://mishka86.github.io/categories/Programming/hexo/ad/</loc>
+        <loc>https://mishka.kr/categories/Programming/hexo/ad/</loc>
         <lastmod>2019-10-09T05:31:31.419Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://mishka86.github.io/categories/Programming/git/</loc>
+        <loc>https://mishka.kr/categories/Programming/git/</loc>
         <lastmod>2019-10-09T05:31:17.021Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://mishka86.github.io/categories/Programming/hexo/comment/</loc>
+        <loc>https://mishka.kr/categories/Programming/hexo/comment/</loc>
         <lastmod>2019-10-09T05:30:26.780Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://mishka86.github.io/categories/Programming/hexo/setting/</loc>
+        <loc>https://mishka.kr/categories/Programming/hexo/setting/</loc>
         <lastmod>2019-10-09T05:30:13.332Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://mishka86.github.io/categories/Programming/hexo/SEO/</loc>
+        <loc>https://mishka.kr/categories/Programming/hexo/SEO/</loc>
         <lastmod>2019-10-09T05:30:00.644Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://mishka86.github.io/categories/Programming/hexo/themes/</loc>
+        <loc>https://mishka.kr/categories/Programming/hexo/themes/</loc>
         <lastmod>2019-10-09T05:29:43.880Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://mishka86.github.io/categories/Programming/hexo/posting/</loc>
+        <loc>https://mishka.kr/categories/Programming/hexo/posting/</loc>
         <lastmod>2019-10-09T05:28:47.593Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://mishka86.github.io/categories/Programming/Markdown/</loc>
+        <loc>https://mishka.kr/categories/Programming/Markdown/</loc>
         <lastmod>2019-10-09T05:27:49.323Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://mishka86.github.io/categories/Setting/VScode/Extension/</loc>
+        <loc>https://mishka.kr/categories/Setting/VScode/Extension/</loc>
         <lastmod>2019-10-09T05:27:20.999Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://mishka86.github.io/categories/Setting/VScode/</loc>
+        <loc>https://mishka.kr/categories/Setting/VScode/</loc>
         <lastmod>2019-10-09T05:27:20.999Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://mishka86.github.io/categories/%ED%9A%8C%EA%B3%A0/</loc>
+        <loc>https://mishka.kr/categories/%ED%9A%8C%EA%B3%A0/</loc>
         <lastmod>2019-10-09T05:27:07.087Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://mishka86.github.io/categories/Setting/VScode/gitbash/</loc>
+        <loc>https://mishka.kr/categories/Setting/VScode/gitbash/</loc>
         <lastmod>2019-10-09T05:27:04.222Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://mishka86.github.io/categories/Setting/zsh/</loc>
+        <loc>https://mishka.kr/categories/Setting/zsh/</loc>
         <lastmod>2019-10-09T05:26:43.609Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://mishka86.github.io/categories/Study/Learning-JavaScript/</loc>
+        <loc>https://mishka.kr/categories/Study/Learning-JavaScript/</loc>
         <lastmod>2019-10-09T05:25:03.830Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>

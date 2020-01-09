@@ -3,18 +3,18 @@
 
 
     <sitemap>
-        <loc>http://mishka86.github.io/post-sitemap.xml</loc>
-        <lastmod>2020-01-06T10:22:30.247Z</lastmod>
+        <loc>https://mishka.kr/post-sitemap.xml</loc>
+        <lastmod>2020-01-09T00:33:52.746Z</lastmod>
     </sitemap>
 
     <sitemap>
-        <loc>http://mishka86.github.io/page-sitemap.xml</loc>
+        <loc>https://mishka.kr/page-sitemap.xml</loc>
         <lastmod>2019-09-26T09:41:42.761Z</lastmod>
     </sitemap>
 
     <sitemap>
-        <loc>http://mishka86.github.io/category-sitemap.xml</loc>
-        <lastmod>2020-01-06T10:22:30.247Z</lastmod>
+        <loc>https://mishka.kr/category-sitemap.xml</loc>
+        <lastmod>2020-01-09T00:33:52.746Z</lastmod>
     </sitemap>
 
 </sitemapindex>
