@@ -8,6 +8,20 @@
     </url>
 
     <url>
+        <loc>https://mishka.kr/categories/Programming/hexo/</loc>
+        <lastmod>2020-01-10T05:53:09.698Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://mishka.kr/categories/Programming/</loc>
+        <lastmod>2020-01-10T05:53:09.698Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
         <loc>https://mishka.kr/categories/Study/%ED%81%B4%EB%A1%9C%EC%A0%80/</loc>
         <lastmod>2020-01-10T00:53:52.394Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -51,20 +65,6 @@
 
     <url>
         <loc>https://mishka.kr/categories/Programming/hexo/backup/</loc>
-        <lastmod>2019-10-18T07:49:57.116Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://mishka.kr/categories/Programming/hexo/</loc>
-        <lastmod>2019-10-18T07:49:57.116Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://mishka.kr/categories/Programming/</loc>
         <lastmod>2019-10-18T07:49:57.116Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
