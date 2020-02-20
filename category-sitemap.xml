@@ -8,14 +8,21 @@
     </url>
 
     <url>
-        <loc>https://mishka.kr/categories/Programming/hexo/</loc>
-        <lastmod>2020-01-10T05:53:09.698Z</lastmod>
+        <loc>https://mishka.kr/categories/Programming/Axios/</loc>
+        <lastmod>2020-02-20T01:59:43.063Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>https://mishka.kr/categories/Programming/</loc>
+        <lastmod>2020-02-20T01:59:43.063Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://mishka.kr/categories/Programming/hexo/</loc>
         <lastmod>2020-01-10T05:53:09.698Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
