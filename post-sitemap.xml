@@ -8,8 +8,16 @@
     </url>
 
     <url>
+        <loc>https://mishka.kr/2020/03/25/TypeScript-4/</loc>
+        <lastmod>2020-03-25T06:41:51.068Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>https://mishka.kr/2020/03/18/TypeSctipt-3-var/</loc>
-        <lastmod>2020-03-18T12:06:30.875Z</lastmod>
+        <lastmod>2020-03-24T09:26:29.548Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -17,7 +25,7 @@
 
     <url>
         <loc>https://mishka.kr/2020/03/11/TypeScript-1/</loc>
-        <lastmod>2020-03-18T08:51:39.068Z</lastmod>
+        <lastmod>2020-03-24T09:23:27.319Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -248,7 +256,7 @@
     </url>
 
     <url>
-        <loc>https://mishka.kr/2019/08/02/Learning-JavaScript-chapter10/</loc>
+        <loc>https://mishka.kr/2019/06/19/Learning-JavaScript-chapter1/</loc>
         <lastmod>2019-10-09T05:25:03.827Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -264,7 +272,7 @@
     </url>
 
     <url>
-        <loc>https://mishka.kr/2019/06/19/Learning-JavaScript-chapter1/</loc>
+        <loc>https://mishka.kr/2019/06/27/Learning-JavaScript-chapter4/</loc>
         <lastmod>2019-10-09T05:25:03.827Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -272,7 +280,7 @@
     </url>
 
     <url>
-        <loc>https://mishka.kr/2019/06/27/Learning-JavaScript-chapter4/</loc>
+        <loc>https://mishka.kr/2019/08/02/Learning-JavaScript-chapter10/</loc>
         <lastmod>2019-10-09T05:25:03.827Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
