@@ -8,6 +8,27 @@
     </url>
 
     <url>
+        <loc>https://mishka.kr/categories/Programming/hexo/comment/</loc>
+        <lastmod>2020-03-30T00:21:57.527Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://mishka.kr/categories/Programming/hexo/</loc>
+        <lastmod>2020-03-30T00:21:57.527Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://mishka.kr/categories/Programming/</loc>
+        <lastmod>2020-03-30T00:21:57.527Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
         <loc>https://mishka.kr/categories/Study/TypeScript/</loc>
         <lastmod>2020-03-25T06:41:51.068Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -24,20 +45,6 @@
     <url>
         <loc>https://mishka.kr/categories/Programming/Axios/</loc>
         <lastmod>2020-02-20T01:59:43.063Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://mishka.kr/categories/Programming/</loc>
-        <lastmod>2020-02-20T01:59:43.063Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://mishka.kr/categories/Programming/hexo/</loc>
-        <lastmod>2020-01-10T05:53:09.698Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
@@ -94,13 +101,6 @@
     <url>
         <loc>https://mishka.kr/categories/Programming/git/</loc>
         <lastmod>2019-10-09T05:31:17.021Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://mishka.kr/categories/Programming/hexo/comment/</loc>
-        <lastmod>2019-10-09T05:30:26.780Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>

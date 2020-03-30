@@ -8,6 +8,14 @@
     </url>
 
     <url>
+        <loc>https://mishka.kr/2019/07/02/hexo-comment-disqus/</loc>
+        <lastmod>2020-03-30T00:21:57.527Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>https://mishka.kr/2020/03/25/TypeScript-4/</loc>
         <lastmod>2020-03-25T06:41:51.068Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -114,14 +122,6 @@
     <url>
         <loc>https://mishka.kr/2019/06/03/git-basic/</loc>
         <lastmod>2019-10-09T05:31:17.021Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://mishka.kr/2019/07/02/hexo-comment-disqus/</loc>
-        <lastmod>2019-10-09T05:30:26.780Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -264,6 +264,14 @@
     </url>
 
     <url>
+        <loc>https://mishka.kr/2019/08/02/Learning-JavaScript-chapter10/</loc>
+        <lastmod>2019-10-09T05:25:03.827Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>https://mishka.kr/2019/08/03/Learning-JavaScript-chapter12/</loc>
         <lastmod>2019-10-09T05:25:03.827Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -273,14 +281,6 @@
 
     <url>
         <loc>https://mishka.kr/2019/06/27/Learning-JavaScript-chapter4/</loc>
-        <lastmod>2019-10-09T05:25:03.827Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://mishka.kr/2019/08/02/Learning-JavaScript-chapter10/</loc>
         <lastmod>2019-10-09T05:25:03.827Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
