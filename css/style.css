@@ -206,35 +206,6 @@ img.thumbnail {
   font-size: 1.15rem;
   position: relative;
 }
-.article .related-posts {
-  border: 1px solid #ddd;
-  margin: 20px 0;
-  padding: 16px;
-}
-.article .related-posts h4 {
-  font-weight: bold;
-  margin-bottom: 10px;
-}
-.article .related-posts ul li {
-  font-size: 14px;
-  border-bottom: 1px solid #ddd;
-  padding: 10px 0;
-}
-.article .related-posts ul li:last-child {
-  border: none;
-  padding-bottom: 0;
-}
-.article .related-posts ul a {
-  color: #000;
-}
-.article .related-posts ul a:hover {
-  opacity: 0.6;
-}
-@media screen and (max-width: 768px) {
-  .article .related-posts ul li {
-    font-size: 12px;
-  }
-}
 .rtl {
   direction: rtl;
 }

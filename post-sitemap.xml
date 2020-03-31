@@ -8,6 +8,30 @@
     </url>
 
     <url>
+        <loc>https://mishka.kr/2020/03/30/webstorm-jira/</loc>
+        <lastmod>2020-03-31T01:04:06.765Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://mishka.kr/2020/03/30/gitflow/</loc>
+        <lastmod>2020-03-31T00:41:23.262Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://mishka.kr/2020/03/30/webstorm-gitflow/</loc>
+        <lastmod>2020-03-31T00:16:34.891Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>https://mishka.kr/2019/07/02/hexo-comment-disqus/</loc>
         <lastmod>2020-03-30T00:21:57.527Z</lastmod>
         <changefreq>weekly</changefreq>
