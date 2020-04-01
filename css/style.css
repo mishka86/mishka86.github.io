@@ -510,3 +510,25 @@ figure.highlight:hover .copy {
 .title {
   font-weight: 700 !important;
 }
+.related-posts {
+  border: 1px solid #ddd;
+  margin: 20px 0;
+  padding: 15px;
+}
+.related-posts h4 {
+  margin-bottom: 10px;
+}
+.related-posts ul li {
+  font-size: 14px;
+  border-bottom: 1px solid #ddd;
+  padding: 10px 0;
+}
+.related-posts ul li:last-child {
+  border-bottom: 0;
+}
+.related-posts ul a {
+  color: #000;
+}
+.related-posts ul a:hover {
+  color: #4a4a4a;
+}

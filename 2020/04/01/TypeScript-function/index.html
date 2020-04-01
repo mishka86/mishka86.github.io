@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+<title>타입스크립트 - 함수 - Mishka&#39;s Blog</title>
+<meta name="Description" content="미슈카의 개발 블로그 입니다. 포스팅에 대한 공유, 논의, 수정, 댓글 등은 언제든 환영합니다.">
+<meta name="Keywords" content="미슈카,Mishka,mishka,개발블로그,미슈카개발블로그">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+<link rel="canonical" href="https://mishka.kr/2020/04/01/typescript-function/">
+<meta property="og:title" content="Mishka's blog">
+<meta property="og:description" content="미슈카의 개발 블로그 입니다. 포스팅에 대한 공유, 논의, 수정, 댓글 등은 언제든 환영합니다.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://mishka86.github.io/">
+<meta property="og:image" content="/images/meta_logo.png">
+
+
+
+
+
+<link rel="alternative" href="rss2.xml" title="타입스크립트 - 함수" type="application/atom+xml">
+
+
+
+<link rel="icon" href="/images/favicon.ico">
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.7.2/css/bulma.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:400,600|Source+Code+Pro">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/vs2015.css">
+
+
+    
+    
+    
+    <style>body>.footer,body>.navbar,body>.section{opacity:0}</style>
+    
+
+    
+    
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css">
+    
+
+    
+    
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.css">
+
+
+    
+    
+    
+    
+
+<link rel="stylesheet" href="/css/back-to-top.css">
+
+
+    
+    
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-141930873-1"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-141930873-1');
+</script>
+
+
+    
+    
+    
+    
+
+    
+    
+<link rel="stylesheet" href="/css/progressbar.css">
+<script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
+
+    
+    
+    
+
+    
+    
+    
+
+
+<link rel="stylesheet" href="/css/style.css">
+
+<!-- 구글 AdSense -->
+
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: 'ca-pub-7669354135137434',
+            enable_page_level_ads: true
+        });
+    </script>
+
+</head>
+<body class="is-2-column">
+    <nav class="navbar navbar-main">
+    <div class="container">
+        <div class="navbar-brand is-flex-center">
+            <a class="navbar-item navbar-logo" href="/">
+            
+                <img src="/images/blog_logo.png" alt="타입스크립트 - 함수" height="28">
+            
+            </a>
+        </div>
+        <div class="navbar-menu">
+            
+            <div class="navbar-start">
+                
+                <a class="navbar-item" href="/">Home</a>
+                
+                <a class="navbar-item" href="/archives">Archives</a>
+                
+                <a class="navbar-item" href="/categories">Categories</a>
+                
+                <a class="navbar-item" href="/tags">Tags</a>
+                
+                <a class="navbar-item" href="/about">About</a>
+                
+            </div>
+            
+            <div class="navbar-end">
+                
+                    
+                    
+                    <a class="navbar-item" target="_blank" title="Download on GitHub" href="https://github.com/mishka86" rel="external nofollow noopener noreferrer">
+                        
+                        <i class="fab fa-github"></i>
+                        
+                    </a>
+                    
+                
+                
+                <a class="navbar-item is-hidden-tablet catalogue" title="카탈로그" href="javascript:;">
+                    <i class="fas fa-list-ul"></i>
+                </a>
+                
+                
+                <a class="navbar-item search" title="검색" href="javascript:;">
+                    <i class="fas fa-search"></i>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+</nav>
+    
+    <section class="section">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-8-tablet is-8-desktop is-10-widescreen has-order-2 column-main">
+<div class="card">
+    <!-- 
+    <div class="card-image">
+        <span  class="image is-7by1">
+            <img class="thumbnail" src="/img/typescript.png" alt="타입스크립트 - 함수">
+        </span>
+    </div>
+     -->
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2020-04-01T09:30:43.000Z">2020-04-01</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/Study/">Study</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/Study/TypeScript/">TypeScript</a>
+                </div>
+                
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                타입스크립트 - 함수
+            
+        </h1>
+        <div class="content">
+            <html><head><meta name="generator" content="Hexo 3.9.0"></head><body><p>함수는 애플리케이션의 코드를 구성하는 기본 요소입니다. 타입스크립트에서 함수는 클래스나 네이스페이스 내에 선언할 수 있고 때론 모듈로서 사용됩니<br>다. 자바스크립트에서 함수를 선언했던 것과 동일한 방식으로 선언해 사용자가 원하는 단위 기능을 수행 할 수 있습니다. <code>다른 점이 있다면 함수의 
+매개변수나 반환값에 타입을 지정해 타입 안전성을 강화</code>할 수 있습니다.</p>
+<h2 id="자바스크립트-함수"><a href="#자바스크립트-함수" class="headerlink" title="자바스크립트 함수"></a>자바스크립트 함수</h2><h3 id="기명-함수와-익명-함수의-선언"><a href="#기명-함수와-익명-함수의-선언" class="headerlink" title="기명 함수와 익명 함수의 선언"></a>기명 함수와 익명 함수의 선언</h3><p>함수의 이름을 명시해 선언하는 <code>기명 함수(named function)</code>와 함수의 이름을 명시하지 않고 사용하는 <code>익명 함수(anonymous function)</code>로 나뉩니다.</p>
+<a id="more"></a>
+<p>기명 함수는 호출될 때 호이스팅이 발생합니다. 따라서 함수를 선언하기 전에도, 함수를 선언한 후에도 호출 할 수 있습니다. 반면 익명 함수는 함수를 할당한<br>뒤에만 호출 할 수 있도록 제한 할 수 있습니다.</p>
+<h3 id="자바스크립트-함수의-불안전성"><a href="#자바스크립트-함수의-불안전성" class="headerlink" title="자바스크립트 함수의 불안전성"></a>자바스크립트 함수의 불안전성</h3><p>자바스크립트는 느슨한 타입언어 입니다. 매개변수의 타입이나 반환 타입은 없지만, 프로그램이 실행될 때 동적으로 타입을 할당해 추론된 타입이 지정됩니<br>다. 타입이 없기 때문에 런타임 때 의도하지 않은 타입 변환이 일어날수 있다는 문제가 있습니다. 타입을 고정할 수 없어 때로는 타입 안정성을 갖추기 위해<br>타입 검사와 타입 캐스팅과 같은 불필요한 코드를 추가할 수밖에 없습니다.</p>
+<h2 id="타입스크립트-함수"><a href="#타입스크립트-함수" class="headerlink" title="타입스크립트 함수"></a>타입스크립트 함수</h2><p>타입스크립트는 함수의 매개변수나 반환 타입을 추가해 타입 안전성을 강화합니다. 매개변수에 타입을 지정해 숫자 값만 받을 수 있도록 타입을 제한할 수<br>있고, 함수의 반환 타입을 지정해 잘못된 타입의 값이 반환되지 않도록 합니다. </p>
+<figure class="highlight typescript hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">ex</span>(<span class="hljs-params">x: <span class="hljs-built_in">number</span>, y: <span class="hljs-built_in">number</span></span>): <span class="hljs-title">number</span> </span>{ ... }</span><br></pre></td></tr></tbody></table></figure>
+
+<p>위와 같이 함수에 매개변수 타입이나 반환 타입을 추가하는 과정을 함수에 대한 타입지정(typing)이라 합니다.</p>
+<h2 id="매개변수의-활용"><a href="#매개변수의-활용" class="headerlink" title="매개변수의 활용"></a>매개변수의 활용</h2><h3 id="기본-초기와-매개변수"><a href="#기본-초기와-매개변수" class="headerlink" title="기본 초기와 매개변수"></a>기본 초기와 매개변수</h3><p>기본 초기화 매개변수는 함수의 특정 매개변수에 인수가 전달되지 않으면 매개변수에 설정된 초깃값으로 값을 초기화하는 기능입니다.</p>
+<figure class="highlight typescript hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">x: <span class="hljs-built_in">number</span> = <span class="hljs-number">2</span></span><br></pre></td></tr></tbody></table></figure>
+
+<p>매개변수 목록에는 일반 매개변수와 기본 초기화 매개변수를 함께 선언할 수 있습니다.</p>
+<figure class="highlight typescript hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">ex2</span>(<span class="hljs-params">x: <span class="hljs-built_in">number</span>, y: <span class="hljs-built_in">number</span> = 2</span>): <span class="hljs-title">number</span></span></span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="나머지-매개변수"><a href="#나머지-매개변수" class="headerlink" title="나머지 매개변수"></a>나머지 매개변수</h3><p>나머지 매개변수는 ES6에서 제안된 특징으로 개수가 정해지지 않은 인수를 배열로 받을 수 있는 기능입니다. 개수가 정해지지 않은 만큼 순서가 크게<br>중요하지 않은 여러 요소를 전달하는 데 유용합니다. 나머지 매개변수는 “…”형태로 선언합니다.</p>
+<figure class="highlight typescript hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">rest</span>(<span class="hljs-params">...restParams</span>) </span>{...}</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// 나머지 매개변수에 타입 지정</span></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">rest</span>(<span class="hljs-params">...restParams: <span class="hljs-built_in">string</span>[]</span>) </span>{...}</span><br></pre></td></tr></tbody></table></figure>
+
+<p>나머지 매개변수는 0개 이상의 요소를 받을 수 있습니다. 나머지 매개변수에 타입을 추가하면 지정한 타입의 인수만 받을 수 있습니다.</p>
+<h3 id="선택-매개변수"><a href="#선택-매개변수" class="headerlink" title="선택 매개변수"></a>선택 매개변수</h3><p>함수 호출 시 매개변수를 선언한 만큼 인수를 전달해야 합니다. 나머지 매개변수는 0개 이상의 인수를 받으므로 매개변수에 나머지 매개변수만 선언돼 있다<br>면 인수 전달을 생략해도 됩니다. 선택 매개변수는 변수명 뒤에 물음표를 붙이는 식으로 선언합니다. 선택 매개변수를 이용하면 선택 매개변수로 지정한 매개<br>변수는 생략이 가능합니다.</p>
+<figure class="highlight typescript hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">select</span>(<span class="hljs-params">a: <span class="hljs-built_in">number</span>, b?: <span class="hljs-built_in">number</span></span>): <span class="hljs-title">number</span> </span>{...}</span><br></pre></td></tr></tbody></table></figure>
+
+<p>함수 호출 시 함수에 선언된 매개변수는 2개지만, 두 번째 매개변수는 선택 매개변수를 사용함으로써 인수 하나를 생략해 호출하더라고 에러가 발생하지<br>않습니다. 앞에서 사용한 매개변수 초깃값을 설정하는 방법은 선택 매개변수와 결합해서 사용할 수 없습니다.</p>
+<h3 id="함수-오버로드"><a href="#함수-오버로드" class="headerlink" title="함수 오버로드"></a>함수 오버로드</h3><p>함수 오버로드는 함수명은 같지만, 매개변수와 반환 타입이 다른 함수를 여러 개 선언할 수 잇는 특징을 말합니다.</p>
+<figure class="highlight typescript hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">add</span>(<span class="hljs-params">a: <span class="hljs-built_in">string</span>, b:<span class="hljs-built_in">string</span></span>): <span class="hljs-title">string</span></span>;</span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">add</span>(<span class="hljs-params">a: <span class="hljs-built_in">number</span>, b:<span class="hljs-built_in">number</span></span>): <span class="hljs-title">number</span></span>;</span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">add</span>(<span class="hljs-params">a: <span class="hljs-built_in">any</span>, b:<span class="hljs-built_in">any</span></span>): <span class="hljs-title">any</span> </span>{</span><br><span class="line">  <span class="hljs-keyword">return</span> a + b;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+<p>가장 일반적인 함수의 시그니처를 가장 아래에 선언하고 그 위로 구체적인 타입을 명시한 함수의 시그니처를 쌓는 방식으로 선언해야 합니다.<br>이때 매개변수의 개수가 다른 오버로드를 지정할 때는 선택 매개변수를 둬 매개변수 개수에 변화를 줄 수 있도록 허용할 수 있습니다.</p>
+<h2 id="익명-함수"><a href="#익명-함수" class="headerlink" title="익명 함수"></a>익명 함수</h2><h3 id="익명-함수와-화살표-함수"><a href="#익명-함수와-화살표-함수" class="headerlink" title="익명 함수와 화살표 함수"></a>익명 함수와 화살표 함수</h3><p>화살표 함수(arrow function)는 ES6 표준에 포함된 익명 함수를 좀 더 간략하게 표현 할 수 있는 방법입니다. 파이선, C++, 자바 8에서는<br>화살표 함수를 ‘람다 함수(lambda function)’ 라고도 부릅니다. </p>
+<figure class="highlight typescript hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">() => {};</span><br><span class="line"><span class="hljs-keyword">let</span> x = <span class="hljs-function"><span class="hljs-params">()</span> =></span> {};</span><br><span class="line"><span class="hljs-keyword">let</span> y =  <span class="hljs-function"><span class="hljs-params">x</span> =></span> { <span class="hljs-keyword">return</span> x; };</span><br></pre></td></tr></tbody></table></figure>
+
+<p>매개변수가 1개일 때는 화살표 함수의 매개변수 목록에 있는 소괄호를 생략할 수 있습니다. 변수에 할당하지 않고 화살표 함수를 사용하려면 즉시 호출 함수를 이용해야 합니다. </p>
+<figure class="highlight typescript hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">(<span class="hljs-function"><span class="hljs-params">x</span> =></span> { x; })(<span class="hljs-number">1</span>);</span><br><span class="line"><span class="hljs-keyword">let</span> iif = (<span class="hljs-function"><span class="hljs-params">x</span> =></span> { <span class="hljs-keyword">return</span>  x; })(<span class="hljs-number">1</span>);</span><br></pre></td></tr></tbody></table></figure>
+
+<p>즉시 호출 함수가 반환값을 가져 변수에 할당해야 한담녀 중괄호 내부에서 return 키워드를 사용, 실해앟면 iif 변수에 즉시 호출 함수가 반환한<br>값이 할당 됩니다.</p>
+<h3 id="필터-메서드"><a href="#필터-메서드" class="headerlink" title="필터 메서드"></a>필터 메서드</h3><p>필터 메서드는 배열에서 조건에 맞는 요소를 추출 하는데 사용합니다. </p>
+<figure class="highlight typescript hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">let</span> numbers = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>];</span><br><span class="line">numbers = numbers.filter(<span class="hljs-function"><span class="hljs-params">n</span> =></span> {</span><br><span class="line">  <span class="hljs-keyword">return</span> n % <span class="hljs-number">2</span> === <span class="hljs-number">0</span>;</span><br><span class="line">})</span><br><span class="line"><span class="hljs-built_in">console</span>.log(numbers);</span><br><span class="line"><span class="hljs-comment">// 결과 [ 2, 4 ]</span></span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="리듀스-메서드"><a href="#리듀스-메서드" class="headerlink" title="리듀스 메서드"></a>리듀스 메서드</h3><p>배열 값의 합을 손쉽게 구할 때는 리듀스 메서드를 이용할 수 있습니다. 리듀스 메서드는 누산기의 원리처럼 배열의 요소를 왼쪽에서 오른쪽으로 더해나가<br>면서 누산된 값을 처리 할수 있는 함수입니다.</p>
+<figure class="highlight typescript hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>].reduce(<span class="hljs-function">(<span class="hljs-params">a,b</span>) =></span> { <span class="hljs-keyword">return</span> a + b; })</span><br></pre></td></tr></tbody></table></figure>
+
+<p>리듀스 메서드의 첫 번째 매개변수는 누적된 값이고 두 번째 매개변수는 현재 카운터의 값입니다.</p>
+<h3 id="객체-리터러릥-선언과-객체-리터럴-타입의-선언"><a href="#객체-리터러릥-선언과-객체-리터럴-타입의-선언" class="headerlink" title="객체 리터러릥 선언과 객체 리터럴 타입의 선언"></a>객체 리터러릥 선언과 객체 리터럴 타입의 선언</h3><p>객테 리터럴은 여러 속성과 값을 한 단위로 묶어서 표현할 수 있는 객체입니다. 속성은 키(key)가 되고 값(value)은 숫자나 문자열뿐만 아니라<br>사용자가 정의한 객체도 할당 할 수 있습니다. 정의한 객체 리터럴 내부에서 다른 프로퍼티를 참조할 일이 많다면 객체 리터럴의 타입을 선언해 내부<br>참조를 함으로써 코드 어시스트가 동작하게 할 수 있습니다.</p>
+<figure class="highlight typescript hljs"><figcaption><span>인터페이스를 이용해 객체 리터럴 타입을 선언</span></figcaption><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">interface</span> PersonType {</span><br><span class="line">  name: <span class="hljs-built_in">string</span>;</span><br><span class="line">  hello(<span class="hljs-keyword">this</span>: PersonType, name2: <span class="hljs-built_in">string</span>): <span class="hljs-built_in">string</span>;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+<p>유의할 점은 this 는 반드시 첫 번째 매개변수로 선언해야 합니다. </p>
+<h2 id="익명-함수의-함수-타입"><a href="#익명-함수의-함수-타입" class="headerlink" title="익명 함수의 함수 타입"></a>익명 함수의 함수 타입</h2><h3 id="익명-함수의-타입-선언"><a href="#익명-함수의-타입-선언" class="headerlink" title="익명 함수의 타입 선언"></a>익명 함수의 타입 선언</h3><p>익명 함수는 변수에 할당할 수 있습니다. 함수 자체에 대한 타입을 함수 타입(function type)이라고 합니다.</p>
+<figure class="highlight typescript hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">let</span> exFunc = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">str1: <span class="hljs-built_in">string</span>, str2: <span class="hljs-built_in">string</span></span>): <span class="hljs-title">string</span> </span>{ <span class="hljs-keyword">return</span> str1 + str2};</span><br></pre></td></tr></tbody></table></figure>
+
+<p>익명 함수의 매개변수나 반환값에 타입을 지정할 수 있지만 익명 함수가 구현체이므로 타입을 선언하면 형태가 복잡해집니다. 이러한 점을 개선하기 위해<br>익명함수에 선언된 타입을 별도로 분리해 함수 타입으로 선언하면, 쉽게 파악할 수 있습니다.</p>
+<figure class="highlight typescript hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">let</span> exFunc: <span class="hljs-function">(<span class="hljs-params">str1: <span class="hljs-built_in">string</span>, str2: <span class="hljs-built_in">string</span></span>) =></span> <span class="hljs-built_in">string</span> = <span class="hljs-function">(<span class="hljs-params">str1, str2</span>) =></span> { <span class="hljs-keyword">return</span> str1 + str2; };</span><br></pre></td></tr></tbody></table></figure>
+
+<p>함수 타입을 type 앨리어스 를 이용해 별도로 분리하면 반복적으로 사용할 수 있습니다.</p>
+<figure class="highlight typescript hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">type</span> exType = <span class="hljs-function">(<span class="hljs-params">a: <span class="hljs-built_in">number</span>, b: <span class="hljs-built_in">number</span></span>) =></span> <span class="hljs-built_in">number</span>;</span><br><span class="line"><span class="hljs-keyword">let</span> addValue: exType = <span class="hljs-function">(<span class="hljs-params">a, b</span>) =></span> a + b;</span><br><span class="line"><span class="hljs-keyword">let</span> minusValue: exType = <span class="hljs-function">(<span class="hljs-params">a, b</span>) =></span> a - b;</span><br></pre></td></tr></tbody></table></figure>
+
+<p>각 변수에 함수 타입을 선언 했으므로 익명 함수의 매개변수 타입이나 반환 타입을 선언하지 않더라도 타입 안정성을 확보할 수 있습니다.</p>
+</body></html>
+        </div>
+
+        
+            <div class="related-posts">
+                <h4>관련 포스팅 보기</h4>
+                <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2019/07/05/Learning-JavaScript-chapter6/" title="러닝 자바스크립트 스터디 자료 - CHAPTER 6. 함수" rel="bookmark">러닝 자바스크립트 스터디 자료 - CHAPTER 6. 함수</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2020/03/11/TypeScript-1/" title="TypeScript? 타입스크립트 소개 및 개발환경 구축" rel="bookmark">TypeScript? 타입스크립트 소개 및 개발환경 구축</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2020/03/25/TypeScript-4/" title="타입스크립트 - 제어문 과 연산자" rel="bookmark">타입스크립트 - 제어문 과 연산자</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2020/03/18/TypeSctipt-3-var/" title="타입스크립트 - 변수 선언과 기본 타입" rel="bookmark">타입스크립트 - 변수 선언과 기본 타입</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2019/07/05/Learning-JavaScript-chapter5/" title="러닝 자바스크립트 스터디 자료 - CHAPTER 5. 표현식과 연산자" rel="bookmark">러닝 자바스크립트 스터디 자료 - CHAPTER 5. 표현식과 연산자</a></h3></div></li></ul>
+            </div>
+        
+
+
+        
+        <div class="level is-size-7 is-uppercase">
+            <div class="level-start">
+                <div class="level-item">
+                    <span class="is-size-6 has-text-grey has-mr-7">#</span>
+                    <a class="has-link-grey -link" href="/tags/TypeScript/">TypeScript</a>, <a class="has-link-grey -link" href="/tags/function/">function</a>, <a class="has-link-grey -link" href="/tags/study/">study</a>, <a class="has-link-grey -link" href="/tags/타입스크립트/">타입스크립트</a>, <a class="has-link-grey -link" href="/tags/함수/">함수</a>
+                </div>
+            </div>
+        </div>
+        
+        
+        
+        
+<div class="sharethis-inline-share-buttons"></div>
+<script type="text/javascript" src="https://platform-api.sharethis.com/js/sharethis.js#property=5d11bc2de1239400125e3dc9&amp;product=inline-share-buttons" async="async"></script>
+
+        
+    </div>
+</div>
+
+
+
+
+
+    <!-- 댓글 위 광고 -->
+    <ins class="adsbygoogle card" style="display:block" data-ad-client="ca-pub-7669354135137434" data-ad-slot="8992996108" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    <script class="card">
+        (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+
+
+
+
+<div class="card card-transparent">
+    <div class="level post-navigation is-flex-wrap is-mobile">
+        
+        
+        <div class="level-end">
+            <a class="level level-item has-link-grey  article-nav-next" href="/2020/03/30/webstorm-jira/">
+                <span class="level-item">webstorm 과 jira 연동해서 사용하기</span>
+                <i class="level-item fas fa-chevron-right"></i>
+            </a>
+        </div>
+        
+    </div>
+</div>
+
+
+
+<div class="card">
+    <div class="card-content">
+        <h3 class="title is-5 has-text-weight-normal">댓글</h3>
+        <div id="disqus_thread"></div>
+<script>
+
+/**
+*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+/*
+var disqus_config = function () {
+this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+*/
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = 'https://https-mishka86-github-io.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="external nofollow noopener noreferrer" target="_blank">comments powered by Disqus.</a></noscript>
+    </div>
+</div>
+
+
+</div>
+                
+                
+
+
+
+
+<div class="column is-4-tablet is-4-desktop is-3-widescreen  has-order-3 column-right is-sticky">
+    
+        
+<div class="card widget" id="toc">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                카탈로그
+            </h3>
+            <ul class="menu-list"><li>
+        <a class="is-flex" href="#자바스크립트-함수">
+        <span class="has-mr-6">1</span>
+        <span>자바스크립트 함수</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#기명-함수와-익명-함수의-선언">
+        <span class="has-mr-6">1.1</span>
+        <span>기명 함수와 익명 함수의 선언</span>
+        </a></li><li>
+        <a class="is-flex" href="#자바스크립트-함수의-불안전성">
+        <span class="has-mr-6">1.2</span>
+        <span>자바스크립트 함수의 불안전성</span>
+        </a></li></ul></li><li>
+        <a class="is-flex" href="#타입스크립트-함수">
+        <span class="has-mr-6">2</span>
+        <span>타입스크립트 함수</span>
+        </a></li><li>
+        <a class="is-flex" href="#매개변수의-활용">
+        <span class="has-mr-6">3</span>
+        <span>매개변수의 활용</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#기본-초기와-매개변수">
+        <span class="has-mr-6">3.1</span>
+        <span>기본 초기와 매개변수</span>
+        </a></li><li>
+        <a class="is-flex" href="#나머지-매개변수">
+        <span class="has-mr-6">3.2</span>
+        <span>나머지 매개변수</span>
+        </a></li><li>
+        <a class="is-flex" href="#선택-매개변수">
+        <span class="has-mr-6">3.3</span>
+        <span>선택 매개변수</span>
+        </a></li><li>
+        <a class="is-flex" href="#함수-오버로드">
+        <span class="has-mr-6">3.4</span>
+        <span>함수 오버로드</span>
+        </a></li></ul></li><li>
+        <a class="is-flex" href="#익명-함수">
+        <span class="has-mr-6">4</span>
+        <span>익명 함수</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#익명-함수와-화살표-함수">
+        <span class="has-mr-6">4.1</span>
+        <span>익명 함수와 화살표 함수</span>
+        </a></li><li>
+        <a class="is-flex" href="#필터-메서드">
+        <span class="has-mr-6">4.2</span>
+        <span>필터 메서드</span>
+        </a></li><li>
+        <a class="is-flex" href="#리듀스-메서드">
+        <span class="has-mr-6">4.3</span>
+        <span>리듀스 메서드</span>
+        </a></li><li>
+        <a class="is-flex" href="#객체-리터러릥-선언과-객체-리터럴-타입의-선언">
+        <span class="has-mr-6">4.4</span>
+        <span>객체 리터러릥 선언과 객체 리터럴 타입의 선언</span>
+        </a></li></ul></li><li>
+        <a class="is-flex" href="#익명-함수의-함수-타입">
+        <span class="has-mr-6">5</span>
+        <span>익명 함수의 함수 타입</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#익명-함수의-타입-선언">
+        <span class="has-mr-6">5.1</span>
+        <span>익명 함수의 타입 선언</span>
+        </a></li></ul></li></ul>
+        </div>
+    </div>
+</div>
+
+        
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                카테고리
+            </h3>
+            <ul class="menu-list">
+            <li>
+        <a class="level is-marginless" href="/categories/Programming/">
+            <span class="level-start">
+                <span class="level-item">Programming</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">13</span>
+            </span>
+        </a><ul><li>
+        <a class="level is-marginless" href="/categories/Programming/Axios/">
+            <span class="level-start">
+                <span class="level-item">Axios</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/Programming/Markdown/">
+            <span class="level-start">
+                <span class="level-item">Markdown</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/Programming/git/">
+            <span class="level-start">
+                <span class="level-item">git</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">2</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/Programming/hexo/">
+            <span class="level-start">
+                <span class="level-item">hexo</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">9</span>
+            </span>
+        </a></li></ul></li><li>
+        <a class="level is-marginless" href="/categories/Setting/">
+            <span class="level-start">
+                <span class="level-item">Setting</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">6</span>
+            </span>
+        </a><ul><li>
+        <a class="level is-marginless" href="/categories/Setting/SSH/">
+            <span class="level-start">
+                <span class="level-item">SSH</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/Setting/VScode/">
+            <span class="level-start">
+                <span class="level-item">VScode</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">2</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/Setting/webstorm/">
+            <span class="level-start">
+                <span class="level-item">webstorm</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">2</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/Setting/zsh/">
+            <span class="level-start">
+                <span class="level-item">zsh</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li></ul></li><li>
+        <a class="level is-marginless" href="/categories/Study/">
+            <span class="level-start">
+                <span class="level-item">Study</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">24</span>
+            </span>
+        </a><ul><li>
+        <a class="level is-marginless" href="/categories/Study/Learning-JavaScript/">
+            <span class="level-start">
+                <span class="level-item">Learning-JavaScript</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">16</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/Study/TypeScript/">
+            <span class="level-start">
+                <span class="level-item">TypeScript</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">4</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/Study/Vue-js-철저입문/">
+            <span class="level-start">
+                <span class="level-item">Vue.js 철저입문</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">2</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/Study/실행컨텍스트/">
+            <span class="level-start">
+                <span class="level-item">실행컨텍스트</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/Study/클로저/">
+            <span class="level-start">
+                <span class="level-item">클로저</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li></ul></li><li>
+        <a class="level is-marginless" href="/categories/회고/">
+            <span class="level-start">
+                <span class="level-item">회고</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+        
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            태그 클라우드
+        </h3>
+        <a href="/tags/1년6개월/" style="font-size: 10px;">1년6개월</a> <a href="/tags/Axios/" style="font-size: 10px;">Axios</a> <a href="/tags/ERROR/" style="font-size: 10px;">ERROR</a> <a href="/tags/Function/" style="font-size: 10px;">Function</a> <a href="/tags/GitFlowIntegration/" style="font-size: 10px;">GitFlowIntegration</a> <a href="/tags/Github/" style="font-size: 11.67px;">Github</a> <a href="/tags/HTTP/" style="font-size: 10px;">HTTP</a> <a href="/tags/LSP/" style="font-size: 10px;">LSP</a> <a href="/tags/Learning-JavaScript/" style="font-size: 18.33px;">Learning-JavaScript</a> <a href="/tags/Mac/" style="font-size: 10px;">Mac</a> <a href="/tags/MarkDown/" style="font-size: 10px;">MarkDown</a> <a href="/tags/Math/" style="font-size: 10px;">Math</a> <a href="/tags/OOP/" style="font-size: 10px;">OOP</a> <a href="/tags/SEO/" style="font-size: 10px;">SEO</a> <a href="/tags/SSH/" style="font-size: 10px;">SSH</a> <a href="/tags/Study/" style="font-size: 10px;">Study</a> <a href="/tags/Terminal/" style="font-size: 10px;">Terminal</a> <a href="/tags/TypeScript/" style="font-size: 15px;">TypeScript</a> <a href="/tags/VScode/" style="font-size: 11.67px;">VScode</a> <a href="/tags/VisualStudioCode/" style="font-size: 10px;">VisualStudioCode</a> <a href="/tags/Vue/" style="font-size: 13.33px;">Vue</a> <a href="/tags/Vue-js/" style="font-size: 10px;">Vue.js</a> <a href="/tags/Wiriting/" style="font-size: 11.67px;">Wiriting</a> <a href="/tags/ad/" style="font-size: 10px;">ad</a> <a href="/tags/array/" style="font-size: 10px;">array</a> <a href="/tags/axios/" style="font-size: 10px;">axios</a> <a href="/tags/babel/" style="font-size: 10px;">babel</a> <a href="/tags/backup/" style="font-size: 10px;">backup</a> <a href="/tags/blockScope/" style="font-size: 10px;">blockScope</a> <a href="/tags/blog/" style="font-size: 13.33px;">blog</a> <a href="/tags/branch/" style="font-size: 10px;">branch</a> <a href="/tags/catch/" style="font-size: 10px;">catch</a> <a href="/tags/closure/" style="font-size: 10px;">closure</a> <a href="/tags/commend/" style="font-size: 10px;">commend</a> <a href="/tags/comment/" style="font-size: 10px;">comment</a> <a href="/tags/const/" style="font-size: 10px;">const</a> <a href="/tags/context/" style="font-size: 10px;">context</a> <a href="/tags/date/" style="font-size: 10px;">date</a> <a href="/tags/deploy/" style="font-size: 10px;">deploy</a> <a href="/tags/disqus/" style="font-size: 10px;">disqus</a> <a href="/tags/domain/" style="font-size: 10px;">domain</a> <a href="/tags/draft/" style="font-size: 10px;">draft</a> <a href="/tags/eslint/" style="font-size: 10px;">eslint</a> <a href="/tags/extension/" style="font-size: 10px;">extension</a> <a href="/tags/finally/" style="font-size: 10px;">finally</a> <a href="/tags/for/" style="font-size: 10px;">for</a> <a href="/tags/for문/" style="font-size: 10px;">for문</a> <a href="/tags/function/" style="font-size: 11.67px;">function</a> <a href="/tags/git/" style="font-size: 16.67px;">git</a> <a href="/tags/gitbash/" style="font-size: 10px;">gitbash</a> <a href="/tags/gitflow/" style="font-size: 13.33px;">gitflow</a> <a href="/tags/github/" style="font-size: 10px;">github</a> <a href="/tags/gulp/" style="font-size: 10px;">gulp</a> <a href="/tags/hexo/" style="font-size: 20px;">hexo</a> <a href="/tags/hoisting/" style="font-size: 10px;">hoisting</a> <a href="/tags/icarus/" style="font-size: 10px;">icarus</a> <a href="/tags/icarus테마/" style="font-size: 10px;">icarus테마</a> <a href="/tags/if/" style="font-size: 10px;">if</a> <a href="/tags/if문/" style="font-size: 10px;">if문</a> <a href="/tags/javascript/" style="font-size: 10px;">javascript</a> <a href="/tags/jira/" style="font-size: 10px;">jira</a> <a href="/tags/let/" style="font-size: 10px;">let</a> <a href="/tags/map/" style="font-size: 10px;">map</a> <a href="/tags/moment/" style="font-size: 10px;">moment</a> <a href="/tags/node/" style="font-size: 10px;">node</a> <a href="/tags/post/" style="font-size: 11.67px;">post</a> <a href="/tags/posting/" style="font-size: 11.67px;">posting</a> <a href="/tags/scaffolds/" style="font-size: 11.67px;">scaffolds</a> <a href="/tags/scope/" style="font-size: 10px;">scope</a> <a href="/tags/set/" style="font-size: 10px;">set</a> <a href="/tags/setting/" style="font-size: 16.67px;">setting</a> <a href="/tags/study/" style="font-size: 20px;">study</a> <a href="/tags/superset/" style="font-size: 10px;">superset</a> <a href="/tags/switch/" style="font-size: 10px;">switch</a> <a href="/tags/themes/" style="font-size: 10px;">themes</a> <a href="/tags/time/" style="font-size: 10px;">time</a> <a href="/tags/timezone/" style="font-size: 10px;">timezone</a> <a href="/tags/try/" style="font-size: 10px;">try</a> <a href="/tags/val/" style="font-size: 10px;">val</a> <a href="/tags/webstorm/" style="font-size: 11.67px;">webstorm</a> <a href="/tags/while/" style="font-size: 10px;">while</a> <a href="/tags/zsh/" style="font-size: 10px;">zsh</a> <a href="/tags/개발도구/" style="font-size: 10px;">개발도구</a> <a href="/tags/개발환경/" style="font-size: 10px;">개발환경</a> <a href="/tags/객체/" style="font-size: 10px;">객체</a> <a href="/tags/객체지향프로그래밍/" style="font-size: 10px;">객체지향프로그래밍</a> <a href="/tags/공부/" style="font-size: 10px;">공부</a> <a href="/tags/깃/" style="font-size: 10px;">깃</a> <a href="/tags/깃허브/" style="font-size: 10px;">깃허브</a> <a href="/tags/날짜/" style="font-size: 10px;">날짜</a> <a href="/tags/단일스레드/" style="font-size: 10px;">단일스레드</a> <a href="/tags/댓글/" style="font-size: 10px;">댓글</a> <a href="/tags/데이터타입/" style="font-size: 10px;">데이터타입</a> <a href="/tags/리터널/" style="font-size: 10px;">리터널</a> <a href="/tags/마크다운/" style="font-size: 10px;">마크다운</a> <a href="/tags/맵/" style="font-size: 10px;">맵</a> <a href="/tags/명령어/" style="font-size: 10px;">명령어</a> <a href="/tags/반복문/" style="font-size: 11.67px;">반복문</a> <a href="/tags/배열/" style="font-size: 10px;">배열</a> <a href="/tags/배열메서드/" style="font-size: 10px;">배열메서드</a> <a href="/tags/백업/" style="font-size: 10px;">백업</a> <a href="/tags/변수/" style="font-size: 10px;">변수</a> <a href="/tags/뷰/" style="font-size: 11.67px;">뷰</a> <a href="/tags/브런치전략/" style="font-size: 10px;">브런치전략</a> <a href="/tags/블로그/" style="font-size: 11.67px;">블로그</a> <a href="/tags/비동기/" style="font-size: 11.67px;">비동기</a> <a href="/tags/사용법/" style="font-size: 10px;">사용법</a> <a href="/tags/상수/" style="font-size: 10px;">상수</a> <a href="/tags/서버통신/" style="font-size: 10px;">서버통신</a> <a href="/tags/설정/" style="font-size: 10px;">설정</a> <a href="/tags/설치방법/" style="font-size: 10px;">설치방법</a> <a href="/tags/세팅/" style="font-size: 11.67px;">세팅</a> <a href="/tags/셋/" style="font-size: 10px;">셋</a> <a href="/tags/소개/" style="font-size: 10px;">소개</a> <a href="/tags/스코프/" style="font-size: 11.67px;">스코프</a> <a href="/tags/스터디/" style="font-size: 13.33px;">스터디</a> <a href="/tags/시간/" style="font-size: 10px;">시간</a> <a href="/tags/실행컨텍스트/" style="font-size: 10px;">실행컨텍스트</a> <a href="/tags/에러/" style="font-size: 10px;">에러</a> <a href="/tags/연산자/" style="font-size: 11.67px;">연산자</a> <a href="/tags/예외/" style="font-size: 10px;">예외</a> <a href="/tags/원시타입/" style="font-size: 10px;">원시타입</a> <a href="/tags/이터레이터/" style="font-size: 10px;">이터레이터</a> <a href="/tags/제너레이터/" style="font-size: 11.67px;">제너레이터</a> <a href="/tags/제어문/" style="font-size: 10px;">제어문</a> <a href="/tags/조건문/" style="font-size: 10px;">조건문</a> <a href="/tags/주석/" style="font-size: 10px;">주석</a> <a href="/tags/추상적사고/" style="font-size: 10px;">추상적사고</a> <a href="/tags/추상화/" style="font-size: 10px;">추상화</a> <a href="/tags/추천/" style="font-size: 10px;">추천</a> <a href="/tags/컨텍스트/" style="font-size: 10px;">컨텍스트</a> <a href="/tags/콜백/" style="font-size: 10px;">콜백</a> <a href="/tags/쿠팡/" style="font-size: 10px;">쿠팡</a> <a href="/tags/쿠팡파트너스/" style="font-size: 10px;">쿠팡파트너스</a> <a href="/tags/클로저/" style="font-size: 10px;">클로저</a> <a href="/tags/타입스크립트/" style="font-size: 15px;">타입스크립트</a> <a href="/tags/터미널/" style="font-size: 10px;">터미널</a> <a href="/tags/템플릿문자열/" style="font-size: 10px;">템플릿문자열</a> <a href="/tags/파트너스/" style="font-size: 10px;">파트너스</a> <a href="/tags/편집기/" style="font-size: 10px;">편집기</a> <a href="/tags/표현식/" style="font-size: 10px;">표현식</a> <a href="/tags/프라미스/" style="font-size: 10px;">프라미스</a> <a href="/tags/프레임워크/" style="font-size: 11.67px;">프레임워크</a> <a href="/tags/함수/" style="font-size: 15px;">함수</a> <a href="/tags/호이스팅/" style="font-size: 11.67px;">호이스팅</a> <a href="/tags/확장프로그램/" style="font-size: 10px;">확장프로그램</a> <a href="/tags/회고/" style="font-size: 10px;">회고</a>
+    </div>
+</div>
+
+        
+    
+    
+<!-- 사이드 광고 -->
+    <ins class="adsbygoogle card" style="display:block" data-ad-client="ca-pub-7669354135137434" data-ad-slot="7664684139" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    <script class="card">
+        (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+    
+<div class="card widget">
+        <script src="https://ads-partners.coupang.com/g.js"></script>
+        <script>
+            new PartnersCoupang.G({ id:4765 });
+        </script>
+        <iframe src="https://ads-partners.coupang.com/iframe/search-bar?id=19062111274125404211001917-l1&type=l1&trackingCode=AF3074287" width="100%" height="75" frameborder="0" scrolling="no"></iframe>
+</div>
+    
+</div>
+
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+    <div class="container">
+        <div class="level">
+            <div class="level-start has-text-centered-mobile">
+                <a class="footer-logo is-block has-mb-6" href="/">
+                
+                    <img src="/images/blog_logo.png" alt="타입스크립트 - 함수" height="28">
+                
+                </a>
+                <p class="is-size-7">
+                &copy; 2020 Mishka&nbsp;
+                Powered by <a href="https://hexo.io/" target="_blank" rel="external nofollow noopener noreferrer">Hexo</a> & <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="external nofollow noopener noreferrer">Icarus</a>
+                
+                </p>
+            </div>
+            <div class="level-end">
+            
+                <div class="field has-addons is-flex-center-mobile has-mt-5-mobile is-flex-wrap is-flex-middle">
+                
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" title="Creative Commons" href="https://creativecommons.org/" rel="external nofollow noopener noreferrer">
+                        
+                        <i class="fab fa-creative-commons"></i>
+                        
+                    </a>
+                </p>
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/" rel="external nofollow noopener noreferrer">
+                        
+                        <i class="fab fa-creative-commons-by"></i>
+                        
+                    </a>
+                </p>
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" title="Download on GitHub" href="https://github.com/mishka86" rel="external nofollow noopener noreferrer">
+                        
+                        <i class="fab fa-github"></i>
+                        
+                    </a>
+                </p>
+                
+                </div>
+            
+            </div>
+        </div>
+    </div>
+</footer>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script>
+<script>moment.locale("ko");</script>
+
+
+    
+    
+    
+    <script src="/js/animation.js"></script>
+    
+
+    
+    
+    
+    <script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js" defer></script>
+    <script src="/js/gallery.js" defer></script>
+    
+
+    
+    
+
+<div id="outdated">
+    <h6>Your browser is out-of-date!</h6>
+    <p>Update your browser to view this website correctly. <a id="btnUpdateBrowser" href="http://outdatedbrowser.com/" rel="external nofollow noopener noreferrer" target="_blank">Update
+            my browser now </a></p>
+    <p class="last"><a href="#" id="btnCloseUpdateBrowser" title="Close">&times;</a></p>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.js" defer></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        outdatedBrowser({
+            bgColor: '#f25648',
+            color: '#ffffff',
+            lowerThan: 'flex'
+        });
+    });
+</script>
+
+
+    
+    
+<script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/unpacked/MathJax.js?config=TeX-MML-AM_CHTML" defer></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    MathJax.Hub.Config({
+        'HTML-CSS': {
+            matchFontHeight: false
+        },
+        SVG: {
+            matchFontHeight: false
+        },
+        CommonHTML: {
+            matchFontHeight: false
+        },
+        tex2jax: {
+            inlineMath: [
+                ['$','$'],
+                ['\\(','\\)']
+            ]
+        }
+    });
+});
+</script>
+
+    
+    
+
+<a id="back-to-top" title="Back to Top" href="javascript:;">
+    <i class="fas fa-chevron-up"></i>
+</a>
+<script src="/js/back-to-top.js" defer></script>
+
+
+    
+    
+
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    <script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script>
+    <script src="/js/clipboard.js" defer></script>
+    
+
+    
+    
+    
+
+
+<script src="/js/main.js" defer></script>
+
+    
+    <div class="searchbox ins-search">
+    <div class="searchbox-container ins-search-container">
+        <div class="searchbox-input-wrapper">
+            <input type="text" class="searchbox-input ins-search-input" placeholder="입력 하세요...">
+            <span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="searchbox-result-wrapper ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+    (function (window) {
+        var INSIGHT_CONFIG = {
+            TRANSLATION: {
+                POSTS: '포스트',
+                PAGES: '페이지',
+                CATEGORIES: '카테고리',
+                TAGS: '태그',
+                UNTITLED: '(제목없음)',
+            },
+            CONTENT_URL: '/content.json',
+        };
+        window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+    })(window);
+</script>
+<script src="/js/insight.js" defer></script>
+<link rel="stylesheet" href="/css/search.css">
+<link rel="stylesheet" href="/css/insight.css">
+    
+</body>
+</html>

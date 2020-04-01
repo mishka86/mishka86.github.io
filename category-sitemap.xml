@@ -8,15 +8,29 @@
     </url>
 
     <url>
+        <loc>https://mishka.kr/categories/Study/TypeScript/</loc>
+        <lastmod>2020-04-01T09:58:45.748Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://mishka.kr/categories/Study/</loc>
+        <lastmod>2020-04-01T09:58:45.748Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
         <loc>https://mishka.kr/categories/Setting/webstorm/</loc>
-        <lastmod>2020-03-31T01:04:06.765Z</lastmod>
+        <lastmod>2020-04-01T07:43:29.333Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>https://mishka.kr/categories/Setting/</loc>
-        <lastmod>2020-03-31T01:04:06.765Z</lastmod>
+        <lastmod>2020-04-01T07:43:29.333Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
@@ -45,20 +59,6 @@
     <url>
         <loc>https://mishka.kr/categories/Programming/hexo/</loc>
         <lastmod>2020-03-30T00:21:57.527Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://mishka.kr/categories/Study/TypeScript/</loc>
-        <lastmod>2020-03-25T06:41:51.068Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://mishka.kr/categories/Study/</loc>
-        <lastmod>2020-03-25T06:41:51.068Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
