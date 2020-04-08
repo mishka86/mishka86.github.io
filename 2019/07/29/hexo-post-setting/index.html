@@ -193,8 +193,8 @@
 <a id="more"></a>
 <p>그래서 <code>_config.yml</code>에 있는 설정들을 하나씩 뜯어보고 해당 기능이 있는지 찾아보았지만<br>원하는 기능은 없는것 같아서 기운없이 여러 블로그를 돌아다니고 있는 도중에 내가 사용하는 테마를 같이 사용하는<br>블로그에서 리스트와 포스트 상세페이지에 스타일이 다른 것을 발견하고는 다시 이것 저것 세팅을 바꿔보고<br>해당 블로그와 코드도 비교해 보면서 방법을 찾기 시작했다.</p>
 <p>그러던 중 정말 우연히 내 포스트와 다른 점을 발견하게 됐고 방법을 찾았다.<br>나와 같은 필요를 느끼고 있는 분들을 위해 그 방법을 간단하게 정리해 보고자 한다.</p>
-<p>우선 포스팅방법이 궁금하신 분들은 지난번에 작성한 <strong><a href="https://mishka86.github.io/2019/06/18/hexo-writing/" rel="external nofollow noopener noreferrer" target="_blank">hexo 포스팅 방법</a></strong>을 참고하면 됩니다. </p>
-<p>여러가지 실험끝에 발견한 방법은 그러한 세팅이 따로 존재하는 것이 아니라 포스팅을 작성할때<br><strong><a href="https://mishka86.github.io/2019/06/18/hexo-writing/#%EB%A8%B8%EB%A6%AC%EB%A7%90-Front-matter" rel="external nofollow noopener noreferrer" target="_blank">머리말(Front matter)</a></strong>에 해당 파일의 정보를 입력해주면 되는 것이었다.</p>
+<p>우선 포스팅방법이 궁금하신 분들은 지난번에 작성한 <strong><a href="/2019/06/18/hexo-writing">hexo 포스팅 방법</a></strong>을 참고하면 됩니다. </p>
+<p>여러가지 실험끝에 발견한 방법은 그러한 세팅이 따로 존재하는 것이 아니라 포스팅을 작성할때<br><strong><a href="/2019/06/10/hexo-writing/#머리말-Front-matter">머리말(Front matter)</a></strong>에 해당 파일의 정보를 입력해주면 되는 것이었다.</p>
 <p>머리말은 지난 포스트에서 설명했듯이 포스트 생성시 포스트 최상단에 자동으로 생성이 됩니다.<br>저자는 이곳에 카테고리,태그,썸네일등을 지정하여 포스트마다 다르게 노출되는 값들을 입력하는 곳이라 생각하였고<br>머리말을 이용하여 위젯이나 레이아웃을 변경할 수 있을것이라고는 미처 생각하지 못했었다.<br>그렇게 한참 다른 곳을 해메이다가 우연히 머리말의 입력값이 다른 것을 발견하고는 유레카를 외쳤다.</p>
 <p>저자는 포스트작성시 머리글에 카탈로그,카테고리,태그 클라우드 위젯을 추가하고 싶었고<br>포스팅 우측에 고정으로 놓고 싶었다. 그래서 아래와 같은 설정을 머리말에 추가해 주었다.</p>
 <figure class="highlight markdown hljs"><figcaption><span>머리말</span></figcaption><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">toc: true</span><br><span class="line">widgets:</span><br><span class="line"><span class="hljs-bullet">  - </span>type: toc</span><br><span class="line"><span class="hljs-code">    position: right</span></span><br><span class="line"><span class="hljs-bullet">  - </span>type: category</span><br><span class="line"><span class="hljs-code">    position: right</span></span><br><span class="line"><span class="hljs-bullet">  - </span>type: tagcloud</span><br><span class="line"><span class="hljs-code">    position: right</span></span><br><span class="line">sidebar:</span><br><span class="line">  right:</span><br><span class="line"><span class="hljs-code">    sticky: true</span></span><br></pre></td></tr></tbody></table></figure>
@@ -210,7 +210,7 @@
         
             <div class="related-posts">
                 <h4>관련 포스팅 보기</h4>
-                <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2019/06/10/hexo-writing/" title="Hexo 포스팅 방법" rel="bookmark">Hexo 포스팅 방법</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2019/05/28/markdown/" title="마크다운(Markdown) 사용법을 알아보자" rel="bookmark">마크다운(Markdown) 사용법을 알아보자</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2019/06/21/blog-ad-coupang/" title="쿠팡파트너스 Hexo 블로그에 등록하기" rel="bookmark">쿠팡파트너스 Hexo 블로그에 등록하기</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2019/06/12/hexo-blog/" title="Hexo 블로그 Github를 이용해 만들어보기" rel="bookmark">Hexo 블로그 Github를 이용해 만들어보기</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2020/01/10/github-domain/" title="Github 블로그에 Custom 도메인 연결하기" rel="bookmark">Github 블로그에 Custom 도메인 연결하기</a></h3></div></li></ul>
+                <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2019/06/10/hexo-writing/" title="Hexo 포스팅 방법" rel="bookmark">Hexo 포스팅 방법</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2019/06/19/hexo-themes/" title="hexo 블로그에 테마 적용하기 - icarus테마" rel="bookmark">hexo 블로그에 테마 적용하기 - icarus테마</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2019/06/21/blog-ad-coupang/" title="쿠팡파트너스 Hexo 블로그에 등록하기" rel="bookmark">쿠팡파트너스 Hexo 블로그에 등록하기</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2020/01/10/github-domain/" title="Github 블로그에 Custom 도메인 연결하기" rel="bookmark">Github 블로그에 Custom 도메인 연결하기</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2019/06/12/hexo-blog/" title="Hexo 블로그 Github를 이용해 만들어보기" rel="bookmark">Hexo 블로그 Github를 이용해 만들어보기</a></h3></div></li></ul>
             </div>
         
 
@@ -622,7 +622,7 @@ document.addEventListener('DOMContentLoaded', function () {
     
     
 
-<a id="back-to-top" title="Back to Top" href="javascript:;">
+<a id="back-to-top" title="Kembali ke atas" href="javascript:;">
     <i class="fas fa-chevron-up"></i>
 </a>
 <script src="/js/back-to-top.js" defer></script>
