@@ -221,11 +221,11 @@
 <p>매개변수가 1개일 때는 화살표 함수의 매개변수 목록에 있는 소괄호를 생략할 수 있습니다. 변수에 할당하지 않고 화살표 함수를 사용하려면 즉시 호출 함수를 이용해야 합니다. </p>
 <figure class="highlight typescript hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">(<span class="hljs-function"><span class="hljs-params">x</span> =></span> { x; })(<span class="hljs-number">1</span>);</span><br><span class="line"><span class="hljs-keyword">let</span> iif = (<span class="hljs-function"><span class="hljs-params">x</span> =></span> { <span class="hljs-keyword">return</span>  x; })(<span class="hljs-number">1</span>);</span><br></pre></td></tr></tbody></table></figure>
 
-<p>즉시 호출 함수가 반환값을 가져 변수에 할당해야 한담녀 중괄호 내부에서 return 키워드를 사용, 실해앟면 iif 변수에 즉시 호출 함수가 반환한<br>값이 할당 됩니다.</p>
+<p>즉시 호출 함수가 반환값을 가져 변수에 할당해야 한다면 중괄호 내부에서 return 키워드를 사용, 실행하면 변수 iif에 즉시 호출 함수가 반환한<br>값이 할당 됩니다.</p>
 <h3 id="필터-메서드"><a href="#필터-메서드" class="headerlink" title="필터 메서드"></a>필터 메서드</h3><p>필터 메서드는 배열에서 조건에 맞는 요소를 추출 하는데 사용합니다. </p>
 <figure class="highlight typescript hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">let</span> numbers = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>];</span><br><span class="line">numbers = numbers.filter(<span class="hljs-function"><span class="hljs-params">n</span> =></span> {</span><br><span class="line">  <span class="hljs-keyword">return</span> n % <span class="hljs-number">2</span> === <span class="hljs-number">0</span>;</span><br><span class="line">})</span><br><span class="line"><span class="hljs-built_in">console</span>.log(numbers);</span><br><span class="line"><span class="hljs-comment">// 결과 [ 2, 4 ]</span></span><br></pre></td></tr></tbody></table></figure>
 
-<h3 id="리듀스-메서드"><a href="#리듀스-메서드" class="headerlink" title="리듀스 메서드"></a>리듀스 메서드</h3><p>배열 값의 합을 손쉽게 구할 때는 리듀스 메서드를 이용할 수 있습니다. 리듀스 메서드는 누산기의 원리처럼 배열의 요소를 왼쪽에서 오른쪽으로 더해나가<br>면서 누산된 값을 처리 할수 있는 함수입니다.</p>
+<h3 id="리듀스-메서드"><a href="#리듀스-메서드" class="headerlink" title="리듀스 메서드"></a>리듀스 메서드</h3><p>배열 값의 합을 손쉽게 구할 때는 리듀스 메서드를 이용할 수 있습니다. 리듀스 메서드는 누산기의 원리처럼 배열의 요소를 왼쪽에서 오른쪽으로 더해나가<br>면서 누산된 값을 처리 할 수 있는 함수입니다.</p>
 <figure class="highlight typescript hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>].reduce(<span class="hljs-function">(<span class="hljs-params">a,b</span>) =></span> { <span class="hljs-keyword">return</span> a + b; })</span><br></pre></td></tr></tbody></table></figure>
 
 <p>리듀스 메서드의 첫 번째 매개변수는 누적된 값이고 두 번째 매개변수는 현재 카운터의 값입니다.</p>
@@ -249,7 +249,7 @@
         
             <div class="related-posts">
                 <h4>관련 포스팅 보기</h4>
-                <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2019/07/05/Learning-JavaScript-chapter6/" title="러닝 자바스크립트 스터디 자료 - CHAPTER 6. 함수" rel="bookmark">러닝 자바스크립트 스터디 자료 - CHAPTER 6. 함수</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2020/03/25/TypeScript-4/" title="타입스크립트 - 제어문 과 연산자" rel="bookmark">타입스크립트 - 제어문 과 연산자</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2020/03/18/TypeSctipt-3-var/" title="타입스크립트 - 변수 선언과 기본 타입" rel="bookmark">타입스크립트 - 변수 선언과 기본 타입</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2020/03/11/TypeScript-1/" title="TypeScript? 타입스크립트 소개 및 개발환경 구축" rel="bookmark">TypeScript? 타입스크립트 소개 및 개발환경 구축</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2019/07/05/Learning-JavaScript-chapter5/" title="러닝 자바스크립트 스터디 자료 - CHAPTER 5. 표현식과 연산자" rel="bookmark">러닝 자바스크립트 스터디 자료 - CHAPTER 5. 표현식과 연산자</a></h3></div></li></ul>
+                <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2019/07/05/Learning-JavaScript-chapter6/" title="러닝 자바스크립트 스터디 자료 - CHAPTER 6. 함수" rel="bookmark">러닝 자바스크립트 스터디 자료 - CHAPTER 6. 함수</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2020/03/11/TypeScript-1/" title="TypeScript? 타입스크립트 소개 및 개발환경 구축" rel="bookmark">TypeScript? 타입스크립트 소개 및 개발환경 구축</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2020/03/25/TypeScript-4/" title="타입스크립트 - 제어문 과 연산자" rel="bookmark">타입스크립트 - 제어문 과 연산자</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2020/03/18/TypeSctipt-3-var/" title="타입스크립트 - 변수 선언과 기본 타입" rel="bookmark">타입스크립트 - 변수 선언과 기본 타입</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2019/07/05/Learning-JavaScript-chapter5/" title="러닝 자바스크립트 스터디 자료 - CHAPTER 5. 표현식과 연산자" rel="bookmark">러닝 자바스크립트 스터디 자료 - CHAPTER 5. 표현식과 연산자</a></h3></div></li></ul>
             </div>
         
 
@@ -718,7 +718,7 @@ document.addEventListener('DOMContentLoaded', function () {
     
     
 
-<a id="back-to-top" title="Kembali ke atas" href="javascript:;">
+<a id="back-to-top" title="Back to Top" href="javascript:;">
     <i class="fas fa-chevron-up"></i>
 </a>
 <script src="/js/back-to-top.js" defer></script>

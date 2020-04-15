@@ -187,9 +187,9 @@
             
         </h1>
         <div class="content">
-            <html><head><meta name="generator" content="Hexo 3.9.0"></head><body><p>이전 포스팅 에서 <a href="/2019/06/12/hexo-blog/">Hexo 블로그의 세팅 방법</a>과 간단한 글쓰는 방법 그리고 <a href="/2019/06/11/Hexo-seo/">SEO세팅</a> 등에 대헤 알아보았습니다.<br>Hexo는 간단한 포스팅 외에도 다양한 기능의 포스팅 방법을 제공해 줍니다.<br>이번에는 포스팅 방법에 대한 내용들을 정리해 보겠습니다. </p>
+            <html><head><meta name="generator" content="Hexo 3.9.0"></head><body><p>이전 포스팅 에서 <a href="/2019/06/12/hexo-blog/">Hexo 블로그의 세팅 방법</a>과 간단한 글쓰는 방법에 대해 다뤄보았는데요 Hexo는 간단한 포스팅 외에도<br>다양한 기능의 포스팅 방법을 제공해 줍니다. Hexo에서 지원하는 것들은 무엇이 있는지 한번 살펴보겠습니다.</p>
 <h2 id="글쓰기-Writing"><a href="#글쓰기-Writing" class="headerlink" title="글쓰기(Writing)"></a>글쓰기(Writing)</h2><hr>
-<p>hexo 명령어를 사용하여 새로운 포스팅의 마크다운 파일을 생성해 줍니다.</p>
+<p>일단 기본적인 명령어 부터 하나씩 살펴보겠습니다.<br>hexo 명령어를 사용하여 새로운 포스팅의 마크다운 파일을 생성해 줍니다. 레이아웃은 생략해도 됩니다.</p>
 <figure class="highlight bash hljs"><figcaption><span>bash </span></figcaption><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo new <layout> <포스트이름></포스트이름></layout></span><br><span class="line">hexo new <포스트이름> <span class="hljs-comment"># layout을 지정하지 않으면 기본으로 post을 생성합니다.</span></포스트이름></span><br></pre></td></tr></tbody></table></figure>
 
 <p>위 명령어를 실행하면 \source_posts 폴더에 포스트이름.md 으로 새로운 마크다운 파일이 생성됩니다.<br>파일명에 띄어쓰기가 있다면 하이픈(-)으로 표시됩니다.</p>
@@ -233,14 +233,11 @@
 <figure class="highlight bash hljs"><figcaption><span>bash </span></figcaption><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new draft <포스트이름></포스트이름></span><br></pre></td></tr></tbody></table></figure>
 
 <p>기본 레이아웃 변경을 <code>_config.yml</code> 의 default_layout 항목에서 draft로 변경하면,<br><code>hexo new <포스트이름></포스트이름></code> 명령어 실행시 post가 아닌 draft로 생성됩니다.</p>
-<p>초안으로 작성된 글은 로컬서버에서 확인 할 수 있다.</p>
+<p>초안으로 작성된 글은 로컬서버에서만 확인 할 수 있다.</p>
 <figure class="highlight bash hljs"><figcaption><span>bash </span></figcaption><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo server --draft</span><br></pre></td></tr></tbody></table></figure>
 
 <p>초안으로 작성된 글을 post로 변경할려면 수동으로 <code>_posts</code>폴더로 옮길 수도 있지만<br>아래와 같은 hexo 명령어로 publish가 가능하다.</p>
 <figure class="highlight bash hljs"><figcaption><span>bash </span></figcaption><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo publish <포스트이름></포스트이름></span><br></pre></td></tr></tbody></table></figure>
-
-<br>
-<br>
 
 <h2 id="스캐폴드-Scaffolds"><a href="#스캐폴드-Scaffolds" class="headerlink" title="스캐폴드 (Scaffolds)"></a>스캐폴드 (Scaffolds)</h2><hr>
 <p>포스트의 구조를 설정할때 사용합니다. <code>Scaffolds</code>폴더 안에 각 md파일을 수정하여 설정을 변경할 수 있습니다.</p>
@@ -248,9 +245,6 @@
 
 <p>기본적인 구조는 위와 같이 되어있고 각 항목들을 추가하여 기본값을 설정해 줍니다.<br>저 같은 경우에는 태그, 카테고리, 썸네일 등을 추가로 작성해 놓았습니다.</p>
 <figure class="highlight bash hljs"><figcaption><span>/scaffolds/post.md</span></figcaption><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: {{ title }}</span><br><span class="line">date: {{ date }}</span><br><span class="line">categories:</span><br><span class="line">tags: [ ]</span><br><span class="line">thumbnail: /img/ </span><br><span class="line">---</span><br></pre></td></tr></tbody></table></figure>
-
-<br>
-<br>
 
 <h2 id="머리말-Front-matter"><a href="#머리말-Front-matter" class="headerlink" title="머리말 (Front matter)"></a>머리말 (Front matter)</h2><hr>
 <p>머리말(Front matter)은 포스트 생성시 포스트 최상단에 자동으로 생성되며 해당 파일의 정보를 입력하는 곳입니다. 형태는 <code>---</code>로 구분되어 있습니다.</p>
@@ -304,7 +298,7 @@
 <td></td>
 </tr>
 </tbody></table>
-<h3 id="카테고리와-태그-categories-tags"><a href="#카테고리와-태그-categories-tags" class="headerlink" title="카테고리와 태그 (categories,tags)"></a>카테고리와 태그 (categories,tags)</h3><p>카테고리와 태그는 Post와 Draft에서만 사용 가능합니다. 카테고리를 여러가지 지정할 경우 분류와 하위 분류의 계층적인 관계를 가집니다. 즉 위에 있는게 메인카테고리 아래에 있는게 서브카테고리가 됩니다. 태그는 순서와 상관없이 모두 같은 계층입니다.</p>
+<h3 id="카테고리와-태그-categories-tags"><a href="#카테고리와-태그-categories-tags" class="headerlink" title="카테고리와 태그 (categories,tags)"></a>카테고리와 태그 (categories,tags)</h3><p>카테고리와 태그는 Post와 Draft에서만 사용 가능합니다. 카테고리를 여러가지 지정할 경우 분류와 하위 분류의 계층적인 관계를 가집니다. 즉 위에 있는게<br>메인카테고리 아래에 있는게 서브카테고리가 됩니다. 태그는 순서와 상관없이 모두 같은 계층입니다.</p>
 <p>여러개를 작성할 경우 아래와 같이 사용 할 수 있습니다.</p>
 <figure class="highlight bash hljs"><figcaption><span>post.md</span></figcaption><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">categories:</span><br><span class="line">- 카테고리이름</span><br><span class="line">- 서브카테고리이름</span><br><span class="line">tags:</span><br><span class="line">- 태그</span><br><span class="line">- 태그</span><br><span class="line">- 태그</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">#또는 아래와 같이도 사용 할 수 있습니다.</span></span><br><span class="line">categories: [카테고리이름, 서브카테고리이름]</span><br><span class="line">tags:[태그, 태그, 태그]</span><br></pre></td></tr></tbody></table></figure>
 
@@ -319,7 +313,7 @@
         
             <div class="related-posts">
                 <h4>관련 포스팅 보기</h4>
-                <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2019/07/29/hexo-post-setting/" title="hexo 포스팅 스타일 설정하기" rel="bookmark">hexo 포스팅 스타일 설정하기</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2019/06/11/Hexo-seo/" title="Hexo 검색엔진 최적화(SEO) 시켜보기" rel="bookmark">Hexo 검색엔진 최적화(SEO) 시켜보기</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2019/06/13/backup/" title="Hexo 배포 원리에 따른 백업 방법" rel="bookmark">Hexo 배포 원리에 따른 백업 방법</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2019/06/21/blog-ad-coupang/" title="쿠팡파트너스 Hexo 블로그에 등록하기" rel="bookmark">쿠팡파트너스 Hexo 블로그에 등록하기</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2019/07/02/hexo-comment-disqus/" title="Disqus를 사용하여 댓글 기능 세팅하기" rel="bookmark">Disqus를 사용하여 댓글 기능 세팅하기</a></h3></div></li></ul>
+                <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2019/07/29/hexo-post-setting/" title="hexo 포스팅 스타일 설정하기" rel="bookmark">hexo 포스팅 스타일 설정하기</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2019/06/11/Hexo-seo/" title="Hexo 검색엔진 최적화(SEO) 시켜보기" rel="bookmark">Hexo 검색엔진 최적화(SEO) 시켜보기</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2019/06/21/blog-ad-coupang/" title="쿠팡파트너스 Hexo 블로그에 등록하기" rel="bookmark">쿠팡파트너스 Hexo 블로그에 등록하기</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2019/06/20/backup/" title="Hexo 배포 원리에 따른 백업(backup) 방법" rel="bookmark">Hexo 배포 원리에 따른 백업(backup) 방법</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2020/01/10/github-domain/" title="Github 블로그에 Custom 도메인 연결하기" rel="bookmark">Github 블로그에 Custom 도메인 연결하기</a></h3></div></li></ul>
             </div>
         
 
@@ -369,8 +363,8 @@
         
         
         <div class="level-end">
-            <a class="level level-item has-link-grey  article-nav-next" href="/2019/06/03/git-basic/">
-                <span class="level-item">Git의 기본적인 명령어</span>
+            <a class="level level-item has-link-grey  article-nav-next" href="/2019/06/09/hexo-blog/">
+                <span class="level-item">Hexo 블로그 Github를 이용해 만들어보기</span>
                 <i class="level-item fas fa-chevron-right"></i>
             </a>
         </div>
@@ -767,7 +761,7 @@ document.addEventListener('DOMContentLoaded', function () {
     
     
 
-<a id="back-to-top" title="Kembali ke atas" href="javascript:;">
+<a id="back-to-top" title="Back to Top" href="javascript:;">
     <i class="fas fa-chevron-up"></i>
 </a>
 <script src="/js/back-to-top.js" defer></script>

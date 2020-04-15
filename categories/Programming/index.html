@@ -551,6 +551,70 @@
 <div class="card">
     <!-- 
     <div class="card-image">
+        <a href="/2019/06/20/backup/" class="image is-7by1">
+            <img class="thumbnail" src="/img/backup_thumbnail.jpg" alt="Hexo 배포 원리에 따른 백업(backup) 방법">
+        </a>
+    </div>
+     -->
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-06-20T02:46:20.000Z">2019-06-20</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/Programming/">Programming</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/Programming/hexo/">hexo</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/Programming/hexo/backup/">backup</a>
+                </div>
+                
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2019/06/20/backup/">Hexo 배포 원리에 따른 백업(backup) 방법</a>
+            
+        </h1>
+        <div class="content">
+            <html><head><meta name="generator" content="Hexo 3.9.0"></head><body><p>Hexo를 이용해서 블로그를 만들고 관리 하다보니 문제점을 하나 발견했다.<br>바로 백업에 관한 문제인데 Hexo 블로그는 Github에 repository를 통해 구성되어 있으니<br>다른 곳에서 작업할때 그것을 clone해서 수정하면 된다고 생각했다.</p>
+<p>그러나 다른 곳에서 clone을 해보고는 문제가 있음을 알 수 있었다.<br>라이브되는 repository에 올라가는건 public 폴더의 내용이라 실제로 작업한 것은 repo에 push 되지 않고 로컬에만 저장되어있는 것이다. </p>
+<p>그래서 해결책으로 별도의 백업 repository 하나를 생성하여 별도로 백업을 하기로 했는데 이 방법도 문제가 있었다.<br>Hexo의 테마가 별도의 git을 가지고 있어서 하나의 백업 repository만으로는 완벽하게 백업 관리가 어려웠다 그래서 두개의 백업 repository와<br>한개의 라이브 repository를 가지고 총 3개의 repository를 가지게 되었다.</p></body></html>
+        </div>
+
+        
+
+
+        
+        
+        <div class="level is-mobile">
+            <div class="level-start">
+                <div class="level-item">
+                <a class="button is-size-7 is-light" href="/2019/06/20/backup/#more">자세히 보기</a>
+                </div>
+            </div>
+        </div>
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+<div class="card">
+    <!-- 
+    <div class="card-image">
         <a href="/2019/06/19/hexo-themes/" class="image is-7by1">
             <img class="thumbnail" src="/img/themes_thumbnail.jpg" alt="hexo 블로그에 테마 적용하기 - icarus테마">
         </a>
@@ -577,7 +641,7 @@
             
         </h1>
         <div class="content">
-            <html><head><meta name="generator" content="Hexo 3.9.0"></head><body><p>hexo를 이용해서 github블로그를 만들었습니다. 이제는 나만의 색깔을 입혀볼 테마를 적용해 보겠습니다.<br>블로그 세팅 방법은 <a href="/2019/06/12/hexo-blog">지난 블로그</a>를 참고하면 좋을것 같습니다. ^^</p>
+            <html><head><meta name="generator" content="Hexo 3.9.0"></head><body><p>hexo를 이용해서 github블로그를 만들었습니다. 이제는 나만의 색깔을 입혀볼 테마를 적용해 보겠습니다.<br>블로그 세팅 방법은 <a href="/2019/06/12/hexo-blog">지난 블로그</a>를 참고하시면 됩니다.</p>
 <p><code>hexo블로그</code>에 테마를 입히는 방법은 사실 아주 간단 합니다.<br>git을 이용하여 <code>clone</code>만 해주면 됩니다. 하지만 테마들마다 사용방법이나 설정법이 약간씩 다르고 자신의 색깔에 맞게<br>커스텀을 하려고 한다면 점점 복잡해 집니다.<br>테마마다 설정방법이 다르기 때문에 이번 포스팅에서는 제가 적용한 <code>icarus테마</code>를 기준으로 설명하겠습니다.</p></body></html>
         </div>
 
@@ -590,143 +654,6 @@
             <div class="level-start">
                 <div class="level-item">
                 <a class="button is-size-7 is-light" href="/2019/06/19/hexo-themes/#more">자세히 보기</a>
-                </div>
-            </div>
-        </div>
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
-<div class="card">
-    <!-- 
-    <div class="card-image">
-        <a href="/2019/06/13/backup/" class="image is-7by1">
-            <img class="thumbnail" src="/img/backup_thumbnail.jpg" alt="Hexo 배포 원리에 따른 백업 방법">
-        </a>
-    </div>
-     -->
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-06-13T02:46:20.000Z">2019-06-13</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/Programming/">Programming</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/Programming/hexo/">hexo</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/Programming/hexo/backup/">backup</a>
-                </div>
-                
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2019/06/13/backup/">Hexo 배포 원리에 따른 백업 방법</a>
-            
-        </h1>
-        <div class="content">
-            <html><head><meta name="generator" content="Hexo 3.9.0"></head><body><p>Hexo를 이용해서 블로그를 만들고 관리 하다보니 문제점을 하나 발견했다.<br>바로 백업에 관한 문제인데 Hexo 블로그는 Github에 repository를 통해 구성되어 있으니<br>다른 곳에서 작업할때 그것을 clone해서 수정하면 된다고 생각했다.</p>
-<p>그러나 다른 곳에서 clone을 해보고는 문제가 있음을 알수 있었다.<br>라이브되는 repository에 올라가는건 public 폴더의 내용이라 실제로 작업한 것은 올라가지 않는다는 것을 말이다.</p>
-<p>그래서 해결책으로 별도의 repository 하나를 생성하여 별도로 백업을 하기로 했는데<br>이 방법도 문제가 있었다. Hexo의 테마들을 각자의 git을 가지고 있어서<br>git 안에 git이 있어 재대로 관리가 되어지지 않았다.</p>
-<p>그래서 검색을 통해 알아보다가 git의 서브모듈(submodule)을 이용해서 백업 하기로 했다.</p></body></html>
-        </div>
-
-        
-
-
-        
-        
-        <div class="level is-mobile">
-            <div class="level-start">
-                <div class="level-item">
-                <a class="button is-size-7 is-light" href="/2019/06/13/backup/#more">자세히 보기</a>
-                </div>
-            </div>
-        </div>
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
-<div class="card">
-    <!-- 
-    <div class="card-image">
-        <a href="/2019/06/12/hexo-blog/" class="image is-7by1">
-            <img class="thumbnail" src="/img/hexo_thumbnail.jpg" alt="Hexo 블로그 Github를 이용해 만들어보기">
-        </a>
-    </div>
-     -->
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-06-12T02:14:39.000Z">2019-06-12</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/Programming/">Programming</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/Programming/hexo/">hexo</a>
-                </div>
-                
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2019/06/12/hexo-blog/">Hexo 블로그 Github를 이용해 만들어보기</a>
-            
-        </h1>
-        <div class="content">
-            <html><head><meta name="generator" content="Hexo 3.9.0"></head><body><p>블로그를 만들고 꾸미다 보니 나같은 사탐들이 많을 거라는 생각에서<br>Hexo를 이용해 Github 블로그 세팅 하는 방법들을 처음부터 하나씩 보고자 한다.</p>
-<h2 id="Hexo"><a href="#Hexo" class="headerlink" title="Hexo"></a>Hexo</h2><p>Hexo는 Node.js 기반의 정적 사이트 생성기(Static site generator)이다.<br>Hexo 공식 사이트에서는 빠르고 간단하고 파워풀한 블로그 프레임워크라고 소개하고 있다.<br>npm을 통해 쉽게 설치가 가능하고 배포역시 쉽게 가능한 것이 장점이다.<br>한글문서로도 잘 정리가 되어있으니 참고 하길 바랍니다. <a href="https://hexo.io/ko/docs/" rel="external nofollow noopener noreferrer" target="_blank">Hexo 한글 튜토리얼</a></p>
-<h2 id="설치-전-준비"><a href="#설치-전-준비" class="headerlink" title="설치 전 준비"></a>설치 전 준비</h2><p>Github를 이용하여 Hexo 블로그를 세팅 하려고 하기때문에</p>
-<blockquote>
-<ul>
-<li><a href="https://git-scm.com/" rel="external nofollow noopener noreferrer" target="_blank">Git</a></li>
-<li><a href="https://nodejs.org/en/" rel="external nofollow noopener noreferrer" target="_blank">Node.js(npm)</a></li>
-<li><a href="https://github.com/" rel="external nofollow noopener noreferrer" target="_blank">Github 계정</a></li>
-</ul>
-</blockquote>
-<p>위의 구성요소들의 사전 설치가 필요하다. 위에 설치 방법들은 이번 포스팅에서는 따로 언급하지 않고 공식사이트로의 링크들만 걸어 놓겠습니다. </p></body></html>
-        </div>
-
-        
-
-
-        
-        
-        <div class="level is-mobile">
-            <div class="level-start">
-                <div class="level-item">
-                <a class="button is-size-7 is-light" href="/2019/06/12/hexo-blog/#more">자세히 보기</a>
                 </div>
             </div>
         </div>
@@ -791,6 +718,73 @@
             <div class="level-start">
                 <div class="level-item">
                 <a class="button is-size-7 is-light" href="/2019/06/11/Hexo-seo/#more">자세히 보기</a>
+                </div>
+            </div>
+        </div>
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+<div class="card">
+    <!-- 
+    <div class="card-image">
+        <a href="/2019/06/10/hexo-writing/" class="image is-7by1">
+            <img class="thumbnail" src="/img/hexo_thumbnail.jpg" alt="Hexo 포스팅 방법">
+        </a>
+    </div>
+     -->
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-06-10T05:25:11.000Z">2019-06-10</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/Programming/">Programming</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/Programming/hexo/">hexo</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/Programming/hexo/posting/">posting</a>
+                </div>
+                
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2019/06/10/hexo-writing/">Hexo 포스팅 방법</a>
+            
+        </h1>
+        <div class="content">
+            <html><head><meta name="generator" content="Hexo 3.9.0"></head><body><p>이전 포스팅 에서 <a href="/2019/06/12/hexo-blog/">Hexo 블로그의 세팅 방법</a>과 간단한 글쓰는 방법에 대해 다뤄보았는데요 Hexo는 간단한 포스팅 외에도<br>다양한 기능의 포스팅 방법을 제공해 줍니다. Hexo에서 지원하는 것들은 무엇이 있는지 한번 살펴보겠습니다.</p>
+<h2 id="글쓰기-Writing"><a href="#글쓰기-Writing" class="headerlink" title="글쓰기(Writing)"></a>글쓰기(Writing)</h2><hr>
+<p>일단 기본적인 명령어 부터 하나씩 살펴보겠습니다.<br>hexo 명령어를 사용하여 새로운 포스팅의 마크다운 파일을 생성해 줍니다. 레이아웃은 생략해도 됩니다.</p>
+<figure class="highlight bash hljs"><figcaption><span>bash </span></figcaption><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo new <layout> <포스트이름></포스트이름></layout></span><br><span class="line">hexo new <포스트이름> <span class="hljs-comment"># layout을 지정하지 않으면 기본으로 post을 생성합니다.</span></포스트이름></span><br></pre></td></tr></tbody></table></figure>
+
+<p>위 명령어를 실행하면 \source_posts 폴더에 포스트이름.md 으로 새로운 마크다운 파일이 생성됩니다.<br>파일명에 띄어쓰기가 있다면 하이픈(-)으로 표시됩니다.</p></body></html>
+        </div>
+
+        
+
+
+        
+        
+        <div class="level is-mobile">
+            <div class="level-start">
+                <div class="level-item">
+                <a class="button is-size-7 is-light" href="/2019/06/10/hexo-writing/#more">자세히 보기</a>
                 </div>
             </div>
         </div>
@@ -1474,7 +1468,7 @@ document.addEventListener('DOMContentLoaded', function () {
     
     
 
-<a id="back-to-top" title="Kembali ke atas" href="javascript:;">
+<a id="back-to-top" title="Back to Top" href="javascript:;">
     <i class="fas fa-chevron-up"></i>
 </a>
 <script src="/js/back-to-top.js" defer></script>

@@ -187,25 +187,25 @@
             
         </h1>
         <div class="content">
-            <html><head><meta name="generator" content="Hexo 3.9.0"></head><body><p>hexo를 이용해서 github블로그를 만들었습니다. 이제는 나만의 색깔을 입혀볼 테마를 적용해 보겠습니다.<br>블로그 세팅 방법은 <a href="/2019/06/12/hexo-blog">지난 블로그</a>를 참고하면 좋을것 같습니다. ^^</p>
+            <html><head><meta name="generator" content="Hexo 3.9.0"></head><body><p>hexo를 이용해서 github블로그를 만들었습니다. 이제는 나만의 색깔을 입혀볼 테마를 적용해 보겠습니다.<br>블로그 세팅 방법은 <a href="/2019/06/12/hexo-blog">지난 블로그</a>를 참고하시면 됩니다.</p>
 <p><code>hexo블로그</code>에 테마를 입히는 방법은 사실 아주 간단 합니다.<br>git을 이용하여 <code>clone</code>만 해주면 됩니다. 하지만 테마들마다 사용방법이나 설정법이 약간씩 다르고 자신의 색깔에 맞게<br>커스텀을 하려고 한다면 점점 복잡해 집니다.<br>테마마다 설정방법이 다르기 때문에 이번 포스팅에서는 제가 적용한 <code>icarus테마</code>를 기준으로 설명하겠습니다.</p>
 <a id="more"></a>
 <h2 id="테마-고르기"><a href="#테마-고르기" class="headerlink" title="테마 고르기"></a>테마 고르기</h2><hr>
-<p>우선 자신의 블로그에 적용할 테마를 고릅니다.<br><a href="https://hexo.io/themes/" rel="external nofollow noopener noreferrer" target="_blank">Hexo Themes</a> 에서 자신이 원하는 테마를 골라줍니다.<br>Hexo Themes에는 많은 개발자들이 hexo를 사용하여 만든 테마 목록들을 확인하고 다운받을 수 있습니다. 물론 별도로 만들수도 있지만 시간이 많이 들고 잘만들어진것들이 많이 있으니 오픈소스를 적극 활용 해보기로 합니다. ㅋ</p>
-<p>저는 테마를 고를때 디자인, 반응형, 영문메뉴얼유무 를 따져 보았고 그 중에 여러가지 테마를 적용해 보고<br>icarus테마를 골랐습니다.</p>
+<p>우선 자신의 블로그에 적용할 테마를 고릅니다.<br><a href="https://hexo.io/themes/" rel="external nofollow noopener noreferrer" target="_blank">Hexo Themes</a> 에서 자신이 원하는 테마를 골라줍니다.<br>Hexo Themes에는 많은 개발자들이 hexo를 사용하여 만든 테마 목록들을 확인하고 다운받을 수 있습니다. 물론 별도로 만들수도 있지만 시간이 많이 들고 잘 만들어진것들이 많이 있으니 오픈소스를 적극 활용 해보기로 합니다. ㅋ</p>
+<p>저는 테마를 고를때 디자인, 반응형, 영문메뉴얼유무를 따져 보았고 그 중에 여러가지 테마를 적용해 보고 icarus테마를 골랐습니다.</p>
 <h2 id="테마-적용하기"><a href="#테마-적용하기" class="headerlink" title="테마 적용하기"></a>테마 적용하기</h2><hr>
-<p>앞에서 말했듯이 테마별로 적용 방법의 약간의 차이가 있을수 있으나 대체적으로 <code>git clone</code> 을 이용하여 설치하는 방법을<br>repository에 README 파일로 적용방법을 알려주고있다.<br>icarus테마역시 <a href="https://github.com/ppoffice/hexo-theme-icarus" rel="external nofollow noopener noreferrer" target="_blank">hexo-theme-icarus repository</a>에서 설치방법을 알려주고 있다. </p>
+<p>앞에서 말했듯이 테마별로 적용 방법의 약간의 차이가 있을수 있으나 대체적으로 <code>git clone</code> 을 이용하여 설치하는 방법을<br>repository에 README 파일로 적용방법을 알려주고있다.<br>icarus테마도 <a href="https://github.com/ppoffice/hexo-theme-icarus" rel="external nofollow noopener noreferrer" target="_blank">hexo-theme-icarus repository</a>에서 설치방법을 알려주고 있다. </p>
 <h3 id="설치"><a href="#설치" class="headerlink" title="설치"></a>설치</h3><p>터미널을 이용하여 hexo블로그가 있는 폴더에 들어가 줍니다. icarus테마를 <code>themes/icarus</code> 경로에 clone 받아 줍니다. </p>
 <figure class="highlight bash hljs"><figcaption><span>bash</span></figcaption><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-built_in">cd</span> blog</span><br><span class="line">git <span class="hljs-built_in">clone</span> https://github.com/ppoffice/hexo-theme-icarus.git themes/icarus</span><br></pre></td></tr></tbody></table></figure>
 
 <p>위와 같이 입력해 주면 themes 디테토리 하위에 icarus 라는 디텍토리가 생기면서 해당 저장소의 내용을 clone 하여 줍니다.</p>
-<center><img src="/img/icarus_setting.jpg" alt="clone 후 모습"></center>
+<center><img src="/img/hexo/icarus_setting.jpg" alt="clone 후 모습"></center>
 
 <p><br><br></p>
 <p>그리고 blog 폴더 안에있는 <code>_config.yml</code>에서 <code>theme</code> 부분을 landscape에서 icarus로 수정해줍니다.</p>
 <figure class="highlight bash hljs"><figcaption><span>_config.yml</span></figcaption><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment"># Extensions</span></span><br><span class="line"><span class="hljs-comment">## Themes: https://hexo.io/themes/</span></span><br><span class="line">theme: icarus</span><br></pre></td></tr></tbody></table></figure>
 
-<p>이렇게만 설정하고 배포하여 주어도 테마가 잘 설정된 모습을 볼 수 있다.<br>하지만 이렇게만 설정하였을 경우 전체 git repo안에 다른 repo가 들어간 형태가 되어<br>blog repo만 관리하여 백업을 하게 되면 themes/icarus 안에 내용은 전혀 백업이 되지 않는다.<br><a href="/2019/06/13/backup/#테마-백업">지난 포스트</a>에서 설명했듯이 테마를 따로 백업해준뒤에 <code>git submodule</code>기능을 사용하여 추가해 주는 것이 관리하기 좋다. </p>
+<p>이렇게만 설정하고 배포하면 테마가 잘 설정된 모습을 볼 수 있다. </p>
 <h3 id="설정"><a href="#설정" class="headerlink" title="설정"></a>설정</h3><p><strong>themes/icarus</strong> 폴더에 있는 <code>_config.yml</code>에서 테마 설정을 변경 할 수 있습니다.<br>블로그 폴더에도 <code>_config.yml</code>에서 설정을 변경하였는데 테마 역시 <code>_config.yml</code>를 사용하여 설정하여 준다.</p>
 <blockquote>
 <p>블로그 폴더의 <code>_config.yml</code>가 hexo블로그의 전반적인 설정 이라면<br>themes/테마 폳더의 <code>_config.yml</code>는 hexo 블로그에 적용된 테마의 추가 설정이라고 보면된다.</p>
@@ -216,7 +216,7 @@
         
             <div class="related-posts">
                 <h4>관련 포스팅 보기</h4>
-                <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2019/06/11/Hexo-seo/" title="Hexo 검색엔진 최적화(SEO) 시켜보기" rel="bookmark">Hexo 검색엔진 최적화(SEO) 시켜보기</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2019/06/13/backup/" title="Hexo 배포 원리에 따른 백업 방법" rel="bookmark">Hexo 배포 원리에 따른 백업 방법</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2019/06/21/blog-ad-coupang/" title="쿠팡파트너스 Hexo 블로그에 등록하기" rel="bookmark">쿠팡파트너스 Hexo 블로그에 등록하기</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2019/07/02/hexo-comment-disqus/" title="Disqus를 사용하여 댓글 기능 세팅하기" rel="bookmark">Disqus를 사용하여 댓글 기능 세팅하기</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2020/01/10/github-domain/" title="Github 블로그에 Custom 도메인 연결하기" rel="bookmark">Github 블로그에 Custom 도메인 연결하기</a></h3></div></li></ul>
+                <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2019/06/11/Hexo-seo/" title="Hexo 검색엔진 최적화(SEO) 시켜보기" rel="bookmark">Hexo 검색엔진 최적화(SEO) 시켜보기</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2019/06/21/blog-ad-coupang/" title="쿠팡파트너스 Hexo 블로그에 등록하기" rel="bookmark">쿠팡파트너스 Hexo 블로그에 등록하기</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2019/06/20/backup/" title="Hexo 배포 원리에 따른 백업(backup) 방법" rel="bookmark">Hexo 배포 원리에 따른 백업(backup) 방법</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2020/01/10/github-domain/" title="Github 블로그에 Custom 도메인 연결하기" rel="bookmark">Github 블로그에 Custom 도메인 연결하기</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2019/06/09/hexo-blog/" title="Hexo 블로그 Github를 이용해 만들어보기" rel="bookmark">Hexo 블로그 Github를 이용해 만들어보기</a></h3></div></li></ul>
             </div>
         
 
@@ -266,8 +266,8 @@
         
         
         <div class="level-end">
-            <a class="level level-item has-link-grey  article-nav-next" href="/2019/06/13/backup/">
-                <span class="level-item">Hexo 배포 원리에 따른 백업 방법</span>
+            <a class="level level-item has-link-grey  article-nav-next" href="/2019/06/11/Hexo-seo/">
+                <span class="level-item">Hexo 검색엔진 최적화(SEO) 시켜보기</span>
                 <i class="level-item fas fa-chevron-right"></i>
             </a>
         </div>
@@ -644,7 +644,7 @@ document.addEventListener('DOMContentLoaded', function () {
     
     
 
-<a id="back-to-top" title="Kembali ke atas" href="javascript:;">
+<a id="back-to-top" title="Back to Top" href="javascript:;">
     <i class="fas fa-chevron-up"></i>
 </a>
 <script src="/js/back-to-top.js" defer></script>

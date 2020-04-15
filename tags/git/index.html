@@ -293,6 +293,70 @@
 <div class="card">
     <!-- 
     <div class="card-image">
+        <a href="/2019/06/20/backup/" class="image is-7by1">
+            <img class="thumbnail" src="/img/backup_thumbnail.jpg" alt="Hexo 배포 원리에 따른 백업(backup) 방법">
+        </a>
+    </div>
+     -->
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-06-20T02:46:20.000Z">2019-06-20</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/Programming/">Programming</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/Programming/hexo/">hexo</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/Programming/hexo/backup/">backup</a>
+                </div>
+                
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2019/06/20/backup/">Hexo 배포 원리에 따른 백업(backup) 방법</a>
+            
+        </h1>
+        <div class="content">
+            <html><head><meta name="generator" content="Hexo 3.9.0"></head><body><p>Hexo를 이용해서 블로그를 만들고 관리 하다보니 문제점을 하나 발견했다.<br>바로 백업에 관한 문제인데 Hexo 블로그는 Github에 repository를 통해 구성되어 있으니<br>다른 곳에서 작업할때 그것을 clone해서 수정하면 된다고 생각했다.</p>
+<p>그러나 다른 곳에서 clone을 해보고는 문제가 있음을 알 수 있었다.<br>라이브되는 repository에 올라가는건 public 폴더의 내용이라 실제로 작업한 것은 repo에 push 되지 않고 로컬에만 저장되어있는 것이다. </p>
+<p>그래서 해결책으로 별도의 백업 repository 하나를 생성하여 별도로 백업을 하기로 했는데 이 방법도 문제가 있었다.<br>Hexo의 테마가 별도의 git을 가지고 있어서 하나의 백업 repository만으로는 완벽하게 백업 관리가 어려웠다 그래서 두개의 백업 repository와<br>한개의 라이브 repository를 가지고 총 3개의 repository를 가지게 되었다.</p></body></html>
+        </div>
+
+        
+
+
+        
+        
+        <div class="level is-mobile">
+            <div class="level-start">
+                <div class="level-item">
+                <a class="button is-size-7 is-light" href="/2019/06/20/backup/#more">자세히 보기</a>
+                </div>
+            </div>
+        </div>
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+<div class="card">
+    <!-- 
+    <div class="card-image">
         <a href="/2019/06/19/Learning-JavaScript-chapter2/" class="image is-7by1">
             <img class="thumbnail" src="/img/learning-thumbnail.jpg" alt="러닝 자바스크립트 스터디 자료 - CHAPTER 2. 자바스크립트 개발 도구">
         </a>
@@ -341,71 +405,6 @@
             <div class="level-start">
                 <div class="level-item">
                 <a class="button is-size-7 is-light" href="/2019/06/19/Learning-JavaScript-chapter2/#more">자세히 보기</a>
-                </div>
-            </div>
-        </div>
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
-<div class="card">
-    <!-- 
-    <div class="card-image">
-        <a href="/2019/06/13/backup/" class="image is-7by1">
-            <img class="thumbnail" src="/img/backup_thumbnail.jpg" alt="Hexo 배포 원리에 따른 백업 방법">
-        </a>
-    </div>
-     -->
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-06-13T02:46:20.000Z">2019-06-13</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/Programming/">Programming</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/Programming/hexo/">hexo</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/Programming/hexo/backup/">backup</a>
-                </div>
-                
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2019/06/13/backup/">Hexo 배포 원리에 따른 백업 방법</a>
-            
-        </h1>
-        <div class="content">
-            <html><head><meta name="generator" content="Hexo 3.9.0"></head><body><p>Hexo를 이용해서 블로그를 만들고 관리 하다보니 문제점을 하나 발견했다.<br>바로 백업에 관한 문제인데 Hexo 블로그는 Github에 repository를 통해 구성되어 있으니<br>다른 곳에서 작업할때 그것을 clone해서 수정하면 된다고 생각했다.</p>
-<p>그러나 다른 곳에서 clone을 해보고는 문제가 있음을 알수 있었다.<br>라이브되는 repository에 올라가는건 public 폴더의 내용이라 실제로 작업한 것은 올라가지 않는다는 것을 말이다.</p>
-<p>그래서 해결책으로 별도의 repository 하나를 생성하여 별도로 백업을 하기로 했는데<br>이 방법도 문제가 있었다. Hexo의 테마들을 각자의 git을 가지고 있어서<br>git 안에 git이 있어 재대로 관리가 되어지지 않았다.</p>
-<p>그래서 검색을 통해 알아보다가 git의 서브모듈(submodule)을 이용해서 백업 하기로 했다.</p></body></html>
-        </div>
-
-        
-
-
-        
-        
-        <div class="level is-mobile">
-            <div class="level-start">
-                <div class="level-item">
-                <a class="button is-size-7 is-light" href="/2019/06/13/backup/#more">자세히 보기</a>
                 </div>
             </div>
         </div>
@@ -1135,7 +1134,7 @@ document.addEventListener('DOMContentLoaded', function () {
     
     
 
-<a id="back-to-top" title="Kembali ke atas" href="javascript:;">
+<a id="back-to-top" title="Back to Top" href="javascript:;">
     <i class="fas fa-chevron-up"></i>
 </a>
 <script src="/js/back-to-top.js" defer></script>

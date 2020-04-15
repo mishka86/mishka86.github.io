@@ -2,12 +2,12 @@
 <html lang="ko">
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-<title>Hexo 배포 원리에 따른 백업 방법 - Mishka&#39;s Blog</title>
+<title>Hexo 블로그 Github를 이용해 만들어보기 - Mishka&#39;s Blog</title>
 <meta name="Description" content="미슈카의 개발 블로그 입니다. 포스팅에 대한 공유, 논의, 수정, 댓글 등은 언제든 환영합니다.">
 <meta name="Keywords" content="미슈카,Mishka,mishka,개발블로그,미슈카개발블로그">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-<link rel="canonical" href="https://mishka.kr/2019/06/13/backup/">
+<link rel="canonical" href="https://mishka.kr/2019/06/09/hexo-blog/">
 <meta property="og:title" content="Mishka's blog">
 <meta property="og:description" content="미슈카의 개발 블로그 입니다. 포스팅에 대한 공유, 논의, 수정, 댓글 등은 언제든 환영합니다.">
 <meta property="og:type" content="website">
@@ -18,7 +18,7 @@
 
 
 
-<link rel="alternative" href="rss2.xml" title="Hexo 배포 원리에 따른 백업 방법" type="application/atom+xml">
+<link rel="alternative" href="rss2.xml" title="Hexo 블로그 Github를 이용해 만들어보기" type="application/atom+xml">
 
 
 
@@ -108,7 +108,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="/images/blog_logo.png" alt="Hexo 배포 원리에 따른 백업 방법" height="28">
+                <img src="/images/blog_logo.png" alt="Hexo 블로그 Github를 이용해 만들어보기" height="28">
             
             </a>
         </div>
@@ -162,7 +162,7 @@
     <!-- 
     <div class="card-image">
         <span  class="image is-7by1">
-            <img class="thumbnail" src="/img/backup_thumbnail.jpg" alt="Hexo 배포 원리에 따른 백업 방법">
+            <img class="thumbnail" src="/img/hexo_thumbnail.jpg" alt="Hexo 블로그 Github를 이용해 만들어보기">
         </span>
     </div>
      -->
@@ -170,10 +170,10 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-06-13T02:46:20.000Z">2019-06-13</time>
+                <time class="level-item has-text-grey" datetime="2019-06-09T02:14:39.000Z">2019-06-09</time>
                 
                 <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/Programming/">Programming</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/Programming/hexo/">hexo</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/Programming/hexo/backup/">backup</a>
+                <a class="has-link-grey -link" href="/categories/Programming/">Programming</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/Programming/hexo/">hexo</a>
                 </div>
                 
                 
@@ -183,47 +183,79 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                Hexo 배포 원리에 따른 백업 방법
+                Hexo 블로그 Github를 이용해 만들어보기
             
         </h1>
         <div class="content">
-            <html><head><meta name="generator" content="Hexo 3.9.0"></head><body><p>Hexo를 이용해서 블로그를 만들고 관리 하다보니 문제점을 하나 발견했다.<br>바로 백업에 관한 문제인데 Hexo 블로그는 Github에 repository를 통해 구성되어 있으니<br>다른 곳에서 작업할때 그것을 clone해서 수정하면 된다고 생각했다.</p>
-<p>그러나 다른 곳에서 clone을 해보고는 문제가 있음을 알수 있었다.<br>라이브되는 repository에 올라가는건 public 폴더의 내용이라 실제로 작업한 것은 올라가지 않는다는 것을 말이다.</p>
-<p>그래서 해결책으로 별도의 repository 하나를 생성하여 별도로 백업을 하기로 했는데<br>이 방법도 문제가 있었다. Hexo의 테마들을 각자의 git을 가지고 있어서<br>git 안에 git이 있어 재대로 관리가 되어지지 않았다.</p>
-<p>그래서 검색을 통해 알아보다가 git의 서브모듈(submodule)을 이용해서 백업 하기로 했다.</p>
+            <html><head><meta name="generator" content="Hexo 3.9.0"></head><body><p>블로그를 만들고 꾸미다 보니 나같은 사탐들이 많을 거라는 생각에서<br>Hexo를 이용해 Github 블로그 세팅 하는 방법들을 처음부터 하나씩 보고자 한다.</p>
+<h2 id="Hexo"><a href="#Hexo" class="headerlink" title="Hexo"></a>Hexo</h2><p>우선 Hexo는 Node.js 기반의 정적 사이트 생성기(Static site generator)이다. 포스트의 경우 md파일로 작성이 가능하고 github를 이용하면 무료로<br>블로그 운영이 가능하다. md로 작성하기 때문에 대부분에 IDE에서 작성하면서 미리보기를 할 수 있으며 node를 이용하면 로컬에서 확인 가능하다.<br>공식 사이트에서는 빠르고 간단하고 파워풀한 블로그 프레임워크라고 소개하고 있다.<br>npm을 통해 쉽게 설치가 가능하고 배포역시 쉽게 가능한 것이 장점이다.<br>한글문서로도 잘 정리가 되어있어 참고하기 좋다. <a href="https://hexo.io/ko/docs/" rel="external nofollow noopener noreferrer" target="_blank">Hexo 한글 튜토리얼</a></p>
+<h2 id="설치-전-준비"><a href="#설치-전-준비" class="headerlink" title="설치 전 준비"></a>설치 전 준비</h2><p>저는 Github를 이용하여 Hexo 블로그를 세팅 하려고 하기때문에 git, github, node 설치가 선행되어야 합니다.</p>
+<blockquote>
+<ul>
+<li><a href="https://git-scm.com/" rel="external nofollow noopener noreferrer" target="_blank">Git</a></li>
+<li><a href="https://nodejs.org/en/" rel="external nofollow noopener noreferrer" target="_blank">Node.js(npm)</a></li>
+<li><a href="https://github.com/" rel="external nofollow noopener noreferrer" target="_blank">Github 계정</a></li>
+</ul>
+</blockquote>
+<p>각각의 설치 방법들은 간단하고 잘 쓰여진 글들이 많으니 참고하시기 바랍니다.</p>
 <a id="more"></a>
 
-<h2 id="새-저장소-생성"><a href="#새-저장소-생성" class="headerlink" title="새 저장소 생성"></a>새 저장소 생성</h2><p>저장소는 총 2개가 필요합니다. <code>테마를 저장할 저장소</code>와 <code>나머지 블로그 자료를 저장할 저장소</code> 이렇게 2개 입니다.</p>
-<p><img src="/img/github_blog.jpg" alt="새로운 repository 만들기"></p>
-<p>저는 제가 사용하는 테마의 이름인 icarus라는 저장소와 blog_backup 이라는 두개의 저장소를 private로 만들어 줬습니다.</p>
+<h2 id="Hexo-설치하기"><a href="#Hexo-설치하기" class="headerlink" title="Hexo 설치하기"></a>Hexo 설치하기</h2><p>node.js를 설치하면 사용 할 수 있는  npm을 이용해서 간편히 설치 할 수 있습니다.</p>
+<figure class="highlight bash hljs"><figcaption><span>Hexo 전역에 설치</span></figcaption><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-cli -g</span><br></pre></td></tr></tbody></table></figure>
+
+<h2 id="블로그-Setup"><a href="#블로그-Setup" class="headerlink" title="블로그 Setup"></a>블로그 Setup</h2><p>아래 명령을 실행하여 간단하게 hexo를 초기화 할수 있습니다.</p>
+<figure class="highlight bash hljs"><figcaption><span>bash</span></figcaption><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo init <프로젝트이름></프로젝트이름></span><br><span class="line"><span class="hljs-built_in">cd</span> <프로젝트이름></프로젝트이름></span><br><span class="line">npm install</span><br></pre></td></tr></tbody></table></figure>
+
+<p>초기화가 완료되면 아래와 같은 구조로 세팅됩니다.</p>
+<figure class="highlight plain hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">.</span><br><span class="line">├── _config.yml</span><br><span class="line">├── package.json</span><br><span class="line">├── scaffolds</span><br><span class="line">├── source</span><br><span class="line">|   ├── _drafts</span><br><span class="line">|   └── _posts</span><br><span class="line">└── themes</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="블로그-설정"><a href="#블로그-설정" class="headerlink" title="블로그 설정"></a>블로그 설정</h3><p><code>_config.yml</code>이 root경로에 생성되는데 해당 파일을 통해서 블로그에 대한 설정을 세팅할 수 있습니다.<br>자세한 설명은 Hexo의 Cofiguration을 통해 확인해 볼수 있다.</p>
 <ul>
-<li>2019.01.07일부로 Github의 private 저장소가 무료로 전환 되었습니다.</li>
+<li>Cofiguration : <a href="https://hexo.io/ko/docs/configuration" rel="external nofollow noopener noreferrer" target="_blank">https://hexo.io/ko/docs/configuration</a></li>
 </ul>
-<h2 id="테마-백업"><a href="#테마-백업" class="headerlink" title="테마 백업"></a>테마 백업</h2><p>먼저 테마폴더를 백업해줍니다.<br>보통 테마를 설치 할때는 아래와 같은 명령어를 사용합니다.</p>
-<figure class="highlight bash hljs"><figcaption><span>bash</span></figcaption><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="hljs-built_in">clone</span> https://github.com/ppoffice/hexo-theme-icarus.git themes/icarus</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="로컬테스트"><a href="#로컬테스트" class="headerlink" title="로컬테스트"></a>로컬테스트</h2><p>간단한 설정을 하고 나서 바로 로컬 서버에서 띄워 확인해 볼 수 있습니다.</p>
+<figure class="highlight bash hljs"><figcaption><span>bash</span></figcaption><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo server</span><br><span class="line">hexo s  <span class="hljs-comment">#단축명령어</span></span><br></pre></td></tr></tbody></table></figure>
 
-<p>물론 위와 같은 방법으로 설치해도 백업문제만을 제외한다면 아무런 문제없이 잘 작동합니다.<br>그러나 여러 컴퓨터에서 포스팅을 해야 하는 상황이 발생한다면 백업의 문제가 발생합니다.</p>
-<p>그래서 설치되어 있는 테마의 원격 저장소의 주소를 변경해줍니다.</p>
-<figure class="highlight bash hljs"><figcaption><span>bash</span></figcaption><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment"># 테마 폴더에서 원격 저장소를 확인합니다.</span></span><br><span class="line">$ git remote -v</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment"># 원격 저장소를 변경해 줍니다. (자신의 저장소 URL로 변경)</span></span><br><span class="line">$ git remote <span class="hljs-built_in">set</span>-url origin https://github.com/mishka86/icarus.git</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment"># 변경된 원격 저장소를 확인합니다.</span></span><br><span class="line">$ git remote -v</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment"># 변경 사항 올려줍니다.</span></span><br><span class="line">$ git commit -a -m <span class="hljs-string">'theme backup'</span></span><br><span class="line">$ git push -u origin master</span><br></pre></td></tr></tbody></table></figure>
+<p>서버가 구동되면 아래와 같은 문구가 출력되며 <a href="http://localhost:4000" rel="external nofollow noopener noreferrer" target="_blank">http://localhost:4000</a>에서 확인 할 수 있습니다.</p>
+<figure class="highlight plain hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Hexo is running at http://localhost:4000 . Press Ctrl+C to stop.</span><br></pre></td></tr></tbody></table></figure>
 
-<h2 id="블로그-자료-백업"><a href="#블로그-자료-백업" class="headerlink" title="블로그 자료 백업"></a>블로그 자료 백업</h2><p>블로그 폴더를 git으로 초기화 시켜줍니다.</p>
-<figure class="highlight bash hljs"><figcaption><span>bash</span></figcaption><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">#git 초기화</span></span><br><span class="line">git init</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">#현재 내용을 전부 커밋해 줍니다.</span></span><br><span class="line">git commit -a</span><br><span class="line">또는</span><br><span class="line">git add .</span><br><span class="line">git commit -m <span class="hljs-string">"커밋메세지"</span></span><br></pre></td></tr></tbody></table></figure>
+<h2 id="Github-블로그-호스팅"><a href="#Github-블로그-호스팅" class="headerlink" title="Github 블로그 호스팅"></a>Github 블로그 호스팅</h2><p>Github에서 새로운 repository를 생성합니다.<br>Repository name을 <code>username.github.io</code>의 형식으로 기재하고 public으로 만들어 줍니다.</p>
+<p><img src="/img/hexo/github_blog.jpg" alt="github에서 repository 생성"></p>
+<h2 id="설정하기"><a href="#설정하기" class="headerlink" title="설정하기"></a>설정하기</h2><p><code>_config.yml</code> 에서 <code>Deployment</code> 항목을 설정해 준다.</p>
+<figure class="highlight plain hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># Deployment</span><br><span class="line">deploy: </span><br><span class="line">  type: git</span><br><span class="line">  repo: repository 주소</span><br><span class="line">  branch: master</span><br></pre></td></tr></tbody></table></figure>
 
-<h2 id="테마폴더-서브모듈-추가"><a href="#테마폴더-서브모듈-추가" class="headerlink" title="테마폴더 서브모듈 추가"></a>테마폴더 서브모듈 추가</h2><p>원격 저장소로 푸시 하기 전에 서브모듈을 추가해 주어야 합니다.<br>테마 폴더는 따로 git으로 관리되고 있으므로 submodlue로 관리 해주어야 합니다.</p>
-<p>테마폴더는 이전 작업에서 백업을 해준것을 확인하고 삭제하여 줍니다.<br>그리고 <code>git submodule</code> 이용해서 서브모듈로 추가해 줍니다.</p>
-<figure class="highlight bash hljs"><figcaption><span>bash</span></figcaption><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment"># 미리 올려둔 저장소의 내용을 서브모듈로 추가한다.</span></span><br><span class="line"><span class="hljs-comment"># git submodule add <저장소주소> <테마폴더></테마폴더></저장소주소></span></span><br><span class="line">git submodule add https://github.com/mishka86/icarus.git themes/icarus</span><br><span class="line"><span class="hljs-comment">#변경된 후의 git submodule status 이용해서 확인 하여준다.</span></span><br><span class="line">$ git submodule status</span><br><span class="line"> 46cf786d5356d36fcac4dc80abbebb56a71dae9b themes/icarus (heads/master)</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment"># 변경된 내용을 모두 커밋</span></span><br><span class="line">$ git commit -a</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="Github에-배포하기"><a href="#Github에-배포하기" class="headerlink" title="Github에 배포하기"></a>Github에 배포하기</h2><p>로컬에서 정상적으로 작동되었다면 hexo cli를 통해 Github에 쉽게 배포를 해보자.</p>
+<h3 id="정적리소스-생성"><a href="#정적리소스-생성" class="headerlink" title="정적리소스 생성"></a>정적리소스 생성</h3><figure class="highlight bash hljs"><figcaption><span>bash</span></figcaption><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo generate </span><br><span class="line">hexo g  <span class="hljs-comment">#단축 명령어</span></span><br></pre></td></tr></tbody></table></figure>
 
-<p>새로운 테마를 설치 할때로 <code>git clone</code>이 아니라 <code>git submodlue</code>을 사용해서 관리해 줍니다.</p>
-<h2 id="배포하기"><a href="#배포하기" class="headerlink" title="배포하기"></a>배포하기</h2><figure class="highlight bash hljs"><figcaption><span>bash</span></figcaption><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment"># 이제 브랜치를 원격 리파지토리에 올린다.</span></span><br><span class="line">git remote add origin <저장소주소></저장소주소></span><br><span class="line">git push -u origin master</span><br></pre></td></tr></tbody></table></figure>
+<p>public 폴더가 생성되어 배포가 가능하다.</p>
+<h3 id="배포하기"><a href="#배포하기" class="headerlink" title="배포하기"></a>배포하기</h3><figure class="highlight bash hljs"><figcaption><span>bash</span></figcaption><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo deploy</span><br><span class="line">hexo d  <span class="hljs-comment">#단축 명령어</span></span><br></pre></td></tr></tbody></table></figure>
 
-<p>두개의 저장소에 테마와 블로그 내용을 별도로 백업을 했습니다.<br>이로써 안전한 백업과 어디서든지 접속하여 deploy 할 수 있게 되었습니다.</p>
+<blockquote>
+<p>배포 중 <strong>오류</strong>가 발생 하면 아래 <a href="#이슈체크">이슈체크</a>를 확인</p>
+</blockquote>
+<h3 id="Generate와-Deploy-동시실행"><a href="#Generate와-Deploy-동시실행" class="headerlink" title="Generate와 Deploy 동시실행"></a>Generate와 Deploy 동시실행</h3><p>아래와 같이 Generate와 Deploy를 동시실행 할 수도 있다.</p>
+<figure class="highlight bash hljs"><figcaption><span>bash</span></figcaption><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">hexo deploy --generate  <span class="hljs-comment">#Deploy 전에 Generate를 해준다.</span></span><br><span class="line">hexo d -g  <span class="hljs-comment">#단축 명령어</span></span><br><span class="line"></span><br><span class="line">hexo generate --deploy  <span class="hljs-comment">#Generate 후에 Deploy를 해준다.</span></span><br><span class="line">hexo g -d  <span class="hljs-comment">#단축 명령어</span></span><br></pre></td></tr></tbody></table></figure>
+
+<p><strong><a href="https://username.github.io" rel="external nofollow noopener noreferrer" target="_blank">https://username.github.io</a></strong> 로 접속하면 deploy된 사이트가 확인 가능하다.</p>
+<h2 id="이슈체크"><a href="#이슈체크" class="headerlink" title="이슈체크"></a>이슈체크</h2><h3 id="배포시-아래와-같은-에러가-발생하면"><a href="#배포시-아래와-같은-에러가-발생하면" class="headerlink" title="배포시 아래와 같은 에러가 발생하면"></a>배포시 아래와 같은 에러가 발생하면</h3><figure class="highlight bash hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ERROR Deployer not found: git</span><br></pre></td></tr></tbody></table></figure>
+
+<p><code>hexo-deployer-git</code> 플러그인을 설치해준다.</p>
+<figure class="highlight bash hljs"><figcaption><span>bash</span></figcaption><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="업데이트-시"><a href="#업데이트-시" class="headerlink" title="업데이트 시"></a>업데이트 시</h3><p>간혹 업데이트가 바로 이루어 지지 않을 경우에는 아래와 같이 public을 clean시켜준 후 배포를 하면 된다.</p>
+<figure class="highlight bash hljs"><figcaption><span>bash</span></figcaption><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo d -g</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="글쓰기"><a href="#글쓰기" class="headerlink" title="글쓰기"></a>글쓰기</h3><figure class="highlight bash hljs"><figcaption><span>bash</span></figcaption><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new post <포스트이름></포스트이름></span><br></pre></td></tr></tbody></table></figure>
+
+<p>\source_post 폴더에 포스트이름.md 으로 새로운 마크다운 파일이 생성됩니다.<br>포스트내용을 작성한후에 다시한번 clean과 generate 그리고 deploy를 해주면 정상 반영된다.</p>
+<p>이상으로 Hexo 블로그 만들기에 대한 포스팅을 마친다.<br>잘못된 사항이나 궁금한 점은 댓글로 남겨주시면 감사하겠습니다.</p>
 </body></html>
         </div>
 
         
             <div class="related-posts">
                 <h4>관련 포스팅 보기</h4>
-                <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2019/06/10/hexo-writing/" title="Hexo 포스팅 방법" rel="bookmark">Hexo 포스팅 방법</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2019/06/11/Hexo-seo/" title="Hexo 검색엔진 최적화(SEO) 시켜보기" rel="bookmark">Hexo 검색엔진 최적화(SEO) 시켜보기</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2019/07/02/hexo-comment-disqus/" title="Disqus를 사용하여 댓글 기능 세팅하기" rel="bookmark">Disqus를 사용하여 댓글 기능 세팅하기</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2019/06/19/hexo-themes/" title="hexo 블로그에 테마 적용하기 - icarus테마" rel="bookmark">hexo 블로그에 테마 적용하기 - icarus테마</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2020/01/10/github-domain/" title="Github 블로그에 Custom 도메인 연결하기" rel="bookmark">Github 블로그에 Custom 도메인 연결하기</a></h3></div></li></ul>
+                <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2019/06/21/blog-ad-coupang/" title="쿠팡파트너스 Hexo 블로그에 등록하기" rel="bookmark">쿠팡파트너스 Hexo 블로그에 등록하기</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2019/06/11/Hexo-seo/" title="Hexo 검색엔진 최적화(SEO) 시켜보기" rel="bookmark">Hexo 검색엔진 최적화(SEO) 시켜보기</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2019/06/20/backup/" title="Hexo 배포 원리에 따른 백업(backup) 방법" rel="bookmark">Hexo 배포 원리에 따른 백업(backup) 방법</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2020/01/10/github-domain/" title="Github 블로그에 Custom 도메인 연결하기" rel="bookmark">Github 블로그에 Custom 도메인 연결하기</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2019/07/02/hexo-comment-disqus/" title="Disqus를 사용하여 댓글 기능 세팅하기" rel="bookmark">Disqus를 사용하여 댓글 기능 세팅하기</a></h3></div></li></ul>
             </div>
         
 
@@ -233,7 +265,7 @@
             <div class="level-start">
                 <div class="level-item">
                     <span class="is-size-6 has-text-grey has-mr-7">#</span>
-                    <a class="has-link-grey -link" href="/tags/backup/">backup</a>, <a class="has-link-grey -link" href="/tags/deploy/">deploy</a>, <a class="has-link-grey -link" href="/tags/git/">git</a>, <a class="has-link-grey -link" href="/tags/github/">github</a>, <a class="has-link-grey -link" href="/tags/hexo/">hexo</a>, <a class="has-link-grey -link" href="/tags/백업/">백업</a>
+                    <a class="has-link-grey -link" href="/tags/Github/">Github</a>, <a class="has-link-grey -link" href="/tags/hexo/">hexo</a>, <a class="has-link-grey -link" href="/tags/블로그/">블로그</a>
                 </div>
             </div>
         </div>
@@ -265,16 +297,16 @@
     <div class="level post-navigation is-flex-wrap is-mobile">
         
         <div class="level-start">
-            <a class="level level-item has-link-grey  article-nav-prev" href="/2019/06/19/hexo-themes/">
+            <a class="level level-item has-link-grey  article-nav-prev" href="/2019/06/10/hexo-writing/">
                 <i class="level-item fas fa-chevron-left"></i>
-                <span class="level-item">hexo 블로그에 테마 적용하기 - icarus테마</span>
+                <span class="level-item">Hexo 포스팅 방법</span>
             </a>
         </div>
         
         
         <div class="level-end">
-            <a class="level level-item has-link-grey  article-nav-next" href="/2019/06/12/hexo-blog/">
-                <span class="level-item">Hexo 블로그 Github를 이용해 만들어보기</span>
+            <a class="level level-item has-link-grey  article-nav-next" href="/2019/06/03/git-basic/">
+                <span class="level-item">Git의 기본적인 명령어</span>
                 <i class="level-item fas fa-chevron-right"></i>
             </a>
         </div>
@@ -328,26 +360,70 @@ s.setAttribute('data-timestamp', +new Date());
                 카탈로그
             </h3>
             <ul class="menu-list"><li>
-        <a class="is-flex" href="#새-저장소-생성">
+        <a class="is-flex" href="#Hexo">
         <span class="has-mr-6">1</span>
-        <span>새 저장소 생성</span>
+        <span>Hexo</span>
         </a></li><li>
-        <a class="is-flex" href="#테마-백업">
+        <a class="is-flex" href="#설치-전-준비">
         <span class="has-mr-6">2</span>
-        <span>테마 백업</span>
+        <span>설치 전 준비</span>
         </a></li><li>
-        <a class="is-flex" href="#블로그-자료-백업">
+        <a class="is-flex" href="#Hexo-설치하기">
         <span class="has-mr-6">3</span>
-        <span>블로그 자료 백업</span>
+        <span>Hexo 설치하기</span>
         </a></li><li>
-        <a class="is-flex" href="#테마폴더-서브모듈-추가">
+        <a class="is-flex" href="#블로그-Setup">
         <span class="has-mr-6">4</span>
-        <span>테마폴더 서브모듈 추가</span>
+        <span>블로그 Setup</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#블로그-설정">
+        <span class="has-mr-6">4.1</span>
+        <span>블로그 설정</span>
+        </a></li></ul></li><li>
+        <a class="is-flex" href="#로컬테스트">
+        <span class="has-mr-6">5</span>
+        <span>로컬테스트</span>
+        </a></li><li>
+        <a class="is-flex" href="#Github-블로그-호스팅">
+        <span class="has-mr-6">6</span>
+        <span>Github 블로그 호스팅</span>
+        </a></li><li>
+        <a class="is-flex" href="#설정하기">
+        <span class="has-mr-6">7</span>
+        <span>설정하기</span>
+        </a></li><li>
+        <a class="is-flex" href="#Github에-배포하기">
+        <span class="has-mr-6">8</span>
+        <span>Github에 배포하기</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#정적리소스-생성">
+        <span class="has-mr-6">8.1</span>
+        <span>정적리소스 생성</span>
         </a></li><li>
         <a class="is-flex" href="#배포하기">
-        <span class="has-mr-6">5</span>
+        <span class="has-mr-6">8.2</span>
         <span>배포하기</span>
-        </a></li></ul>
+        </a></li><li>
+        <a class="is-flex" href="#Generate와-Deploy-동시실행">
+        <span class="has-mr-6">8.3</span>
+        <span>Generate와 Deploy 동시실행</span>
+        </a></li></ul></li><li>
+        <a class="is-flex" href="#이슈체크">
+        <span class="has-mr-6">9</span>
+        <span>이슈체크</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#배포시-아래와-같은-에러가-발생하면">
+        <span class="has-mr-6">9.1</span>
+        <span>배포시 아래와 같은 에러가 발생하면</span>
+        </a></li><li>
+        <a class="is-flex" href="#업데이트-시">
+        <span class="has-mr-6">9.2</span>
+        <span>업데이트 시</span>
+        </a></li><li>
+        <a class="is-flex" href="#글쓰기">
+        <span class="has-mr-6">9.3</span>
+        <span>글쓰기</span>
+        </a></li></ul></li></ul>
         </div>
     </div>
 </div>
@@ -543,7 +619,7 @@ s.setAttribute('data-timestamp', +new Date());
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                    <img src="/images/blog_logo.png" alt="Hexo 배포 원리에 따른 백업 방법" height="28">
+                    <img src="/images/blog_logo.png" alt="Hexo 블로그 Github를 이용해 만들어보기" height="28">
                 
                 </a>
                 <p class="is-size-7">
@@ -655,7 +731,7 @@ document.addEventListener('DOMContentLoaded', function () {
     
     
 
-<a id="back-to-top" title="Kembali ke atas" href="javascript:;">
+<a id="back-to-top" title="Back to Top" href="javascript:;">
     <i class="fas fa-chevron-up"></i>
 </a>
 <script src="/js/back-to-top.js" defer></script>
