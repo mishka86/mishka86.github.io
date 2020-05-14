@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+<title>타입스크립트 - 모듈 - Mishka&#39;s Blog</title>
+<meta name="Description" content="미슈카의 개발 블로그 입니다. 포스팅에 대한 공유, 논의, 수정, 댓글 등은 언제든 환영합니다.">
+<meta name="Keywords" content="미슈카,Mishka,mishka,개발블로그,미슈카개발블로그">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+<link rel="canonical" href="https://mishka.kr/2020/05/14/typescript-module/">
+<meta property="og:title" content="Mishka's blog">
+<meta property="og:description" content="미슈카의 개발 블로그 입니다. 포스팅에 대한 공유, 논의, 수정, 댓글 등은 언제든 환영합니다.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://mishka86.github.io/">
+<meta property="og:image" content="/images/meta_logo.png">
+
+
+
+
+
+<link rel="alternative" href="rss2.xml" title="타입스크립트 - 모듈" type="application/atom+xml">
+
+
+
+<link rel="icon" href="/images/favicon.ico">
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.7.2/css/bulma.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:400,600|Source+Code+Pro">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/vs2015.css">
+
+
+    
+    
+    
+    <style>body>.footer,body>.navbar,body>.section{opacity:0}</style>
+    
+
+    
+    
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css">
+    
+
+    
+    
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.css">
+
+
+    
+    
+    
+    
+
+<link rel="stylesheet" href="/css/back-to-top.css">
+
+
+    
+    
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-141930873-1"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-141930873-1');
+</script>
+
+
+    
+    
+    
+    
+
+    
+    
+<link rel="stylesheet" href="/css/progressbar.css">
+<script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
+
+    
+    
+    
+
+    
+    
+    
+
+
+<link rel="stylesheet" href="/css/style.css">
+
+<!-- 구글 AdSense -->
+
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: 'ca-pub-7669354135137434',
+            enable_page_level_ads: true
+        });
+    </script>
+
+</head>
+<body class="is-2-column">
+    <nav class="navbar navbar-main">
+    <div class="container">
+        <div class="navbar-brand is-flex-center">
+            <a class="navbar-item navbar-logo" href="/">
+            
+                <img src="/images/blog_logo.png" alt="타입스크립트 - 모듈" height="28">
+            
+            </a>
+        </div>
+        <div class="navbar-menu">
+            
+            <div class="navbar-start">
+                
+                <a class="navbar-item" href="/">Home</a>
+                
+                <a class="navbar-item" href="/archives">Archives</a>
+                
+                <a class="navbar-item" href="/categories">Categories</a>
+                
+                <a class="navbar-item" href="/tags">Tags</a>
+                
+                <a class="navbar-item" href="/about">About</a>
+                
+            </div>
+            
+            <div class="navbar-end">
+                
+                    
+                    
+                    <a class="navbar-item" target="_blank" title="Download on GitHub" href="https://github.com/mishka86" rel="external nofollow noopener noreferrer">
+                        
+                        <i class="fab fa-github"></i>
+                        
+                    </a>
+                    
+                
+                
+                <a class="navbar-item is-hidden-tablet catalogue" title="카탈로그" href="javascript:;">
+                    <i class="fas fa-list-ul"></i>
+                </a>
+                
+                
+                <a class="navbar-item search" title="검색" href="javascript:;">
+                    <i class="fas fa-search"></i>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+</nav>
+    
+    <section class="section">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-8-tablet is-8-desktop is-10-widescreen has-order-2 column-main">
+<div class="card">
+    <!-- 
+    <div class="card-image">
+        <span  class="image is-7by1">
+            <img class="thumbnail" src="/img/typescript.png" alt="타입스크립트 - 모듈">
+        </span>
+    </div>
+     -->
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2020-05-14T07:50:03.000Z">2020-05-14</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/Study/">Study</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/Study/TypeScript/">TypeScript</a>
+                </div>
+                
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                타입스크립트 - 모듈
+            
+        </h1>
+        <div class="content">
+            <html><head><meta name="generator" content="Hexo 3.9.0"></head><body><p>모듈(modules)은 독립 가능한 기능의 단위 입니다. 프로그램은 여러 모듈로 구성돼 있고 모듈을 결합해 하나의 프로그램을 만듭니다.<br>모듈을 사용하면 다음과 같은 장점이 있습니다.</p>
+<blockquote>
+<ul>
+<li>유지보수의 용이성</li>
+<li>전역 스코프 오염을 방지 </li>
+<li>재사용성 향상 </li>
+</ul>
+</blockquote>
+<p>첫 번째 장점은 모듈을 사용하면 유지보수가 쉬워집니다. 공통기능을 모듈로 정의해 사용하면 애플리케이션의 전체적인 수정 없 모듈의 수정이나<br>교체만으로도 코드를 효과적으로 수정할 수 있습니다.</p>
+<p>두 번째 장점은 모듈은 전역 스코프 오염(global scope pollution)을 방지합니다. 전역 스코프틑 전역 이름 공간을 가지므로 변수의 이름이나<br>함수 이름을 중복해 선언 할 수 없습니다. 그런데 변수나 함수등을 파일 내부에 한정해 모듈로 선언하면 이름 공간이 파일 단위로 제한되며 전역 이름 공간을 침번하지 않습니다.</p>
+<p>세 번째 장점은 모듈을 사용하면 재사용성이 향상 됩니다. 모듈화를 잘 해두면 현재의 프로젝트뿐 아니라 다른 프로젝트에도 공유해 재사용할 수 있습니다.</p>
+<a id="more"></a>
+
+<h2 id="모듈러-프로그래밍을-위한-접근"><a href="#모듈러-프로그래밍을-위한-접근" class="headerlink" title="모듈러 프로그래밍을 위한 접근"></a>모듈러 프로그래밍을 위한 접근</h2><p>모듈러 프로그래밍은 프로그램의 설계 기술로 모듈의 분리와 모듈의 손쉬운 교체에 관심이 있습니다. 상호 교환 가능한 모듈을 정의할 수 있어야 합니다.<br>모듈러 프로그래밍의 첫 번째 과정은 모듈을 식별, 두번째는 모듈을 분리, 세번째 과정을 모듈을 공개 하는 것입니다.<br>모듈을 외부로 공개함으로써 프로젝트 내에 존재하는 특정 파일에서 호출해 사용할 수 있게 됩니다.</p>
+<h2 id="내부-모듈과-외부-모듈"><a href="#내부-모듈과-외부-모듈" class="headerlink" title="내부 모듈과 외부 모듈"></a>내부 모듈과 외부 모듈</h2><p>내부 모듈의 네임스페이스는 여러 파일에 걸쳐 하나의 이름 공간을 공유하지만, 외부 모듈은 파일 모듈 파일마다 이름 공간이 정해집니다.</p>
+<h3 id="내부-모듈"><a href="#내부-모듈" class="headerlink" title="내부 모듈"></a>내부 모듈</h3><p>내부 모듈인 네임스페이스는 전역 이름 공간과 분리된 네임스페이스 단위의 이름 공간입니다. 참조할 때는 별도의 참조문을 선언하지 않아도 됩니다.<br>네임스페이스는 전역 스코프에 속하지만 전역 스코프와 독립된 이름공간이라는 점.</p>
+<h3 id="외부-모듈"><a href="#외부-모듈" class="headerlink" title="외부 모듈"></a>외부 모듈</h3><p>export로 선언한 모듈을 외부 모듈이라 합니다. 흔희 말하는 모듈은 외부 모듈을 가리킵니다.<br>외부 모듈의 이름 공간은 파일 내로 제한되므로 파일이 다르다면 외부 모듈의 이름이 같아도 괜찮지만 export를 생략해 외부 모듈로 선언하지<br>않으면 전역 스코프의 이름 공간을 공유해 이름 충돌이 발생합니다.</p>
+<h2 id="네임스페이스"><a href="#네임스페이스" class="headerlink" title="네임스페이스"></a>네임스페이스</h2><p>네임스페이스는 하나의 독립된 이름 공간을 만들고 여러 파일에 걸쳐 하나의 이름 공간을 공유 할 수 있습니다.<br>namespace와 module은 키워드는 다르지만, 역할과 기능상 차이가 없습니다.</p>
+<ul>
+<li>타입스크립트 1.5 버전 이후에 내부 모듈을 선언 할 때는 module 대신에 namespace로 선언해야 합니다.</li>
+</ul>
+<p>내부 모듈은 자바스크립트로 컴파일 될때 즉시 실행 함수로 변환됩니다. </p>
+<figure class="highlight javascript hljs"><figcaption><span>.js</span></figcaption><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">hello</span>) </span>{</span><br><span class="line">  <span class="hljs-comment">/* 내부 모듈의 이름 공간 */</span></span><br><span class="line">})(Hello || (Hello = {}));</span><br></pre></td></tr></tbody></table></figure>
+
+<p>즉시 실행 함수에서 hello 매개변수는 함수 외부에서 함수 내부의 이름 공간에 접근 할수 있게 하는 역할을 합니다.</p>
+<p>프로젝트 단위 컴파일을 수행하지 않고 특정 파일만을 컴파일할 때는 같은 네임스페이스라도 외부에 선언된 네임스페이스를 인식할 수 없습니다.<br>그럴땐 명시적으로 참조 경로를 선언해 줘야 합니다.</p>
+<h3 id="네임스페이스-모듈"><a href="#네임스페이스-모듈" class="headerlink" title="네임스페이스 모듈"></a>네임스페이스 모듈</h3><p>네임스페이스는 export를 이용해 모듈로 선언할 수 있습니다. 모듈로 선언되 네임스페이스는 import 문을 이용해 JS로 컴파일된 뒤에도 명시적으로<br>모듈 호출(import문, require 함수 등)을 할 수 있습니다. </p>
+<h3 id="네임스페이스의-이름-확장"><a href="#네임스페이스의-이름-확장" class="headerlink" title="네임스페이스의 이름 확장"></a>네임스페이스의 이름 확장</h3><p>네임스페이스 이름은 알파벳의 소문자와 대문자를 사용해 다음처럼 선언합니다.</p>
+<figure class="highlight typescript hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">namespace</span> Animal{...}</span><br></pre></td></tr></tbody></table></figure>
+
+<p>네임스페이스 이름은 예외로 점(.)을 허용합니다. 점을 이용하면 네임스페이스 간의 이름 계층을 만드는 효과가 있습니다.<br>논리적인 이름 순서상 상위 이름은 앞에 선언돼야 하고 하위 이름은 상대적으로 뒤에 선언돼야 합니다. </p>
+<h3 id="브라우저에서-네임스페이스의-모듈-호출"><a href="#브라우저에서-네임스페이스의-모듈-호출" class="headerlink" title="브라우저에서 네임스페이스의 모듈 호출"></a>브라우저에서 네임스페이스의 모듈 호출</h3><p>여러 타입스크립트 파일을 컴파일할 때 런타임시에 타입스크립트 파일을 인식하려면 가장 단순한 방법으로 out옵션으로 타입스크립트 파일을 컴파일하며 됩니다.<br>그런데 브라우저 상황은 다소 다릅니다. 파일을 하나로 합치지 않고 타입스크립트 파일을 개별적으로 컴파일하고 import문을 사용하지 않더라고 브라우저가<br>호출된 것처럼 인식합니다.</p>
+<h2 id="모듈-선언과-모듈-임포트"><a href="#모듈-선언과-모듈-임포트" class="headerlink" title="모듈 선언과 모듈 임포트"></a>모듈 선언과 모듈 임포트</h2><p>타입스크립트 1.5부터는 ES2015 모듈 시스템을 지원합니다.<br>ES2015 모듈 시스템은 export나 import 제한자를 통해 모듈을 선언하고 호출 할 수 있습니다. 모듈은 export로 선언해야 외부로 노출됩니다.<br>export 키워드와 모듈 이름을 함께 선언해 모듈을 노출하는 방식을 명명된 내보내기(named exports)라고 합니다. 외부로 노출된 모듈은 import 키워드를 이용해 가져올 수 있습니다. </p>
+<figure class="highlight typescript hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">export</span> <span class="hljs-keyword">interface</span> Information {...}</span><br><span class="line"><span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">add</span>(<span class="hljs-params">a: <span class="hljs-built_in">number</span>, b: <span class="hljs-built_in">number</span></span>) </span>{...}</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> m <span class="hljs-keyword">from</span> <span class="hljs-string">'./module'</span>;</span><br><span class="line"><span class="hljs-keyword">import</span> { add, sub } <span class="hljs-keyword">from</span> <span class="hljs-string">'./calc'</span>;</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="여러-모듈을-함께-export하기"><a href="#여러-모듈을-함께-export하기" class="headerlink" title="여러 모듈을 함께 export하기"></a>여러 모듈을 함께 export하기</h3><p>변수나 배열 등도 모듈로 선언할 수 있습니다. 모듈을 개벌적으로 선언해도 되지만 모듈을 선언할 때마다 export 키워드를 붙이는건 불편합니다.<br>이러한 점을 개선하기 위해 여러 모듈을 함께 export 해주면 편리합니다.<br>만약 모듈로 선언할 대상이 인터페이스를 사용하는 함수일 때는 함수가 인터페이스와 의존관계가 있으므로 함수와 인터페이스를 함께 export해야 합니다.</p>
+<figure class="highlight typescript hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">let</span> ver = <span class="hljs-string">'1.0'</span>;</span><br><span class="line"><span class="hljs-keyword">let</span> author: <span class="hljs-built_in">string</span> = <span class="hljs-string">'happy'</span>;</span><br><span class="line"><span class="hljs-keyword">let</span> extension = [<span class="hljs-string">'jpg'</span>, <span class="hljs-string">'bmp'</span>, <span class="hljs-string">'png'</span>];</span><br><span class="line"><span class="hljs-keyword">let</span> display = <span class="hljs-function"><span class="hljs-params">()</span> =></span> <span class="hljs-string">'hello world'</span>;</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">export</span> { ver, author, extension, display };</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="가져온-모든-모듈을-재노출"><a href="#가져온-모든-모듈을-재노출" class="headerlink" title="가져온 모든 모듈을 재노출"></a>가져온 모든 모듈을 재노출</h3><p>재노출할 모듈이 많아 구체적인 이름을 열거하기가 불편할 때는 “export * from …”문법을 이용합니다. *은 모든 모듈을 의미합니다.<br>모듈 파일을 재노출할 때 모든 외부 모듈을 의미하는 *에 대한 별칭이 없으므로 임포트 할 때는 as 키워드를 이용해 별칭을 추가해야 합니다.</p>
+<figure class="highlight typescript hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">export</span> * <span class="hljs-keyword">from</span>  <span class="hljs-string">'./module1'</span>;</span><br><span class="line"><span class="hljs-keyword">export</span> * <span class="hljs-keyword">from</span>  <span class="hljs-string">'./module2'</span>;</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> m <span class="hljs-keyword">from</span> <span class="hljs-string">'./module'</span>;</span><br></pre></td></tr></tbody></table></figure>
+
+<p>모듈 파일에서 재노출한 전체 모듈을 참조할 수 있도록 m이라는 별칭을 추가 별칭 m은 재노추루된 모듈에 접근할 수 있는 식별자로 이용됩니다.</p>
+<h3 id="네임스페이스로-감싸서-재노출"><a href="#네임스페이스로-감싸서-재노출" class="headerlink" title="네임스페이스로 감싸서 재노출"></a>네임스페이스로 감싸서 재노출</h3><p>네임스페이스는 독립된 이름 공간이며 export를 이용해 모듈로 선언할 수 있습니다.</p>
+<figure class="highlight typescript hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">export</span> <span class="hljs-keyword">namespace</span> CarInfo{...}</span><br></pre></td></tr></tbody></table></figure>
+
+<p>export로 선언하며 다른 파일에서 임포트할 수 있는 모듈이 됩니다. 네임스페이스는 이름공간을 정의해 하위에 여러 모듈을 포함할 수 있는 특성이 있습니다.<br>이 때문에 네임스페이스를 기존에 흩어졌던 모듈을 다시 용도에 맞게 감싸서 재노출할 용도로 사용할 수 있습니다.</p>
+<h3 id="디폴트-모듈"><a href="#디폴트-모듈" class="headerlink" title="디폴트 모듈"></a>디폴트 모듈</h3><p>타입스크립트 1.5가 발표되기 전에는 모듈을 선언할 때 export-equals 문으로 할당 했고, 모듈을 호출 할 때는 import-equals 문으로 임포트했습니다.</p>
+<figure class="highlight typescript hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">export</span> = validator</span><br><span class="line"><span class="hljs-keyword">import</span> Validator = <span class="hljs-built_in">require</span>(<span class="hljs-string">"validator"</span>);</span><br></pre></td></tr></tbody></table></figure>
+
+<p>타입스크립트1.5에서는 import-equals 문과 export-equals 문 대신 다른 형태의 키워드를 이용합니다.</p>
+<figure class="highlight typescript hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> {...}</span><br><span class="line"><span class="hljs-keyword">import</span> Validator <span class="hljs-keyword">from</span> <span class="hljs-string">'./module'</span>;</span><br></pre></td></tr></tbody></table></figure>
+
+<p>이외에도 모듈을 선언하는 방법은 여럿 있습니다. 익명 함수의 디폴트 모듈선언, 기명함수의 디폴트 함수선언, 클래스 선언</p>
+<figure class="highlight typescript hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">x: <span class="hljs-built_in">number</span></span>) </span>{...}</span><br><span class="line"><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">add</span>(<span class="hljs-params">x: <span class="hljs-built_in">number</span></span>) </span>{...}</span><br><span class="line"><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-keyword">class</span> Hello {...}</span><br></pre></td></tr></tbody></table></figure>
+
+<p>디폴트 모듈은 default 키워드를 사용해서 선언합니다. 디폴트 모듈의 특성은 모듈파일에 <strong>최대 1개</strong> 까지만 선언할 수 있습니다.<br>default 키워드를 두 번 사용하면 컴파일 에러가 발생합니다.<br>임포트할 디폴트 모듈은 {}에 선언하면 안 되고 {}가 없이 선언해야 합니다. </p>
+<figure class="highlight typescript hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">import</span> p, {hello} <span class="hljs-keyword">from</span> <span class="hljs-string">'./defaul'</span>;</span><br></pre></td></tr></tbody></table></figure>
+
+<p>이처럼 디폴트 모듈과 일반 모듈을 함께 임포트할 때는 디폴트 모듈은 이름만 선언하고 일반 모듈은 {} 내부에 모듈 이름을 선언해야 합니다.</p>
+<h3 id="모듈-시스템"><a href="#모듈-시스템" class="headerlink" title="모듈 시스템"></a>모듈 시스템</h3><p>모듈 로더는 모듈 파일에 선언된 모듈을 실행할수 있습니다. 브라우저에서 동작하는 모듈로더는 느린로딩의 방식으로 모듈 파일을 가져와 모듈을 실행합니다.<br>타입스크립트에서는 모듈을 정의하거나 호출할 때 ES2015 모듈을 이용합니다. 타입스크립트는 자바스트립트로 컴파일돼 실행 합니다.<br>이때 ES2015 모듈이 표준이지만 더 많은 브라우저에서 지원하게 하고자 ES5 표준으로 커파일 하도 ES2015 모듈은 모듈 로더를 통해 호출 할 수 있습니다.</p>
+<p>모듈 로더마다 지원하는 명세가 다소 다릅니다. 최근 나오는 모듈 로더는 대체로 CommonJS 와 AMD 모듈 형식을 기본으로 지원합니다.</p>
+</body></html>
+        </div>
+
+        
+            <div class="related-posts">
+                <h4>관련 포스팅 보기</h4>
+                <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2020/03/18/TypeSctipt-3-var/" title="타입스크립트 - 변수 선언과 기본 타입" rel="bookmark">타입스크립트 - 변수 선언과 기본 타입</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2020/03/25/TypeScript-4/" title="타입스크립트 - 제어문 과 연산자" rel="bookmark">타입스크립트 - 제어문 과 연산자</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2020/04/29/TypeScript-class-Interface/" title="타입스크립트 - 클래스와 인터페이스" rel="bookmark">타입스크립트 - 클래스와 인터페이스</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2020/04/01/TypeScript-function/" title="타입스크립트 - 함수" rel="bookmark">타입스크립트 - 함수</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2020/03/11/TypeScript-1/" title="TypeScript? 타입스크립트 소개 및 개발환경 구축" rel="bookmark">TypeScript? 타입스크립트 소개 및 개발환경 구축</a></h3></div></li></ul>
+            </div>
+        
+
+
+        
+        <div class="level is-size-7 is-uppercase">
+            <div class="level-start">
+                <div class="level-item">
+                    <span class="is-size-6 has-text-grey has-mr-7">#</span>
+                    <a class="has-link-grey -link" href="/tags/TypeScript/">TypeScript</a>, <a class="has-link-grey -link" href="/tags/module/">module</a>, <a class="has-link-grey -link" href="/tags/study/">study</a>, <a class="has-link-grey -link" href="/tags/모듈/">모듈</a>, <a class="has-link-grey -link" href="/tags/타입스크립트/">타입스크립트</a>
+                </div>
+            </div>
+        </div>
+        
+        
+        
+        
+<div class="sharethis-inline-share-buttons"></div>
+<script type="text/javascript" src="https://platform-api.sharethis.com/js/sharethis.js#property=5d11bc2de1239400125e3dc9&amp;product=inline-share-buttons" async="async"></script>
+
+        
+    </div>
+</div>
+
+
+
+
+
+    <!-- 댓글 위 광고 -->
+    <ins class="adsbygoogle card" style="display:block" data-ad-client="ca-pub-7669354135137434" data-ad-slot="8992996108" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    <script class="card">
+        (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+
+
+
+
+<div class="card card-transparent">
+    <div class="level post-navigation is-flex-wrap is-mobile">
+        
+        
+        <div class="level-end">
+            <a class="level level-item has-link-grey  article-nav-next" href="/2020/04/29/TypeScript-class-Interface/">
+                <span class="level-item">타입스크립트 - 클래스와 인터페이스</span>
+                <i class="level-item fas fa-chevron-right"></i>
+            </a>
+        </div>
+        
+    </div>
+</div>
+
+
+
+<div class="card">
+    <div class="card-content">
+        <h3 class="title is-5 has-text-weight-normal">댓글</h3>
+        <div id="disqus_thread"></div>
+<script>
+
+/**
+*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+/*
+var disqus_config = function () {
+this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+*/
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = 'https://https-mishka86-github-io.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="external nofollow noopener noreferrer" target="_blank">comments powered by Disqus.</a></noscript>
+    </div>
+</div>
+
+
+</div>
+                
+                
+
+
+
+
+<div class="column is-4-tablet is-4-desktop is-3-widescreen  has-order-3 column-right is-sticky">
+    
+        
+<div class="card widget" id="toc">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                카탈로그
+            </h3>
+            <ul class="menu-list"><li>
+        <a class="is-flex" href="#모듈러-프로그래밍을-위한-접근">
+        <span class="has-mr-6">1</span>
+        <span>모듈러 프로그래밍을 위한 접근</span>
+        </a></li><li>
+        <a class="is-flex" href="#내부-모듈과-외부-모듈">
+        <span class="has-mr-6">2</span>
+        <span>내부 모듈과 외부 모듈</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#내부-모듈">
+        <span class="has-mr-6">2.1</span>
+        <span>내부 모듈</span>
+        </a></li><li>
+        <a class="is-flex" href="#외부-모듈">
+        <span class="has-mr-6">2.2</span>
+        <span>외부 모듈</span>
+        </a></li></ul></li><li>
+        <a class="is-flex" href="#네임스페이스">
+        <span class="has-mr-6">3</span>
+        <span>네임스페이스</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#네임스페이스-모듈">
+        <span class="has-mr-6">3.1</span>
+        <span>네임스페이스 모듈</span>
+        </a></li><li>
+        <a class="is-flex" href="#네임스페이스의-이름-확장">
+        <span class="has-mr-6">3.2</span>
+        <span>네임스페이스의 이름 확장</span>
+        </a></li><li>
+        <a class="is-flex" href="#브라우저에서-네임스페이스의-모듈-호출">
+        <span class="has-mr-6">3.3</span>
+        <span>브라우저에서 네임스페이스의 모듈 호출</span>
+        </a></li></ul></li><li>
+        <a class="is-flex" href="#모듈-선언과-모듈-임포트">
+        <span class="has-mr-6">4</span>
+        <span>모듈 선언과 모듈 임포트</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#여러-모듈을-함께-export하기">
+        <span class="has-mr-6">4.1</span>
+        <span>여러 모듈을 함께 export하기</span>
+        </a></li><li>
+        <a class="is-flex" href="#가져온-모든-모듈을-재노출">
+        <span class="has-mr-6">4.2</span>
+        <span>가져온 모든 모듈을 재노출</span>
+        </a></li><li>
+        <a class="is-flex" href="#네임스페이스로-감싸서-재노출">
+        <span class="has-mr-6">4.3</span>
+        <span>네임스페이스로 감싸서 재노출</span>
+        </a></li><li>
+        <a class="is-flex" href="#디폴트-모듈">
+        <span class="has-mr-6">4.4</span>
+        <span>디폴트 모듈</span>
+        </a></li><li>
+        <a class="is-flex" href="#모듈-시스템">
+        <span class="has-mr-6">4.5</span>
+        <span>모듈 시스템</span>
+        </a></li></ul></li></ul>
+        </div>
+    </div>
+</div>
+
+        
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                카테고리
+            </h3>
+            <ul class="menu-list">
+            <li>
+        <a class="level is-marginless" href="/categories/Programming/">
+            <span class="level-start">
+                <span class="level-item">Programming</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">13</span>
+            </span>
+        </a><ul><li>
+        <a class="level is-marginless" href="/categories/Programming/Axios/">
+            <span class="level-start">
+                <span class="level-item">Axios</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/Programming/Markdown/">
+            <span class="level-start">
+                <span class="level-item">Markdown</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/Programming/git/">
+            <span class="level-start">
+                <span class="level-item">git</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">2</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/Programming/hexo/">
+            <span class="level-start">
+                <span class="level-item">hexo</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">9</span>
+            </span>
+        </a></li></ul></li><li>
+        <a class="level is-marginless" href="/categories/Setting/">
+            <span class="level-start">
+                <span class="level-item">Setting</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">6</span>
+            </span>
+        </a><ul><li>
+        <a class="level is-marginless" href="/categories/Setting/SSH/">
+            <span class="level-start">
+                <span class="level-item">SSH</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/Setting/VScode/">
+            <span class="level-start">
+                <span class="level-item">VScode</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">2</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/Setting/webstorm/">
+            <span class="level-start">
+                <span class="level-item">webstorm</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">2</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/Setting/zsh/">
+            <span class="level-start">
+                <span class="level-item">zsh</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li></ul></li><li>
+        <a class="level is-marginless" href="/categories/Study/">
+            <span class="level-start">
+                <span class="level-item">Study</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">26</span>
+            </span>
+        </a><ul><li>
+        <a class="level is-marginless" href="/categories/Study/Learning-JavaScript/">
+            <span class="level-start">
+                <span class="level-item">Learning-JavaScript</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">16</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/Study/TypeScript/">
+            <span class="level-start">
+                <span class="level-item">TypeScript</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">6</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/Study/Vue-js-철저입문/">
+            <span class="level-start">
+                <span class="level-item">Vue.js 철저입문</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">2</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/Study/실행컨텍스트/">
+            <span class="level-start">
+                <span class="level-item">실행컨텍스트</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/Study/클로저/">
+            <span class="level-start">
+                <span class="level-item">클로저</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li></ul></li><li>
+        <a class="level is-marginless" href="/categories/회고/">
+            <span class="level-start">
+                <span class="level-item">회고</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+        
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            태그 클라우드
+        </h3>
+        <a href="/tags/1년6개월/" style="font-size: 10px;">1년6개월</a> <a href="/tags/Axios/" style="font-size: 10px;">Axios</a> <a href="/tags/ERROR/" style="font-size: 10px;">ERROR</a> <a href="/tags/Function/" style="font-size: 10px;">Function</a> <a href="/tags/GitFlowIntegration/" style="font-size: 10px;">GitFlowIntegration</a> <a href="/tags/Github/" style="font-size: 11.43px;">Github</a> <a href="/tags/HTTP/" style="font-size: 10px;">HTTP</a> <a href="/tags/LSP/" style="font-size: 10px;">LSP</a> <a href="/tags/Learning-JavaScript/" style="font-size: 17.14px;">Learning-JavaScript</a> <a href="/tags/Mac/" style="font-size: 10px;">Mac</a> <a href="/tags/MarkDown/" style="font-size: 10px;">MarkDown</a> <a href="/tags/Math/" style="font-size: 10px;">Math</a> <a href="/tags/OOP/" style="font-size: 10px;">OOP</a> <a href="/tags/SEO/" style="font-size: 10px;">SEO</a> <a href="/tags/SSH/" style="font-size: 10px;">SSH</a> <a href="/tags/Study/" style="font-size: 10px;">Study</a> <a href="/tags/Terminal/" style="font-size: 10px;">Terminal</a> <a href="/tags/TypeScript/" style="font-size: 17.14px;">TypeScript</a> <a href="/tags/VScode/" style="font-size: 11.43px;">VScode</a> <a href="/tags/VisualStudioCode/" style="font-size: 10px;">VisualStudioCode</a> <a href="/tags/Vue/" style="font-size: 12.86px;">Vue</a> <a href="/tags/Vue-js/" style="font-size: 10px;">Vue.js</a> <a href="/tags/Wiriting/" style="font-size: 11.43px;">Wiriting</a> <a href="/tags/ad/" style="font-size: 10px;">ad</a> <a href="/tags/array/" style="font-size: 10px;">array</a> <a href="/tags/axios/" style="font-size: 10px;">axios</a> <a href="/tags/babel/" style="font-size: 10px;">babel</a> <a href="/tags/backup/" style="font-size: 10px;">backup</a> <a href="/tags/blockScope/" style="font-size: 10px;">blockScope</a> <a href="/tags/blog/" style="font-size: 12.86px;">blog</a> <a href="/tags/branch/" style="font-size: 10px;">branch</a> <a href="/tags/catch/" style="font-size: 10px;">catch</a> <a href="/tags/class/" style="font-size: 10px;">class</a> <a href="/tags/closure/" style="font-size: 10px;">closure</a> <a href="/tags/commend/" style="font-size: 10px;">commend</a> <a href="/tags/comment/" style="font-size: 10px;">comment</a> <a href="/tags/const/" style="font-size: 10px;">const</a> <a href="/tags/context/" style="font-size: 10px;">context</a> <a href="/tags/date/" style="font-size: 10px;">date</a> <a href="/tags/deploy/" style="font-size: 10px;">deploy</a> <a href="/tags/disqus/" style="font-size: 10px;">disqus</a> <a href="/tags/domain/" style="font-size: 10px;">domain</a> <a href="/tags/draft/" style="font-size: 10px;">draft</a> <a href="/tags/eslint/" style="font-size: 10px;">eslint</a> <a href="/tags/extension/" style="font-size: 10px;">extension</a> <a href="/tags/finally/" style="font-size: 10px;">finally</a> <a href="/tags/for/" style="font-size: 10px;">for</a> <a href="/tags/for문/" style="font-size: 10px;">for문</a> <a href="/tags/function/" style="font-size: 11.43px;">function</a> <a href="/tags/git/" style="font-size: 15.71px;">git</a> <a href="/tags/gitbash/" style="font-size: 10px;">gitbash</a> <a href="/tags/gitflow/" style="font-size: 12.86px;">gitflow</a> <a href="/tags/github/" style="font-size: 10px;">github</a> <a href="/tags/gulp/" style="font-size: 10px;">gulp</a> <a href="/tags/hexo/" style="font-size: 18.57px;">hexo</a> <a href="/tags/hoisting/" style="font-size: 10px;">hoisting</a> <a href="/tags/icarus/" style="font-size: 10px;">icarus</a> <a href="/tags/icarus테마/" style="font-size: 10px;">icarus테마</a> <a href="/tags/if/" style="font-size: 10px;">if</a> <a href="/tags/if문/" style="font-size: 10px;">if문</a> <a href="/tags/interface/" style="font-size: 10px;">interface</a> <a href="/tags/javascript/" style="font-size: 10px;">javascript</a> <a href="/tags/jira/" style="font-size: 10px;">jira</a> <a href="/tags/let/" style="font-size: 10px;">let</a> <a href="/tags/map/" style="font-size: 10px;">map</a> <a href="/tags/module/" style="font-size: 10px;">module</a> <a href="/tags/moment/" style="font-size: 10px;">moment</a> <a href="/tags/node/" style="font-size: 10px;">node</a> <a href="/tags/post/" style="font-size: 11.43px;">post</a> <a href="/tags/posting/" style="font-size: 11.43px;">posting</a> <a href="/tags/scaffolds/" style="font-size: 11.43px;">scaffolds</a> <a href="/tags/scope/" style="font-size: 10px;">scope</a> <a href="/tags/set/" style="font-size: 10px;">set</a> <a href="/tags/setting/" style="font-size: 15.71px;">setting</a> <a href="/tags/study/" style="font-size: 20px;">study</a> <a href="/tags/superset/" style="font-size: 10px;">superset</a> <a href="/tags/switch/" style="font-size: 10px;">switch</a> <a href="/tags/themes/" style="font-size: 10px;">themes</a> <a href="/tags/time/" style="font-size: 10px;">time</a> <a href="/tags/timezone/" style="font-size: 10px;">timezone</a> <a href="/tags/try/" style="font-size: 10px;">try</a> <a href="/tags/val/" style="font-size: 10px;">val</a> <a href="/tags/webstorm/" style="font-size: 11.43px;">webstorm</a> <a href="/tags/while/" style="font-size: 10px;">while</a> <a href="/tags/zsh/" style="font-size: 10px;">zsh</a> <a href="/tags/개발도구/" style="font-size: 10px;">개발도구</a> <a href="/tags/개발환경/" style="font-size: 10px;">개발환경</a> <a href="/tags/객체/" style="font-size: 10px;">객체</a> <a href="/tags/객체지향프로그래밍/" style="font-size: 10px;">객체지향프로그래밍</a> <a href="/tags/공부/" style="font-size: 10px;">공부</a> <a href="/tags/깃/" style="font-size: 10px;">깃</a> <a href="/tags/깃허브/" style="font-size: 10px;">깃허브</a> <a href="/tags/날짜/" style="font-size: 10px;">날짜</a> <a href="/tags/단일스레드/" style="font-size: 10px;">단일스레드</a> <a href="/tags/댓글/" style="font-size: 10px;">댓글</a> <a href="/tags/데이터타입/" style="font-size: 10px;">데이터타입</a> <a href="/tags/리터널/" style="font-size: 10px;">리터널</a> <a href="/tags/마크다운/" style="font-size: 10px;">마크다운</a> <a href="/tags/맵/" style="font-size: 10px;">맵</a> <a href="/tags/명령어/" style="font-size: 10px;">명령어</a> <a href="/tags/모듈/" style="font-size: 10px;">모듈</a> <a href="/tags/반복문/" style="font-size: 11.43px;">반복문</a> <a href="/tags/배열/" style="font-size: 10px;">배열</a> <a href="/tags/배열메서드/" style="font-size: 10px;">배열메서드</a> <a href="/tags/백업/" style="font-size: 10px;">백업</a> <a href="/tags/변수/" style="font-size: 10px;">변수</a> <a href="/tags/뷰/" style="font-size: 11.43px;">뷰</a> <a href="/tags/브런치전략/" style="font-size: 10px;">브런치전략</a> <a href="/tags/블로그/" style="font-size: 11.43px;">블로그</a> <a href="/tags/비동기/" style="font-size: 11.43px;">비동기</a> <a href="/tags/사용법/" style="font-size: 10px;">사용법</a> <a href="/tags/상수/" style="font-size: 10px;">상수</a> <a href="/tags/서버통신/" style="font-size: 10px;">서버통신</a> <a href="/tags/설정/" style="font-size: 10px;">설정</a> <a href="/tags/설치방법/" style="font-size: 10px;">설치방법</a> <a href="/tags/세팅/" style="font-size: 11.43px;">세팅</a> <a href="/tags/셋/" style="font-size: 10px;">셋</a> <a href="/tags/소개/" style="font-size: 10px;">소개</a> <a href="/tags/스코프/" style="font-size: 11.43px;">스코프</a> <a href="/tags/스터디/" style="font-size: 12.86px;">스터디</a> <a href="/tags/시간/" style="font-size: 10px;">시간</a> <a href="/tags/실행컨텍스트/" style="font-size: 10px;">실행컨텍스트</a> <a href="/tags/에러/" style="font-size: 10px;">에러</a> <a href="/tags/연산자/" style="font-size: 11.43px;">연산자</a> <a href="/tags/예외/" style="font-size: 10px;">예외</a> <a href="/tags/원시타입/" style="font-size: 10px;">원시타입</a> <a href="/tags/이터레이터/" style="font-size: 10px;">이터레이터</a> <a href="/tags/인터페이스/" style="font-size: 10px;">인터페이스</a> <a href="/tags/제너레이터/" style="font-size: 11.43px;">제너레이터</a> <a href="/tags/제어문/" style="font-size: 10px;">제어문</a> <a href="/tags/조건문/" style="font-size: 10px;">조건문</a> <a href="/tags/주석/" style="font-size: 10px;">주석</a> <a href="/tags/추상적사고/" style="font-size: 10px;">추상적사고</a> <a href="/tags/추상화/" style="font-size: 10px;">추상화</a> <a href="/tags/추천/" style="font-size: 10px;">추천</a> <a href="/tags/컨텍스트/" style="font-size: 10px;">컨텍스트</a> <a href="/tags/콜백/" style="font-size: 10px;">콜백</a> <a href="/tags/쿠팡/" style="font-size: 10px;">쿠팡</a> <a href="/tags/쿠팡파트너스/" style="font-size: 10px;">쿠팡파트너스</a> <a href="/tags/클래스/" style="font-size: 10px;">클래스</a> <a href="/tags/클로저/" style="font-size: 10px;">클로저</a> <a href="/tags/타입스크립트/" style="font-size: 17.14px;">타입스크립트</a> <a href="/tags/터미널/" style="font-size: 10px;">터미널</a> <a href="/tags/템플릿문자열/" style="font-size: 10px;">템플릿문자열</a> <a href="/tags/파트너스/" style="font-size: 10px;">파트너스</a> <a href="/tags/편집기/" style="font-size: 10px;">편집기</a> <a href="/tags/표현식/" style="font-size: 10px;">표현식</a> <a href="/tags/프라미스/" style="font-size: 10px;">프라미스</a> <a href="/tags/프레임워크/" style="font-size: 11.43px;">프레임워크</a> <a href="/tags/함수/" style="font-size: 14.29px;">함수</a> <a href="/tags/호이스팅/" style="font-size: 11.43px;">호이스팅</a> <a href="/tags/확장프로그램/" style="font-size: 10px;">확장프로그램</a> <a href="/tags/회고/" style="font-size: 10px;">회고</a>
+    </div>
+</div>
+
+        
+    
+    
+<!-- 사이드 광고 -->
+    <ins class="adsbygoogle card" style="display:block" data-ad-client="ca-pub-7669354135137434" data-ad-slot="7664684139" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    <script class="card">
+        (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+    
+<div class="card widget">
+        <script src="https://ads-partners.coupang.com/g.js"></script>
+        <script>
+            new PartnersCoupang.G({ id:4765 });
+        </script>
+        <iframe src="https://ads-partners.coupang.com/iframe/search-bar?id=19062111274125404211001917-l1&type=l1&trackingCode=AF3074287" width="100%" height="75" frameborder="0" scrolling="no"></iframe>
+</div>
+    
+</div>
+
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+    <div class="container">
+        <div class="level">
+            <div class="level-start has-text-centered-mobile">
+                <a class="footer-logo is-block has-mb-6" href="/">
+                
+                    <img src="/images/blog_logo.png" alt="타입스크립트 - 모듈" height="28">
+                
+                </a>
+                <p class="is-size-7">
+                &copy; 2020 Mishka&nbsp;
+                Powered by <a href="https://hexo.io/" target="_blank" rel="external nofollow noopener noreferrer">Hexo</a> & <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="external nofollow noopener noreferrer">Icarus</a>
+                
+                </p>
+            </div>
+            <div class="level-end">
+            
+                <div class="field has-addons is-flex-center-mobile has-mt-5-mobile is-flex-wrap is-flex-middle">
+                
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" title="Creative Commons" href="https://creativecommons.org/" rel="external nofollow noopener noreferrer">
+                        
+                        <i class="fab fa-creative-commons"></i>
+                        
+                    </a>
+                </p>
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/" rel="external nofollow noopener noreferrer">
+                        
+                        <i class="fab fa-creative-commons-by"></i>
+                        
+                    </a>
+                </p>
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" title="Download on GitHub" href="https://github.com/mishka86" rel="external nofollow noopener noreferrer">
+                        
+                        <i class="fab fa-github"></i>
+                        
+                    </a>
+                </p>
+                
+                </div>
+            
+            </div>
+        </div>
+    </div>
+</footer>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script>
+<script>moment.locale("ko");</script>
+
+
+    
+    
+    
+    <script src="/js/animation.js"></script>
+    
+
+    
+    
+    
+    <script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js" defer></script>
+    <script src="/js/gallery.js" defer></script>
+    
+
+    
+    
+
+<div id="outdated">
+    <h6>Your browser is out-of-date!</h6>
+    <p>Update your browser to view this website correctly. <a id="btnUpdateBrowser" href="http://outdatedbrowser.com/" rel="external nofollow noopener noreferrer" target="_blank">Update
+            my browser now </a></p>
+    <p class="last"><a href="#" id="btnCloseUpdateBrowser" title="Close">&times;</a></p>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.js" defer></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        outdatedBrowser({
+            bgColor: '#f25648',
+            color: '#ffffff',
+            lowerThan: 'flex'
+        });
+    });
+</script>
+
+
+    
+    
+<script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/unpacked/MathJax.js?config=TeX-MML-AM_CHTML" defer></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    MathJax.Hub.Config({
+        'HTML-CSS': {
+            matchFontHeight: false
+        },
+        SVG: {
+            matchFontHeight: false
+        },
+        CommonHTML: {
+            matchFontHeight: false
+        },
+        tex2jax: {
+            inlineMath: [
+                ['$','$'],
+                ['\\(','\\)']
+            ]
+        }
+    });
+});
+</script>
+
+    
+    
+
+<a id="back-to-top" title="Back to Top" href="javascript:;">
+    <i class="fas fa-chevron-up"></i>
+</a>
+<script src="/js/back-to-top.js" defer></script>
+
+
+    
+    
+
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    <script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script>
+    <script src="/js/clipboard.js" defer></script>
+    
+
+    
+    
+    
+
+
+<script src="/js/main.js" defer></script>
+
+    
+    <div class="searchbox ins-search">
+    <div class="searchbox-container ins-search-container">
+        <div class="searchbox-input-wrapper">
+            <input type="text" class="searchbox-input ins-search-input" placeholder="입력 하세요...">
+            <span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="searchbox-result-wrapper ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+    (function (window) {
+        var INSIGHT_CONFIG = {
+            TRANSLATION: {
+                POSTS: '포스트',
+                PAGES: '페이지',
+                CATEGORIES: '카테고리',
+                TAGS: '태그',
+                UNTITLED: '(제목없음)',
+            },
+            CONTENT_URL: '/content.json',
+        };
+        window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+    })(window);
+</script>
+<script src="/js/insight.js" defer></script>
+<link rel="stylesheet" href="/css/search.css">
+<link rel="stylesheet" href="/css/insight.css">
+    
+</body>
+</html>
