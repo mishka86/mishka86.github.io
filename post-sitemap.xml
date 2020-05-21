@@ -8,8 +8,16 @@
     </url>
 
     <url>
+        <loc>https://mishka.kr/2020/05/20/TypeScript-Advancedtype/</loc>
+        <lastmod>2020-05-21T00:03:39.029Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>https://mishka.kr/2020/05/14/Typescript-Module/</loc>
-        <lastmod>2020-05-14T09:17:08.829Z</lastmod>
+        <lastmod>2020-05-20T11:21:20.795Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
