@@ -8,8 +8,24 @@
     </url>
 
     <url>
+        <loc>https://mishka.kr/2019/10/18/ssh-setting/</loc>
+        <lastmod>2020-06-17T09:06:04.580Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://mishka.kr/2020/06/17/TypeScript-async/</loc>
+        <lastmod>2020-06-17T08:55:59.688Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>https://mishka.kr/2020/06/03/TypeScript-generic/</loc>
-        <lastmod>2020-06-03T10:39:29.970Z</lastmod>
+        <lastmod>2020-06-03T12:14:09.584Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -17,7 +33,7 @@
 
     <url>
         <loc>https://mishka.kr/2020/06/03/TypeScript-typeChange/</loc>
-        <lastmod>2020-06-03T09:38:07.881Z</lastmod>
+        <lastmod>2020-06-03T11:19:50.246Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -200,14 +216,6 @@
     </url>
 
     <url>
-        <loc>https://mishka.kr/2019/10/18/ssh-setting/</loc>
-        <lastmod>2019-10-18T07:53:15.763Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
         <loc>https://mishka.kr/2019/06/21/blog-ad-coupang/</loc>
         <lastmod>2019-10-09T05:31:31.419Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -328,7 +336,7 @@
     </url>
 
     <url>
-        <loc>https://mishka.kr/2019/08/02/Learning-JavaScript-chapter10/</loc>
+        <loc>https://mishka.kr/2019/06/19/Learning-JavaScript-chapter1/</loc>
         <lastmod>2019-10-09T05:25:03.827Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -336,7 +344,7 @@
     </url>
 
     <url>
-        <loc>https://mishka.kr/2019/06/19/Learning-JavaScript-chapter1/</loc>
+        <loc>https://mishka.kr/2019/08/02/Learning-JavaScript-chapter10/</loc>
         <lastmod>2019-10-09T05:25:03.827Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
