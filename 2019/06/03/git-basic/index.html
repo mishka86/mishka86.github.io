@@ -195,22 +195,19 @@
             
         </h1>
         <div class="content">
-            <html><head><meta name="generator" content="Hexo 3.9.0"></head><body><p>안녕하세요 미슈카 입니다.<br>오늘은 git의 기본적인 명령어들을 정리해보려고 합니다.<br>모든 명령어들을 정리하는 것이 아닌 많이 쓰이는 명령어들을 위주로 정리 하려고 합니다.</p>
+            <html><head><meta name="generator" content="Hexo 3.9.0"></head><body><p>git의 기본적인 명령어들을 정리해보려고 합니다.<br>모든 명령어들을 정리하는 것이 아닌 많이 쓰이는 명령어들을 위주로 정리 해보았습니다.</p>
 <p>그전에 먼저 간단하게 git이란 무엇인가? 그리고 git에서 사용하는 용어들을 정리해 보겠습니다.</p>
 <h1 id="git이란-무엇인가"><a href="#git이란-무엇인가" class="headerlink" title="git이란 무엇인가?"></a>git이란 무엇인가?</h1><hr>
-<p>git은 컴퓨터 파일의 변경사항을 추적하고 여러 명의 사용자들 간에 해당 파일들의 작업을 조율하기 위한 분산 버전 관리 시스템이다.<a href="https://ko.wikipedia.org/wiki/Git" rel="external nofollow noopener noreferrer" target="_blank">위키백과</a><br>위키 백과에서는 위와 같이 말하고 있다. 그 중에서 우리가 주위깊게 보아야 할 단어들은<br><u><strong>“추적, 분산 버전 관리 시스템”</strong></u>이다.<br>git은 2005년 리누스 토르발스가 리눅스 커널 개발을 위해 처음 개발하였다.<br>많은 버전 관리 시스템(VCS : Version Control System)중에 하나인데 다른 버전 관리 시스템과 다른점은<br>저장소를 분산해서 관리 한다는 점이다. 즉 중앙 저장소에 문제가 생겨도 로컬저장소를 이용하여 복원이 가능하다는 것이다.</p>
+<p>git은 컴퓨터 파일의 변경사항을 추적하고 여러 명의 사용자들 간에 해당 파일들의 작업을 조율하기 위한 분산 버전 관리 시스템이다.<a href="https://ko.wikipedia.org/wiki/Git" rel="external nofollow noopener noreferrer" target="_blank">위키백과</a><br>위키 백과에서는 위와 같이 말하고 있다. 그 중에서 주위깊게 보아야 할 단어들은 <u><strong>“추적, 분산 버전 관리 시스템”</strong></u> 정도이다.<br>git은 2005년 리누스 토르발스가 리눅스 커널 개발을 위해 처음 개발하였다.<br>많은 버전 관리 시스템(VCS : Version Control System)중에 하나인데 다른 버전 관리 시스템과 다른점은<br>저장소를 분산해서 관리 한다는 점이다. 즉 중앙 저장소에 문제가 생겨도 로컬저장소를 이용하여 복원이 가능하다는 것이다.</p>
 <a id="more"></a>
 
-<h1 id="git에서-사용하는-용어"><a href="#git에서-사용하는-용어" class="headerlink" title="git에서 사용하는 용어"></a>git에서 사용하는 용어</h1><hr>
+<h1 id="git에서-사용하는-용어들"><a href="#git에서-사용하는-용어들" class="headerlink" title="git에서 사용하는 용어들"></a>git에서 사용하는 용어들</h1><hr>
 <blockquote>
 <ul>
 <li>Working tree : 현재 작업하고 있는 공간, git이 관리하고 있지만 아직 추적(track)하고 있지 않은 상태 (또는 Working Directory)</li>
 <li>Staging area : 커밋 하기전 staged 된 파일들이 있는 공간,수정한 파일을 커밋하기 전에 표시(add)해둔 공간</li>
 <li>Commit : 작업한 내용을 로컬 저장소에 저장하는 것을 의미합니다.</li>
-<li>Repository : 저장소를 의미 합니다. 저장소에는 2가지가 있습니다.</li>
-</ul>
-<p>-Local Repository : 본인 PC에 존재하는 저장소를 의미합니다.<br>-Remote Repository : Github, Gitlab과 같은 원격저장소를 의미합니다.</p>
-<ul>
+<li>Repository : 저장소를 의미 합니다. 저장소에는 2가지가 있습니다.<br>-Local Repository : 본인 PC에 존재하는 저장소를 의미합니다.<br>-Remote Repository : Github, Gitlab과 같은 원격저장소를 의미합니다.</li>
 <li>Push : 로컬저장소(Local Repository) 에서 Commit이 완료된 내용을 원격저장소에 업로드 하는 것.</li>
 <li>Clone : 원격저장소의 내용을 통째로 다운로드 하는 것을 말합니다.</li>
 <li>Branch : 가지 또는 분기점을 의미, 현재 상태를 복사하여 자신만의 branch를 만들수 있고 작업이 완료되면 merge를 통해 합칠 수 있다.</li>
@@ -225,48 +222,48 @@
 <p>본격적으로 git 명령어 들에 대해 알아보자<br>모든 명령어를 나열하는 것은 아니고 주로 사용하는 명령어를 기준으로 써보고자 한다.</p>
 <h2 id="환경설정"><a href="#환경설정" class="headerlink" title="환경설정"></a>환경설정</h2><h3 id="git-config"><a href="#git-config" class="headerlink" title="git config"></a>git config</h3><figure class="highlight bash hljs"><figcaption><span>bash</span></figcaption><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git config --global --list   // 현재 설정 정보를 조회합니다.</span><br><span class="line">git config --global user.name <span class="hljs-string">"사용자명"</span>   // 사용자명을 등록합니다.</span><br><span class="line">git config --global user.email <span class="hljs-string">"이메일주소"</span>   // 사용자 이메일주소을 등록합니다.</span><br></pre></td></tr></tbody></table></figure>
 
-<h2 id="기본명령어"><a href="#기본명령어" class="headerlink" title="기본명령어"></a>기본명령어</h2><h3 id="git-init"><a href="#git-init" class="headerlink" title="git init"></a>git init</h3><figure class="highlight bash hljs"><figcaption><span>bash</span></figcaption><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git init    // 깃 저장소를 초기화 한다.</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="기본명령어"><a href="#기본명령어" class="headerlink" title="기본명령어"></a>기본명령어</h2><h3 id="git-init"><a href="#git-init" class="headerlink" title="git init"></a>git init</h3><figure class="highlight bash hljs"><figcaption><span>bash</span></figcaption><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git init  // 깃 저장소를 초기화 한다.</span><br></pre></td></tr></tbody></table></figure>
 
 <p>현재 디텍토리에서 git 저장소를 생성합니다.</p>
 <h3 id="git-status"><a href="#git-status" class="headerlink" title="git status"></a>git status</h3><figure class="highlight bash hljs"><figcaption><span>bash</span></figcaption><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git status  // 저장소 상태 보기</span><br></pre></td></tr></tbody></table></figure>
 
 <p>저장소의 상태를 체크 합니다. Commit이 필요한 변경사항이 있는지, 현재 저장소의 어떤 브런치를 작업하고 있는지 등을 볼 수 있다.</p>
-<h3 id="git-diff"><a href="#git-diff" class="headerlink" title="git diff"></a>git diff</h3><figure class="highlight bash hljs"><figcaption><span>bash</span></figcaption><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">git diff    // 스테이징 영역과 현재 작업트리의 차이점을 보여준다.</span><br><span class="line"></span><br><span class="line">옵션</span><br><span class="line">HEAD    // 저장소, 스테이징 영역, 작업트리의 차이점을 모두 볼수 있다.</span><br><span class="line">--cached    // 스테이징 영역과 저장소의 차이점을 볼 수 있다.</span><br><span class="line">--<span class="hljs-built_in">stat</span>    // 변경사항에 대한 통계를 볼 수 있다.</span><br></pre></td></tr></tbody></table></figure>
+<h3 id="git-diff"><a href="#git-diff" class="headerlink" title="git diff"></a>git diff</h3><figure class="highlight bash hljs"><figcaption><span>bash</span></figcaption><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">git diff  // 스테이징 영역과 현재 작업트리의 차이점을 보여준다.</span><br><span class="line"></span><br><span class="line">옵션</span><br><span class="line">HEAD  // 저장소, 스테이징 영역, 작업트리의 차이점을 모두 볼수 있다.</span><br><span class="line">--cached  // 스테이징 영역과 저장소의 차이점을 볼 수 있다.</span><br><span class="line">--<span class="hljs-built_in">stat</span>  // 변경사항에 대한 통계를 볼 수 있다.</span><br></pre></td></tr></tbody></table></figure>
 
-<h3 id="git-add"><a href="#git-add" class="headerlink" title="git add"></a>git add</h3><figure class="highlight bash hljs"><figcaption><span>bash</span></figcaption><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">git add <파일이름>    // 파일단위로 선택</파일이름></span><br><span class="line"></span><br><span class="line">git add .    // 모든 파일 추가</span><br><span class="line">  또는</span><br><span class="line">git add *</span><br><span class="line"></span><br><span class="line">옵션 </span><br><span class="line">-i    // 대화형모드 실행, 일부분만 선택하여 스테이징 가능</span><br><span class="line">-p    // 대화형 모드 없이 바로 패치모드 사용</span><br></pre></td></tr></tbody></table></figure>
+<h3 id="git-add"><a href="#git-add" class="headerlink" title="git add"></a>git add</h3><figure class="highlight bash hljs"><figcaption><span>bash</span></figcaption><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">git add <파일이름>  // 파일단위로 선택</파일이름></span><br><span class="line"></span><br><span class="line">git add .  // 모든 파일 추가</span><br><span class="line">  또는</span><br><span class="line">git add *</span><br><span class="line"></span><br><span class="line">옵션 </span><br><span class="line">-i  // 대화형모드 실행, 일부분만 선택하여 스테이징 가능</span><br><span class="line">-p  // 대화형 모드 없이 바로 패치모드 사용</span><br></pre></td></tr></tbody></table></figure>
 
 <p>단일 파일 또는 변경된 모든 파일을 스테이징 한다.</p>
-<h3 id="git-commit"><a href="#git-commit" class="headerlink" title="git commit"></a>git commit</h3><figure class="highlight bash hljs"><figcaption><span>bash</span></figcaption><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git commit</span><br><span class="line">git commit -m <span class="hljs-string">"커밋메세지"</span></span><br><span class="line">git commit -a     // 스테이지에 올리는 것과 커밋을 동시에 진행</span><br></pre></td></tr></tbody></table></figure>
+<h3 id="git-commit"><a href="#git-commit" class="headerlink" title="git commit"></a>git commit</h3><figure class="highlight bash hljs"><figcaption><span>bash</span></figcaption><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git commit</span><br><span class="line">git commit -m <span class="hljs-string">"커밋메세지"</span></span><br><span class="line">git commit -a  // 스테이지에 올리는 것과 커밋을 동시에 진행</span><br></pre></td></tr></tbody></table></figure>
 
 <h3 id="git-revert"><a href="#git-revert" class="headerlink" title="git revert"></a>git revert</h3><figure class="highlight bash hljs"><figcaption><span>bash</span></figcaption><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git revert <커밋아이디></커밋아이디></span><br></pre></td></tr></tbody></table></figure>
 
 <p>기존 커밋에서 변경한 내용을 취소해서 새로운 커밋을 만듭니다.</p>
-<h3 id="git-reset"><a href="#git-reset" class="headerlink" title="git reset"></a>git reset</h3><figure class="highlight bash hljs"><figcaption><span>bash</span></figcaption><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git reset --<커밋아이디>    // 커밋 취소</커밋아이디></span><br><span class="line">git reset --hard <커밋아이디>    // 해당 위치로 되돌림</커밋아이디></span><br><span class="line">git reset --hard HEAD     // 마지막 커밋 상태로 되돌림</span><br></pre></td></tr></tbody></table></figure>
+<h3 id="git-reset"><a href="#git-reset" class="headerlink" title="git reset"></a>git reset</h3><figure class="highlight bash hljs"><figcaption><span>bash</span></figcaption><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git reset --<커밋아이디>  // 커밋 취소</커밋아이디></span><br><span class="line">git reset --hard <커밋아이디>  // 해당 위치로 되돌림</커밋아이디></span><br><span class="line">git reset --hard HEAD  // 마지막 커밋 상태로 되돌림</span><br></pre></td></tr></tbody></table></figure>
 
-<h3 id="git-log"><a href="#git-log" class="headerlink" title="git log"></a>git log</h3><figure class="highlight bash hljs"><figcaption><span>bash</span></figcaption><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">git <span class="hljs-built_in">log</span></span><br><span class="line"></span><br><span class="line">옵션</span><br><span class="line">-3    // 출력할 커밋로그의 갯수를 지정 할 수 있습니다.</span><br><span class="line">--oneline    // 한 줄로 간단하게 보여줍니다.</span><br><span class="line">--graph    // 브런치 트리를 볼 수 있습니다.</span><br></pre></td></tr></tbody></table></figure>
+<h3 id="git-log"><a href="#git-log" class="headerlink" title="git log"></a>git log</h3><figure class="highlight bash hljs"><figcaption><span>bash</span></figcaption><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">git <span class="hljs-built_in">log</span></span><br><span class="line"></span><br><span class="line">옵션</span><br><span class="line">-3  // 출력할 커밋로그의 갯수를 지정 할 수 있습니다.</span><br><span class="line">--oneline  // 한 줄로 간단하게 보여줍니다.</span><br><span class="line">--graph  // 브런치 트리를 볼 수 있습니다.</span><br></pre></td></tr></tbody></table></figure>
 
 <p>커밋로그들을 볼 수 있습니다. 여러가지 옵션들을 적절히 사용하면 자신이 원하는 로그만을 볼 수 있습니다.</p>
-<h2 id="Branch-명령어"><a href="#Branch-명령어" class="headerlink" title="Branch 명령어"></a>Branch 명령어</h2><h3 id="branch-목록"><a href="#branch-목록" class="headerlink" title="branch 목록"></a>branch 목록</h3><figure class="highlight bash hljs"><figcaption><span>bash</span></figcaption><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git branch    // 로컬 브런치</span><br><span class="line">git branch -v    // 해당 브런치의 commit ID도 볼 수 있다.</span><br><span class="line">git branch -r    // 리모트 브런치</span><br><span class="line">git branch -a    // 로컬, 리모트 포함된 모든 브런치</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="Branch-명령어"><a href="#Branch-명령어" class="headerlink" title="Branch 명령어"></a>Branch 명령어</h2><h3 id="branch-목록"><a href="#branch-목록" class="headerlink" title="branch 목록"></a>branch 목록</h3><figure class="highlight bash hljs"><figcaption><span>bash</span></figcaption><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git branch  // 로컬 브런치</span><br><span class="line">git branch -v  // 해당 브런치의 commit ID도 볼 수 있다.</span><br><span class="line">git branch -r  // 리모트 브런치</span><br><span class="line">git branch -a  // 로컬, 리모트 포함된 모든 브런치</span><br></pre></td></tr></tbody></table></figure>
 
 <p>브런치목록을 보여줍니다. 옵션을 통해 원하는 저장소의 브런치를 볼 수 있습니다.</p>
-<h3 id="branch-생성"><a href="#branch-생성" class="headerlink" title="branch 생성"></a>branch 생성</h3><figure class="highlight bash hljs"><figcaption><span>bash</span></figcaption><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git branch <브런치이름>    // 원하는 이름으로 브런치를 생성한다.</브런치이름></span><br></pre></td></tr></tbody></table></figure>
+<h3 id="branch-생성"><a href="#branch-생성" class="headerlink" title="branch 생성"></a>branch 생성</h3><figure class="highlight bash hljs"><figcaption><span>bash</span></figcaption><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git branch <브런치이름>  // 원하는 이름으로 브런치를 생성한다.</브런치이름></span><br></pre></td></tr></tbody></table></figure>
 
 <h3 id="branch-삭제"><a href="#branch-삭제" class="headerlink" title="branch 삭제"></a>branch 삭제</h3><figure class="highlight bash hljs"><figcaption><span>bash</span></figcaption><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git branch -d <브런치이름></브런치이름></span><br></pre></td></tr></tbody></table></figure>
 
-<h3 id="git-checkout"><a href="#git-checkout" class="headerlink" title="git checkout"></a>git checkout</h3><figure class="highlight bash hljs"><figcaption><span>bash</span></figcaption><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout <브런치이름>    // 활성 브런치 변경</브런치이름></span><br></pre></td></tr></tbody></table></figure>
+<h3 id="git-checkout"><a href="#git-checkout" class="headerlink" title="git checkout"></a>git checkout</h3><figure class="highlight bash hljs"><figcaption><span>bash</span></figcaption><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout <브런치이름>  // 활성 브런치 변경</브런치이름></span><br></pre></td></tr></tbody></table></figure>
 
-<h3 id="git-merge"><a href="#git-merge" class="headerlink" title="git merge"></a>git merge</h3><figure class="highlight bash hljs"><figcaption><span>bash</span></figcaption><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git merge <브런치이름>    // 브런치이름의 내용을 현재 브런치로 합친다.</브런치이름></span><br></pre></td></tr></tbody></table></figure>
+<h3 id="git-merge"><a href="#git-merge" class="headerlink" title="git merge"></a>git merge</h3><figure class="highlight bash hljs"><figcaption><span>bash</span></figcaption><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git merge <브런치이름>  // 브런치이름의 내용을 현재 브런치로 합친다.</브런치이름></span><br></pre></td></tr></tbody></table></figure>
 
-<h2 id="원격저장소"><a href="#원격저장소" class="headerlink" title="원격저장소"></a>원격저장소</h2><h3 id="git-clone"><a href="#git-clone" class="headerlink" title="git clone"></a>git clone</h3><figure class="highlight bash hljs"><figcaption><span>bash</span></figcaption><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="hljs-built_in">clone</span> <저장소주소> <폴더명>    //원격저장소를 복제하여 저장소를 생성합니다.(폴더명은 생략가능)</폴더명></저장소주소></span><br></pre></td></tr></tbody></table></figure>
+<h2 id="원격저장소"><a href="#원격저장소" class="headerlink" title="원격저장소"></a>원격저장소</h2><h3 id="git-clone"><a href="#git-clone" class="headerlink" title="git clone"></a>git clone</h3><figure class="highlight bash hljs"><figcaption><span>bash</span></figcaption><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="hljs-built_in">clone</span> <저장소주소> <폴더명>  //원격저장소를 복제하여 저장소를 생성합니다.(폴더명은 생략가능)</폴더명></저장소주소></span><br></pre></td></tr></tbody></table></figure>
 
-<h3 id="git-remote"><a href="#git-remote" class="headerlink" title="git remote"></a>git remote</h3><figure class="highlight bash hljs"><figcaption><span>bash</span></figcaption><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git remote add <저장소이름> <저장소주소>    // 원격저장소 연결</저장소주소></저장소이름></span><br><span class="line">git remote -v    // 연결된 원격 저장소를 보여줍니다. </span><br><span class="line">git remote rm <저장소이름>    // 원격저장소를 제거합니다.</저장소이름></span><br></pre></td></tr></tbody></table></figure>
+<h3 id="git-remote"><a href="#git-remote" class="headerlink" title="git remote"></a>git remote</h3><figure class="highlight bash hljs"><figcaption><span>bash</span></figcaption><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git remote add <저장소이름> <저장소주소>  // 원격저장소 연결</저장소주소></저장소이름></span><br><span class="line">git remote -v  // 연결된 원격 저장소를 보여줍니다. </span><br><span class="line">git remote rm <저장소이름>  // 원격저장소를 제거합니다.</저장소이름></span><br></pre></td></tr></tbody></table></figure>
 
 <h3 id="git-fetch"><a href="#git-fetch" class="headerlink" title="git fetch"></a>git fetch</h3><figure class="highlight bash hljs"><figcaption><span>bash</span></figcaption><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git fetch</span><br></pre></td></tr></tbody></table></figure>
 
 <p>원격저장소의 변경사항을 가져와서 갱신합니다.</p>
-<h3 id="git-pull"><a href="#git-pull" class="headerlink" title="git pull"></a>git pull</h3><figure class="highlight bash hljs"><figcaption><span>bash</span></figcaption><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git pull </span><br><span class="line">git pull -rebase <저장소이름> <브런치이름>    // 커밋메세지를 남기지 않는다.</브런치이름></저장소이름></span><br></pre></td></tr></tbody></table></figure>
+<h3 id="git-pull"><a href="#git-pull" class="headerlink" title="git pull"></a>git pull</h3><figure class="highlight bash hljs"><figcaption><span>bash</span></figcaption><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git pull </span><br><span class="line">git pull -rebase <저장소이름> <브런치이름>  // 커밋메세지를 남기지 않는다.</브런치이름></저장소이름></span><br></pre></td></tr></tbody></table></figure>
 
-<h3 id="git-push"><a href="#git-push" class="headerlink" title="git push"></a>git push</h3><figure class="highlight bash hljs"><figcaption><span>bash</span></figcaption><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git push    // 원격저장소에 업로드 한다.</span><br><span class="line">git push <저장소이름> <브런치이름></브런치이름></저장소이름></span><br><span class="line">git push origin master</span><br></pre></td></tr></tbody></table></figure>
+<h3 id="git-push"><a href="#git-push" class="headerlink" title="git push"></a>git push</h3><figure class="highlight bash hljs"><figcaption><span>bash</span></figcaption><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git push  // 원격저장소에 업로드 한다.</span><br><span class="line">git push <저장소이름> <브런치이름></브런치이름></저장소이름></span><br><span class="line">git push origin master</span><br></pre></td></tr></tbody></table></figure>
 
 <p>파라미터 값을 주지 않으면 origin 저장소에 푸싱하며 현재 지역브런치와 같은 이름으로 브런치에 푸싱합니다.</p>
 </body></html>
@@ -384,9 +381,9 @@ s.setAttribute('data-timestamp', +new Date());
         <span class="has-mr-6">1</span>
         <span>git이란 무엇인가?</span>
         </a></li><li>
-        <a class="is-flex" href="#git에서-사용하는-용어">
+        <a class="is-flex" href="#git에서-사용하는-용어들">
         <span class="has-mr-6">2</span>
-        <span>git에서 사용하는 용어</span>
+        <span>git에서 사용하는 용어들</span>
         </a><ul class="menu-list"><li>
         <a class="is-flex" href="#git에서-일어나는-상태변화">
         <span class="has-mr-6">2.1</span>
@@ -591,6 +588,14 @@ s.setAttribute('data-timestamp', +new Date());
                 <span class="level-item tag">30</span>
             </span>
         </a><ul><li>
+        <a class="level is-marginless" href="/categories/Study/JavaScript/">
+            <span class="level-start">
+                <span class="level-item">JavaScript</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">2</span>
+            </span>
+        </a></li><li>
         <a class="level is-marginless" href="/categories/Study/Learning-JavaScript/">
             <span class="level-start">
                 <span class="level-item">Learning-JavaScript</span>
@@ -613,22 +618,6 @@ s.setAttribute('data-timestamp', +new Date());
             </span>
             <span class="level-end">
                 <span class="level-item tag">2</span>
-            </span>
-        </a></li><li>
-        <a class="level is-marginless" href="/categories/Study/실행컨텍스트/">
-            <span class="level-start">
-                <span class="level-item">실행컨텍스트</span>
-            </span>
-            <span class="level-end">
-                <span class="level-item tag">1</span>
-            </span>
-        </a></li><li>
-        <a class="level is-marginless" href="/categories/Study/클로저/">
-            <span class="level-start">
-                <span class="level-item">클로저</span>
-            </span>
-            <span class="level-end">
-                <span class="level-item tag">1</span>
             </span>
         </a></li></ul></li><li>
         <a class="level is-marginless" href="/categories/회고/">
@@ -795,7 +784,7 @@ document.addEventListener('DOMContentLoaded', function () {
     
     
 
-<a id="back-to-top" title="Kembali ke atas" href="javascript:;">
+<a id="back-to-top" title="Back to Top" href="javascript:;">
     <i class="fas fa-chevron-up"></i>
 </a>
 <script src="/js/back-to-top.js" defer></script>

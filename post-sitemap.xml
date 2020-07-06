@@ -8,8 +8,88 @@
     </url>
 
     <url>
-        <loc>https://mishka.kr/2020/06/17/TypeScript-async/</loc>
-        <lastmod>2020-06-17T10:26:14.558Z</lastmod>
+        <loc>https://mishka.kr/2019/08/02/Learning-JavaScript-chapter9/</loc>
+        <lastmod>2020-07-06T10:55:18.508Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://mishka.kr/2019/07/13/Learning-JavaScript-chapter8/</loc>
+        <lastmod>2020-07-06T10:53:38.300Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://mishka.kr/2019/07/05/Learning-JavaScript-chapter6/</loc>
+        <lastmod>2020-07-06T10:27:12.626Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://mishka.kr/2019/07/05/Learning-JavaScript-chapter5/</loc>
+        <lastmod>2020-07-06T10:20:02.802Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://mishka.kr/2019/06/27/Learning-JavaScript-chapter4/</loc>
+        <lastmod>2020-07-06T10:07:21.679Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://mishka.kr/2019/06/19/Learning-JavaScript-chapter1/</loc>
+        <lastmod>2020-07-06T09:53:10.575Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://mishka.kr/2019/11/08/Vue-study-1.1/</loc>
+        <lastmod>2020-07-06T09:46:10.506Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://mishka.kr/2019/11/08/Vue-study-1/</loc>
+        <lastmod>2020-06-29T10:48:24.648Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://mishka.kr/2019/09/27/zsh-setting/</loc>
+        <lastmod>2020-06-29T10:30:15.926Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://mishka.kr/2020/03/30/webstorm-gitflow/</loc>
+        <lastmod>2020-06-29T10:24:55.284Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://mishka.kr/2019/06/24/vscode-gitbash/</loc>
+        <lastmod>2020-06-29T10:22:01.606Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -17,7 +97,135 @@
 
     <url>
         <loc>https://mishka.kr/2019/10/18/ssh-setting/</loc>
-        <lastmod>2020-06-17T09:06:04.580Z</lastmod>
+        <lastmod>2020-06-29T10:13:29.470Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://mishka.kr/2019/08/29/Retrospective-20190829/</loc>
+        <lastmod>2020-06-29T09:57:13.293Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://mishka.kr/2019/05/28/markdown/</loc>
+        <lastmod>2020-06-29T09:54:41.139Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://mishka.kr/2019/06/10/hexo-writing/</loc>
+        <lastmod>2020-06-29T09:47:01.854Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://mishka.kr/2019/06/19/hexo-themes/</loc>
+        <lastmod>2020-06-29T09:19:06.764Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://mishka.kr/2019/06/11/Hexo-seo/</loc>
+        <lastmod>2020-06-29T09:16:48.440Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://mishka.kr/2019/07/29/hexo-post-setting/</loc>
+        <lastmod>2020-06-29T09:13:15.787Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://mishka.kr/2019/07/02/hexo-comment-disqus/</loc>
+        <lastmod>2020-06-29T09:07:20.616Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://mishka.kr/2019/06/09/hexo-blog/</loc>
+        <lastmod>2020-06-29T09:00:44.215Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://mishka.kr/2020/01/10/github-domain/</loc>
+        <lastmod>2020-06-23T10:27:38.187Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://mishka.kr/2020/03/30/gitflow/</loc>
+        <lastmod>2020-06-23T10:22:59.621Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://mishka.kr/2019/06/03/git-basic/</loc>
+        <lastmod>2020-06-23T10:16:11.079Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://mishka.kr/2020/01/02/execution_context/</loc>
+        <lastmod>2020-06-23T10:07:02.351Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://mishka.kr/2020/01/04/closure/</loc>
+        <lastmod>2020-06-23T10:00:35.565Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://mishka.kr/2019/06/21/blog-ad-coupang/</loc>
+        <lastmod>2020-06-23T09:48:21.552Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://mishka.kr/2020/02/19/axios/</loc>
+        <lastmod>2020-06-23T09:26:08.261Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://mishka.kr/2020/06/17/TypeScript-async/</loc>
+        <lastmod>2020-06-17T10:26:14.558Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -72,30 +280,6 @@
     </url>
 
     <url>
-        <loc>https://mishka.kr/2019/06/19/hexo-themes/</loc>
-        <lastmod>2020-04-15T07:03:33.629Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://mishka.kr/2019/06/10/hexo-writing/</loc>
-        <lastmod>2020-04-15T06:30:05.366Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://mishka.kr/2019/06/09/hexo-blog/</loc>
-        <lastmod>2020-04-15T06:21:35.292Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
         <loc>https://mishka.kr/2020/04/01/TypeScript-function/</loc>
         <lastmod>2020-04-15T05:58:06.007Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -104,40 +288,8 @@
     </url>
 
     <url>
-        <loc>https://mishka.kr/2020/03/30/webstorm-gitflow/</loc>
-        <lastmod>2020-04-14T00:01:26.053Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://mishka.kr/2019/07/02/hexo-comment-disqus/</loc>
-        <lastmod>2020-04-13T09:09:31.853Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://mishka.kr/2019/07/29/hexo-post-setting/</loc>
-        <lastmod>2020-04-08T01:34:35.245Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
         <loc>https://mishka.kr/2020/03/30/webstorm-jira/</loc>
         <lastmod>2020-04-01T07:43:29.333Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://mishka.kr/2020/03/30/gitflow/</loc>
-        <lastmod>2020-03-31T00:41:23.262Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -168,86 +320,6 @@
     </url>
 
     <url>
-        <loc>https://mishka.kr/2020/02/19/axios/</loc>
-        <lastmod>2020-02-20T01:59:43.063Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://mishka.kr/2020/01/10/github-domain/</loc>
-        <lastmod>2020-01-10T05:53:09.698Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://mishka.kr/2020/01/04/closure/</loc>
-        <lastmod>2020-01-10T00:53:52.394Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://mishka.kr/2020/01/02/execution_context/</loc>
-        <lastmod>2020-01-06T10:22:30.247Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://mishka.kr/2019/11/08/Vue-study-1/</loc>
-        <lastmod>2019-11-08T09:31:21.236Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://mishka.kr/2019/11/08/Vue-study-1.1/</loc>
-        <lastmod>2019-11-08T09:31:18.695Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://mishka.kr/2019/06/21/blog-ad-coupang/</loc>
-        <lastmod>2019-10-09T05:31:31.419Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://mishka.kr/2019/06/03/git-basic/</loc>
-        <lastmod>2019-10-09T05:31:17.021Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://mishka.kr/2019/06/11/Hexo-seo/</loc>
-        <lastmod>2019-10-09T05:30:00.644Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://mishka.kr/2019/05/28/markdown/</loc>
-        <lastmod>2019-10-09T05:27:49.323Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
         <loc>https://mishka.kr/2019/06/24/vscode-extension/</loc>
         <lastmod>2019-10-09T05:27:20.999Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -256,48 +328,8 @@
     </url>
 
     <url>
-        <loc>https://mishka.kr/2019/08/29/Retrospective-20190829/</loc>
-        <lastmod>2019-10-09T05:27:07.087Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://mishka.kr/2019/06/24/vscode-gitbash/</loc>
-        <lastmod>2019-10-09T05:27:04.222Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://mishka.kr/2019/09/27/zsh-setting/</loc>
-        <lastmod>2019-10-09T05:26:43.609Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
         <loc>https://mishka.kr/2019/08/03/Learning-JavaScript-chapter11/</loc>
         <lastmod>2019-10-09T05:25:03.830Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://mishka.kr/2019/08/02/Learning-JavaScript-chapter9/</loc>
-        <lastmod>2019-10-09T05:25:03.829Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://mishka.kr/2019/07/13/Learning-JavaScript-chapter8/</loc>
-        <lastmod>2019-10-09T05:25:03.829Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -328,14 +360,6 @@
     </url>
 
     <url>
-        <loc>https://mishka.kr/2019/07/05/Learning-JavaScript-chapter6/</loc>
-        <lastmod>2019-10-09T05:25:03.828Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
         <loc>https://mishka.kr/2019/08/02/Learning-JavaScript-chapter10/</loc>
         <lastmod>2019-10-09T05:25:03.827Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -344,31 +368,7 @@
     </url>
 
     <url>
-        <loc>https://mishka.kr/2019/06/19/Learning-JavaScript-chapter1/</loc>
-        <lastmod>2019-10-09T05:25:03.827Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
         <loc>https://mishka.kr/2019/08/03/Learning-JavaScript-chapter12/</loc>
-        <lastmod>2019-10-09T05:25:03.827Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://mishka.kr/2019/06/27/Learning-JavaScript-chapter4/</loc>
-        <lastmod>2019-10-09T05:25:03.827Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://mishka.kr/2019/07/05/Learning-JavaScript-chapter5/</loc>
         <lastmod>2019-10-09T05:25:03.827Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>

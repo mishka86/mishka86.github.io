@@ -195,12 +195,12 @@
             
         </h1>
         <div class="content">
-            <html><head><meta name="generator" content="Hexo 3.9.0"></head><body><p>Hexo 블로그를 만들고 나서 이번에 적용해 보려고 하는 것은 검색엔진 최적화(SEO)였다.<br>다행히 Hexo에는 SEO관련 플러그인들이 많이 있었다.<br>그 중에 많이 쓰이고 해당 블로그에 적용한 플러드인들을 소개합니다.</p>
+            <html><head><meta name="generator" content="Hexo 3.9.0"></head><body><p>Hexo 블로그를 만들고 나서 이번에 적용해 보려고 하는 것은 검색엔진 최적화(SEO)였다.<br>다행히 Hexo에는 SEO관련 플러그인들이 많이 있었다.<br>그 중에 많이 쓰이고 해당 블로그에 적용한 플러그인들을 소개합니다.</p>
 <h2 id="SEO"><a href="#SEO" class="headerlink" title="SEO"></a>SEO</h2><hr>
 <p>SEO란?<br>영어로 Search Engine Optimization 의 약자이며, 검색엔진 최적화 라는 의미를 가지고 있습니다.<br>검색엔진에 맞게 사이트를 제작 및 운영하는 과정 전부를 뜻합니다.</p>
 <a id="more"></a>
 <h2 id="플러그인-설치-및-설정"><a href="#플러그인-설치-및-설정" class="headerlink" title="플러그인 설치 및 설정"></a>플러그인 설치 및 설정</h2><hr>
-<h3 id="hexo-auto-canonical"><a href="#hexo-auto-canonical" class="headerlink" title="- hexo-auto-canonical"></a>- hexo-auto-canonical</h3><p>메타 태그 중 canonical 속성을 대표 URL을 뜻합니다.<br>각 포스트마다 자동으로 표준 링크를 만들어 줍니다.</p>
+<h3 id="hexo-auto-canonical"><a href="#hexo-auto-canonical" class="headerlink" title="- hexo-auto-canonical"></a>- hexo-auto-canonical</h3><p>메타 태그 중 canonical 속성은 대표 URL을 뜻합니다.<br>각 포스트마다 자동으로 표준 링크를 만들어 줍니다.</p>
 <p><strong>설치</strong></p>
 <figure class="highlight bash hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install --save hexo-auto-canonical</span><br></pre></td></tr></tbody></table></figure>
 
@@ -250,7 +250,7 @@
 <figure class="highlight bash hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-generator-robotstxt --save</span><br></pre></td></tr></tbody></table></figure>
 
 <p><strong>설정</strong><br><br>_config.yml 파일에 아래 내용을 추가합니다.</p>
-<figure class="highlight bash hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">robotstxt:</span><br><span class="line">  useragent: <span class="hljs-string">"*"</span></span><br><span class="line">  allow:</span><br><span class="line">    - /</span><br><span class="line">  sitemap: https://<username>.github.io/sitemap.xml</username></span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight bash hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">robotstxt:</span><br><span class="line">  useragent: <span class="hljs-string">"*"</span></span><br><span class="line">  allow:</span><br><span class="line">    - /</span><br><span class="line">  sitemap: https://[username].github.io/sitemap.xml</span><br></pre></td></tr></tbody></table></figure>
 
 <p>Deploy를 해주신 후에<br>각 검색엔진에서 SEO설정을 해줍니다.</p>
 </body></html>
@@ -259,7 +259,7 @@
         
             <div class="related-posts">
                 <h4>관련 포스팅 보기</h4>
-                <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2019/06/20/backup/" title="Hexo 배포 원리에 따른 백업(backup) 방법" rel="bookmark">Hexo 배포 원리에 따른 백업(backup) 방법</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2019/06/21/blog-ad-coupang/" title="쿠팡파트너스 Hexo 블로그에 등록하기" rel="bookmark">쿠팡파트너스 Hexo 블로그에 등록하기</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2019/07/29/hexo-post-setting/" title="hexo 포스팅 스타일 설정하기" rel="bookmark">hexo 포스팅 스타일 설정하기</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2020/01/10/github-domain/" title="Github 블로그에 Custom 도메인 연결하기" rel="bookmark">Github 블로그에 Custom 도메인 연결하기</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2019/07/02/hexo-comment-disqus/" title="Disqus를 사용하여 댓글 기능 세팅하기" rel="bookmark">Disqus를 사용하여 댓글 기능 세팅하기</a></h3></div></li></ul>
+                <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2019/06/21/blog-ad-coupang/" title="쿠팡파트너스 Hexo 블로그에 등록하기" rel="bookmark">쿠팡파트너스 Hexo 블로그에 등록하기</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2019/06/20/backup/" title="Hexo 배포 원리에 따른 백업(backup) 방법" rel="bookmark">Hexo 배포 원리에 따른 백업(backup) 방법</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2020/01/10/github-domain/" title="Github 블로그에 Custom 도메인 연결하기" rel="bookmark">Github 블로그에 Custom 도메인 연결하기</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2019/06/09/hexo-blog/" title="Hexo 블로그 Github를 이용해 만들어보기" rel="bookmark">Hexo 블로그 Github를 이용해 만들어보기</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2019/07/02/hexo-comment-disqus/" title="Disqus를 사용하여 댓글 기능 세팅하기" rel="bookmark">Disqus를 사용하여 댓글 기능 세팅하기</a></h3></div></li></ul>
             </div>
         
 
@@ -495,6 +495,14 @@ s.setAttribute('data-timestamp', +new Date());
                 <span class="level-item tag">30</span>
             </span>
         </a><ul><li>
+        <a class="level is-marginless" href="/categories/Study/JavaScript/">
+            <span class="level-start">
+                <span class="level-item">JavaScript</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">2</span>
+            </span>
+        </a></li><li>
         <a class="level is-marginless" href="/categories/Study/Learning-JavaScript/">
             <span class="level-start">
                 <span class="level-item">Learning-JavaScript</span>
@@ -517,22 +525,6 @@ s.setAttribute('data-timestamp', +new Date());
             </span>
             <span class="level-end">
                 <span class="level-item tag">2</span>
-            </span>
-        </a></li><li>
-        <a class="level is-marginless" href="/categories/Study/실행컨텍스트/">
-            <span class="level-start">
-                <span class="level-item">실행컨텍스트</span>
-            </span>
-            <span class="level-end">
-                <span class="level-item tag">1</span>
-            </span>
-        </a></li><li>
-        <a class="level is-marginless" href="/categories/Study/클로저/">
-            <span class="level-start">
-                <span class="level-item">클로저</span>
-            </span>
-            <span class="level-end">
-                <span class="level-item tag">1</span>
             </span>
         </a></li></ul></li><li>
         <a class="level is-marginless" href="/categories/회고/">
@@ -699,7 +691,7 @@ document.addEventListener('DOMContentLoaded', function () {
     
     
 
-<a id="back-to-top" title="Kembali ke atas" href="javascript:;">
+<a id="back-to-top" title="Back to Top" href="javascript:;">
     <i class="fas fa-chevron-up"></i>
 </a>
 <script src="/js/back-to-top.js" defer></script>

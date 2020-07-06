@@ -225,24 +225,22 @@
 <h3 id="배너-검색위젯"><a href="#배너-검색위젯" class="headerlink" title="배너, 검색위젯"></a>배너, 검색위젯</h3><p>배너와 검색위젯 기능은 미리 만들어진 배너를 사용할수 있는 코드들을 보여줍니다.<br>원하는 형태의 배너를 선택하셔서 사용하시면 됩니다.</p>
 <h2 id="Hexo-블로그에-적용"><a href="#Hexo-블로그에-적용" class="headerlink" title="Hexo 블로그에 적용"></a>Hexo 블로그에 적용</h2><p>레이아웃의 경우 적용하신 테마에 따라 형식이 조금씩 다르겠지만 보통 layout 폴더에서 ejs파일들로 관리합니다.<br><a href="https://ejs.co/" rel="external nofollow noopener noreferrer" target="_blank">EJS</a> 는 Embedded JavaScrip의 줄임말로 간단한 자바스크립트로 HTML마크업을 생성 할수 있는 간단한 템플릿언어입니다.<br>hexo블로그들은 대부분 ejs로 작성되어있습니다. </p>
 <p> <code>layout</code>폴더 경로에 <code>layout/ads</code>라는 폴더를 만들고 <code>coupang_ad.ejs</code>라는 파일을 새로 생성합니다.<br>배너 만들기를 통해 생성한 코드를 <code>coupang_ad.ejs</code>에 입력해 줍니다.</p>
-<figure class="highlight js hljs"><figcaption><span>coupang_ad.ejs</span></figcaption><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">//예시코드입니다. 생성받으신 코드를 입력하시면 됩니다.</span></span><br><span class="line"><script src="<span" class="hljs-string">"https://ads-partners.coupang.com/g.js"</span>></script></span><br><span class="line"><script></span><br><span class="line">	<span class="hljs-keyword">new</span> PartnersCoupang.G({ <span class="hljs-attr">id</span>: });</span><br><span class="line"><<span class="hljs-regexp">/script></span></span><br></pre></td></tr></tbody></table></figure>
+<p>그리고 원하시는 위치에 위의 코드를 불러오면 됩니다.<br>형태는 <code><%- partial('ads coupang_ad') %></%-></code> 이것 처럼 넣으시면 됩니다. 이때 확장자는 쓰시면 안됩니다.</p>
+<figure class="highlight javascript hljs"><figcaption><span>원하는위치.ejs</span></figcaption><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><%- partial(<span class="hljs-string">'ads/coupang_ad'</%-></span>) %><br></pre></td></tr></tbody></table></figure>
 
-<p>그리고 원하시는 위치에 위의 코드를 불러오면 됩니다.<br>형태는 <code><%- partial('ads/coupang_ad') %></code> 이것 처럼 넣으시면 됩니다. 이때 확장자는 쓰시면 안됩니다.</p>
-<figure class="highlight js hljs"><figcaption><span>원하는위치.ejs</span></figcaption><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><%- partial(<span class="hljs-string">'ads/coupang_ad'</span>) %></span><br></pre></td></tr></tbody></table></figure>
-
-<p>이제 모든 과정이 끝났습니다. 블로그를 재배포 해준후에 확인하시면 잘 들어가 잇는 것을 볼 수 있습니다.<br>쿠팡파트너스 페이지에서 클릭,구매액,수익 등을 확인 할 수 있습니다.</p>
-<p>그리고 회원가입시에 추천인 코드를 쓰면 1%추가 적립을 받을수 있다고 합니다.<br>추천인코드가 필요하신 분은 가져다 쓰세요 ^^</p>
+<p>이제 모든 과정이 끝났습니다. 블로그를 재배포 해준후에 확인하시면 잘 들어가 있는 것을 볼 수 있습니다.<br>쿠팡파트너스 페이지에서 클릭, 구매액, 수익 등을 확인 할 수 있습니다.</p>
+<p>그리고 회원가입시에 추천인 코드를 쓰면 1% 추가 적립을 받을 수 있다고 합니다.<br>추천인코드가 필요하신 분은 가져다 쓰세요 ^^</p>
 <blockquote>
 <p><strong>ID : AF3074287</strong></p>
 </blockquote>
-<p>우리모두 블로그로 부수입을 창출해 봅시다. ㅎㅎㅎ</p>
+<p>우리 모두 블로그로 부수입을 창출해 봅시다. ㅎㅎㅎ</p>
 </body></html>
         </div>
 
         
             <div class="related-posts">
                 <h4>관련 포스팅 보기</h4>
-                <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2020/01/10/github-domain/" title="Github 블로그에 Custom 도메인 연결하기" rel="bookmark">Github 블로그에 Custom 도메인 연결하기</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2019/07/02/hexo-comment-disqus/" title="Disqus를 사용하여 댓글 기능 세팅하기" rel="bookmark">Disqus를 사용하여 댓글 기능 세팅하기</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2019/06/09/hexo-blog/" title="Hexo 블로그 Github를 이용해 만들어보기" rel="bookmark">Hexo 블로그 Github를 이용해 만들어보기</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2019/06/11/Hexo-seo/" title="Hexo 검색엔진 최적화(SEO) 시켜보기" rel="bookmark">Hexo 검색엔진 최적화(SEO) 시켜보기</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2019/06/20/backup/" title="Hexo 배포 원리에 따른 백업(backup) 방법" rel="bookmark">Hexo 배포 원리에 따른 백업(backup) 방법</a></h3></div></li></ul>
+                <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2020/01/10/github-domain/" title="Github 블로그에 Custom 도메인 연결하기" rel="bookmark">Github 블로그에 Custom 도메인 연결하기</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2019/06/09/hexo-blog/" title="Hexo 블로그 Github를 이용해 만들어보기" rel="bookmark">Hexo 블로그 Github를 이용해 만들어보기</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2019/07/02/hexo-comment-disqus/" title="Disqus를 사용하여 댓글 기능 세팅하기" rel="bookmark">Disqus를 사용하여 댓글 기능 세팅하기</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2019/06/11/Hexo-seo/" title="Hexo 검색엔진 최적화(SEO) 시켜보기" rel="bookmark">Hexo 검색엔진 최적화(SEO) 시켜보기</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2019/06/20/backup/" title="Hexo 배포 원리에 따른 백업(backup) 방법" rel="bookmark">Hexo 배포 원리에 따른 백업(backup) 방법</a></h3></div></li></ul>
             </div>
         
 
@@ -264,7 +262,7 @@
 <script type="text/javascript" src="https://platform-api.sharethis.com/js/sharethis.js#property=5d11bc2de1239400125e3dc9&amp;product=inline-share-buttons" async="async"></script>
 
         
-    </span></pre></td></tr></tbody></table></figure></body></html></div>
+    </div>
 </div>
 
 
@@ -330,7 +328,7 @@ s.setAttribute('data-timestamp', +new Date());
 </div>
 
 
-</div></div>
+</div>
                 
                 
 
@@ -486,6 +484,14 @@ s.setAttribute('data-timestamp', +new Date());
                 <span class="level-item tag">30</span>
             </span>
         </a><ul><li>
+        <a class="level is-marginless" href="/categories/Study/JavaScript/">
+            <span class="level-start">
+                <span class="level-item">JavaScript</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">2</span>
+            </span>
+        </a></li><li>
         <a class="level is-marginless" href="/categories/Study/Learning-JavaScript/">
             <span class="level-start">
                 <span class="level-item">Learning-JavaScript</span>
@@ -508,22 +514,6 @@ s.setAttribute('data-timestamp', +new Date());
             </span>
             <span class="level-end">
                 <span class="level-item tag">2</span>
-            </span>
-        </a></li><li>
-        <a class="level is-marginless" href="/categories/Study/실행컨텍스트/">
-            <span class="level-start">
-                <span class="level-item">실행컨텍스트</span>
-            </span>
-            <span class="level-end">
-                <span class="level-item tag">1</span>
-            </span>
-        </a></li><li>
-        <a class="level is-marginless" href="/categories/Study/클로저/">
-            <span class="level-start">
-                <span class="level-item">클로저</span>
-            </span>
-            <span class="level-end">
-                <span class="level-item tag">1</span>
             </span>
         </a></li></ul></li><li>
         <a class="level is-marginless" href="/categories/회고/">
@@ -690,7 +680,7 @@ document.addEventListener('DOMContentLoaded', function () {
     
     
 
-<a id="back-to-top" title="Kembali ke atas" href="javascript:;">
+<a id="back-to-top" title="Back to Top" href="javascript:;">
     <i class="fas fa-chevron-up"></i>
 </a>
 <script src="/js/back-to-top.js" defer></script>

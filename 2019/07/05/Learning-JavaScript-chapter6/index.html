@@ -209,7 +209,7 @@
 </ul>
 </blockquote>
 <p>함수를 변수에 할당하면 <strong>다른 이름으로 함수를 호출</strong> 할 수 있다.<br>함수를 객체 프로퍼티에 할당 할 수도 있다. 배열 요소로 할당 할 수도 있다.</p>
-<h2 id="함수와-매개변수"><a href="#함수와-매개변수" class="headerlink" title="함수와 매개변수"></a>함수와 매개변수</h2><p>함수를 호출하면서 정보를 전달 할때는 함수 매겨변수를 이용한다.<br>매개변수는 함수가 호출되기 전에는 존재하지 않는다는 점을 제외하면 일반적인 변수나 마찬가지이다.</p>
+<h2 id="함수와-매개변수"><a href="#함수와-매개변수" class="headerlink" title="함수와 매개변수"></a>함수와 매개변수</h2><p>함수를 호출하면서 정보를 전달 할때는 함수 매개변수를 이용한다.<br>매개변수는 함수가 호출되기 전에는 존재하지 않는다는 점을 제외하면 일반적인 변수나 마찬가지이다.</p>
 <figure class="highlight javascript hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">avg</span>(<span class="hljs-params">a,b</span>)</span>{</span><br><span class="line">    <span class="hljs-keyword">return</span>(a+b)/<span class="hljs-number">2</span></span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
 
 <p>이 함수 선언에서 a와b를 정해진 매개변수를 한 개 전달하든 같은 함수를 호출 하는 것이다.<br>다시 말해 어떤 함수를 그 함수에서 정해진 매개변수 숫자와 관계없이 몇 개의 매개 변수를 전달해도 됩니다.<br>정해진 매개변수에 값을 제공하지 않으면 암묵적을 undefined가 할당됩니다.</p>
@@ -248,15 +248,14 @@
 <p>함수를 호출하면서 call를 사용하고 this로 사용할 객체를 넘기면 해당 함수가 주어진 객체의 메서드인 것처럼 사용 할 수 있다.<br>call의 첫번째 매개변수는 this로 사용할 값이고, 매개변수가 더 있으면 그 매개변수는 호출하는 함수로 전달된다.</p>
 <p>apply는 함수 매개변수처리 방법만 제외하고 call과 같습니다.<br>call은 함수와 마찬가지로 매개변수를 직접 받지만 apply는 매개변수를 배열로 받습니다.</p>
 <p>apply는 배열 요소를 함수 매개변수로 사용해야 할 때 유용하다.<br>ES6의 확장연산자(…)를 사용해도 apply와 같은 결과를 얻을 수 있다.</p>
-<p>bind를 사용하면 함수의 함수의 <code>this값을 영구히 바꿀 수 있다</code>.
-bind에 매개변수를 넘기면 항상 그 매개변수를 받으면서 호출되는 새 함수를 만드는 효과가 있다.</p>
+<p>bind를 사용하면 함수의 함수의 <code>this값을 영구히 바꿀 수 있다.</code><br>bind에 매개변수를 넘기면 항상 그 매개변수를 받으면서 호출되는 새 함수를 만드는 효과가 있다.</p>
 </body></html>
         </div>
 
         
             <div class="related-posts">
                 <h4>관련 포스팅 보기</h4>
-                <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2020/04/01/TypeScript-function/" title="타입스크립트 - 함수" rel="bookmark">타입스크립트 - 함수</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2019/06/19/Learning-JavaScript-chapter1/" title="러닝 자바스크립트 스터디 자료 - CHAPTER 1. 첫 번째 애플리케이션" rel="bookmark">러닝 자바스크립트 스터디 자료 - CHAPTER 1. 첫 번째 애플리케이션</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2019/06/19/Learning-JavaScript-chapter2/" title="러닝 자바스크립트 스터디 자료 - CHAPTER 2. 자바스크립트 개발 도구" rel="bookmark">러닝 자바스크립트 스터디 자료 - CHAPTER 2. 자바스크립트 개발 도구</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2019/06/27/Learning-JavaScript-chapter4/" title="러닝 자바스크립트 스터디 자료 - CHAPTER 4. 제어문" rel="bookmark">러닝 자바스크립트 스터디 자료 - CHAPTER 4. 제어문</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2019/07/05/Learning-JavaScript-chapter5/" title="러닝 자바스크립트 스터디 자료 - CHAPTER 5. 표현식과 연산자" rel="bookmark">러닝 자바스크립트 스터디 자료 - CHAPTER 5. 표현식과 연산자</a></h3></div></li></ul>
+                <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2020/04/01/TypeScript-function/" title="타입스크립트 - 함수" rel="bookmark">타입스크립트 - 함수</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2019/06/19/Learning-JavaScript-chapter1/" title="러닝 자바스크립트 스터디 자료 - CHAPTER 1. 첫 번째 애플리케이션" rel="bookmark">러닝 자바스크립트 스터디 자료 - CHAPTER 1. 첫 번째 애플리케이션</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2019/06/20/Learning-JavaScript-chapter3/" title="러닝 자바스크립트 스터디 자료 - CHAPTER 3. 리터널과 변수, 상수, 데이터 타입" rel="bookmark">러닝 자바스크립트 스터디 자료 - CHAPTER 3. 리터널과 변수, 상수, 데이터 타입</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2019/06/19/Learning-JavaScript-chapter2/" title="러닝 자바스크립트 스터디 자료 - CHAPTER 2. 자바스크립트 개발 도구" rel="bookmark">러닝 자바스크립트 스터디 자료 - CHAPTER 2. 자바스크립트 개발 도구</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2019/07/05/Learning-JavaScript-chapter5/" title="러닝 자바스크립트 스터디 자료 - CHAPTER 5. 표현식과 연산자" rel="bookmark">러닝 자바스크립트 스터디 자료 - CHAPTER 5. 표현식과 연산자</a></h3></div></li></ul>
             </div>
         
 
@@ -508,6 +507,14 @@ s.setAttribute('data-timestamp', +new Date());
                 <span class="level-item tag">30</span>
             </span>
         </a><ul><li>
+        <a class="level is-marginless" href="/categories/Study/JavaScript/">
+            <span class="level-start">
+                <span class="level-item">JavaScript</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">2</span>
+            </span>
+        </a></li><li>
         <a class="level is-marginless" href="/categories/Study/Learning-JavaScript/">
             <span class="level-start">
                 <span class="level-item">Learning-JavaScript</span>
@@ -530,22 +537,6 @@ s.setAttribute('data-timestamp', +new Date());
             </span>
             <span class="level-end">
                 <span class="level-item tag">2</span>
-            </span>
-        </a></li><li>
-        <a class="level is-marginless" href="/categories/Study/실행컨텍스트/">
-            <span class="level-start">
-                <span class="level-item">실행컨텍스트</span>
-            </span>
-            <span class="level-end">
-                <span class="level-item tag">1</span>
-            </span>
-        </a></li><li>
-        <a class="level is-marginless" href="/categories/Study/클로저/">
-            <span class="level-start">
-                <span class="level-item">클로저</span>
-            </span>
-            <span class="level-end">
-                <span class="level-item tag">1</span>
             </span>
         </a></li></ul></li><li>
         <a class="level is-marginless" href="/categories/회고/">
@@ -712,7 +703,7 @@ document.addEventListener('DOMContentLoaded', function () {
     
     
 
-<a id="back-to-top" title="Kembali ke atas" href="javascript:;">
+<a id="back-to-top" title="Back to Top" href="javascript:;">
     <i class="fas fa-chevron-up"></i>
 </a>
 <script src="/js/back-to-top.js" defer></script>
