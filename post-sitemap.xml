@@ -8,8 +8,80 @@
     </url>
 
     <url>
+        <loc>https://mishka.kr/2020/10/13/momentJs/</loc>
+        <lastmod>2020-10-13T07:11:42.666Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://mishka.kr/2020/03/11/TypeScript-1/</loc>
+        <lastmod>2020-07-15T10:40:34.749Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://mishka.kr/2019/08/17/Learning-JavaScript-chapter16/</loc>
+        <lastmod>2020-07-15T10:38:01.560Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://mishka.kr/2019/08/16/Learning-JavaScript-chapter15/</loc>
+        <lastmod>2020-07-15T10:33:11.494Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://mishka.kr/2019/08/03/Learning-JavaScript-chapter14/</loc>
+        <lastmod>2020-07-15T10:29:47.785Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://mishka.kr/2019/08/03/Learning-JavaScript-chapter13/</loc>
+        <lastmod>2020-07-15T09:57:19.466Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://mishka.kr/2019/08/03/Learning-JavaScript-chapter12/</loc>
+        <lastmod>2020-07-15T09:52:53.318Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://mishka.kr/2019/08/03/Learning-JavaScript-chapter11/</loc>
+        <lastmod>2020-07-15T09:43:44.454Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://mishka.kr/2019/08/02/Learning-JavaScript-chapter10/</loc>
+        <lastmod>2020-07-15T09:35:46.325Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>https://mishka.kr/2019/08/02/Learning-JavaScript-chapter9/</loc>
-        <lastmod>2020-07-06T10:55:18.508Z</lastmod>
+        <lastmod>2020-07-15T09:21:31.199Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -312,32 +384,8 @@
     </url>
 
     <url>
-        <loc>https://mishka.kr/2020/03/11/TypeScript-1/</loc>
-        <lastmod>2020-03-24T09:23:27.319Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
         <loc>https://mishka.kr/2019/06/24/vscode-extension/</loc>
         <lastmod>2019-10-09T05:27:20.999Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://mishka.kr/2019/08/03/Learning-JavaScript-chapter11/</loc>
-        <lastmod>2019-10-09T05:25:03.830Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://mishka.kr/2019/08/03/Learning-JavaScript-chapter13/</loc>
-        <lastmod>2019-10-09T05:25:03.828Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -360,48 +408,8 @@
     </url>
 
     <url>
-        <loc>https://mishka.kr/2019/08/02/Learning-JavaScript-chapter10/</loc>
-        <lastmod>2019-10-09T05:25:03.827Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://mishka.kr/2019/08/03/Learning-JavaScript-chapter12/</loc>
-        <lastmod>2019-10-09T05:25:03.827Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
         <loc>https://mishka.kr/2019/06/19/Learning-JavaScript-chapter2/</loc>
         <lastmod>2019-10-09T05:25:03.801Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://mishka.kr/2019/08/03/Learning-JavaScript-chapter14/</loc>
-        <lastmod>2019-10-09T05:24:05.253Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://mishka.kr/2019/08/16/Learning-JavaScript-chapter15/</loc>
-        <lastmod>2019-10-09T05:23:59.979Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://mishka.kr/2019/08/17/Learning-JavaScript-chapter16/</loc>
-        <lastmod>2019-10-09T05:23:23.222Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 

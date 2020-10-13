@@ -8,15 +8,36 @@
     </url>
 
     <url>
-        <loc>https://mishka.kr/categories/Study/Learning-JavaScript/</loc>
-        <lastmod>2020-07-06T10:55:18.508Z</lastmod>
+        <loc>https://mishka.kr/categories/Programming/moment/</loc>
+        <lastmod>2020-10-13T07:11:42.666Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://mishka.kr/categories/Programming/</loc>
+        <lastmod>2020-10-13T07:11:42.666Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://mishka.kr/categories/Study/TypeScript/</loc>
+        <lastmod>2020-07-15T10:40:34.749Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>https://mishka.kr/categories/Study/</loc>
-        <lastmod>2020-07-06T10:55:18.508Z</lastmod>
+        <lastmod>2020-07-15T10:40:34.749Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://mishka.kr/categories/Study/Learning-JavaScript/</loc>
+        <lastmod>2020-07-15T10:38:01.560Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
@@ -79,13 +100,6 @@
 
     <url>
         <loc>https://mishka.kr/categories/Programming/Markdown/</loc>
-        <lastmod>2020-06-29T09:54:41.139Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://mishka.kr/categories/Programming/</loc>
         <lastmod>2020-06-29T09:54:41.139Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
@@ -157,13 +171,6 @@
     <url>
         <loc>https://mishka.kr/categories/Programming/Axios/</loc>
         <lastmod>2020-06-23T09:26:08.261Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://mishka.kr/categories/Study/TypeScript/</loc>
-        <lastmod>2020-06-17T10:26:14.558Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
