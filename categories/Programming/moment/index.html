@@ -200,36 +200,21 @@
         </h1>
         <div class="content">
             <html><head><meta name="generator" content="Hexo 3.9.0"></head><body><p>자바스크립트에서 날짜 또는 시간을 다루기 위해서는 기본적으로 Date 객체를 사용합니다.<br>이를보다 편리하고 간단하게 활용할수 있는 라이브러리에 대해 정리해 보고자 합니다.</p>
-<p>Moment.js는 Date 형식의 데이터 파싱,검증,조작 등을 간편하게 할수 있게 해주는 유용한 라이브러리이다.<br>이를 Vue에서 사용하기 쉽도록 수정 배포된 버전이 vue-moment 이다. </p>
-<h2 id="설치"><a href="#설치" class="headerlink" title="설치"></a>설치</h2><figure class="highlight plain hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install vue-moment</span><br></pre></td></tr></tbody></table></figure>
-
-<figure class="highlight javascript hljs"><figcaption><span>main.js</span></figcaption><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Vue.use(<span class="hljs-built_in">require</span>(<span class="hljs-string">'vue-moment'</span>))</span><br></pre></td></tr></tbody></table></figure>
-
-<p>require를 사용하지 않는다면</p>
-<figure class="highlight javascript hljs"><figcaption><span>main.js</span></figcaption><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">import</span> VueMoment <span class="hljs-keyword">from</span> <span class="hljs-string">'vue-moment'</span></span><br><span class="line">Vue.use(VueMoment)</span><br></pre></td></tr></tbody></table></figure>
-
-<h2 id="사용"><a href="#사용" class="headerlink" title="사용"></a>사용</h2><p>위과 같이 설치하고 나면 moment를 호출하여 사용할 수 있다.<br><code>Vue.$moment</code> 의 형태로 사용한다. 스크립트에서는 <code>this.$moment</code> 탬플릿에서는 <code>$moment</code> 의 형태로 사용한다.</p>
-<figure class="highlight javascript hljs"><figcaption><span>사용예시</span></figcaption><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">// 현재시간</span></span><br><span class="line">{{$moment().format(<span class="hljs-string">'YYYY-MM-DD'</span>)}} </span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// 데이터 입력 시간</span></span><br><span class="line">{{$moment(time).format(<span class="hljs-string">'YYYY-MM-DD'</span>)}</span><br></pre></td></tr></tbody></table></figure>
-
-<h2 id="필터링-filtering-방법"><a href="#필터링-filtering-방법" class="headerlink" title="필터링(filtering) 방법"></a>필터링(filtering) 방법</h2><h3 id="format-포맷팅"><a href="#format-포맷팅" class="headerlink" title="format(포맷팅)"></a>format(포맷팅)</h3><p>format 을 사용해서 원하는 형태의 시간정보를 생성할수 있다.</p>
-<figure class="highlight javascript hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">moment().format();                                <span class="hljs-comment">// "2014-09-08T08:02:17-05:00" (ISO 8601, no fractional seconds)</span></span><br><span class="line">moment().format(<span class="hljs-string">'YYYY-MM-DD'</span>);                    <span class="hljs-comment">// "2014-09-08"</span></span><br><span class="line">moment().format(<span class="hljs-string">'dddd, MMMM Do YYYY, h:mm:ss a'</span>); <span class="hljs-comment">// "Sunday, February 14th 2010, 3:25:50 pm"</span></span><br><span class="line">moment().format(<span class="hljs-string">'ddd, hA'</span>);                       <span class="hljs-comment">// "Sun, 3PM"</span></span><br><span class="line">moment().format(<span class="hljs-string">'[Today is] dddd'</span>);               <span class="hljs-comment">// "Today is Sunday"</span></span><br></pre></td></tr></tbody></table></figure>
-
-<p><a href="https://momentjs.com/docs/#/displaying/format/" rel="external nofollow noopener noreferrer" target="_blank">더 다양한 방법 보기 - format</a></p>
-<h3 id="add-더하기"><a href="#add-더하기" class="headerlink" title="add(더하기)"></a>add(더하기)</h3><p>기존 시간에 원하는 시간을 추가하여 기존 시간을 변경할 수 있습니다.</p>
-<figure class="highlight javascript hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">this</span>.$moment(someDate).add(<span class="hljs-number">7</span>, <span class="hljs-string">'days'</span>)  <span class="hljs-comment">// 7일이 추가된 시간</span></span><br></pre></td></tr></tbody></table></figure>
-
-<p><a href="https://momentjs.com/docs/#/manipulating/add/" rel="external nofollow noopener noreferrer" target="_blank">더 다양한 방법 보기 - add</a></p>
-<h3 id="subtract-빼기"><a href="#subtract-빼기" class="headerlink" title="subtract(빼기)"></a>subtract(빼기)</h3><p>기존 시간에 원하는 시간을 빼서 기존 시간을 변경할 수 있습니다.</p>
-<figure class="highlight javascript hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">this</span>.$moment(someDate).subtract(<span class="hljs-number">7</span>, <span class="hljs-string">'days'</span>)  <span class="hljs-comment">// 7일 뺀 시간</span></span><br></pre></td></tr></tbody></table></figure>
-
-<p><a href="https://momentjs.com/docs/#/manipulating/subtract/" rel="external nofollow noopener noreferrer" target="_blank">더 다양한 방법 보기 - subtract</a></p>
-</body></html>
+<p>Moment.js는 Date 형식의 데이터 파싱,검증,조작 등을 간편하게 할수 있게 해주는 유용한 라이브러리이다.<br>이를 Vue에서 사용하기 쉽도록 수정 배포된 버전이 vue-moment 이다. </p></body></html>
         </div>
 
         
 
 
         
+        
+        <div class="level is-mobile">
+            <div class="level-start">
+                <div class="level-item">
+                <a class="button is-size-7 is-light" href="/2020/10/13/momentJs/#more">자세히 보기</a>
+                </div>
+            </div>
+        </div>
         
         
     </div>
