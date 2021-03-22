@@ -228,7 +228,7 @@
 <h2 id="오류체크"><a href="#오류체크" class="headerlink" title="오류체크"></a>오류체크</h2><p><code>icarus</code>테마는 기본적으로 disqus 댓글 시스템을 지원하고 있어서 위와같이 세팅하면 정상적으로 댓글기능이 작동해야 하지만<br>무엇이 문제였는지 시스템 자체는 연결되었는데 댓글을 작성하는 위젯이 제대로 작동하지 않았다 ㅠㅜ<br><img src="/img/disqus_error.jpg" alt></p>
 <p><code>icarus</code>테마에서 제공하는 포스팅에서도 comment Plugin 의 설정만을 변경해 주면된다고 나오는데 말이다.<br><a href="https://blog.zhangruipeng.me/hexo-theme-icarus/Plugins/Comment/disqus-comment-plugin/" rel="external nofollow noopener noreferrer" target="_blank">Disqus Comment Plugin</a></p>
 <p>여러가지를 시도해 보다 결국 소스코드 자체를 변경하는 것으로 해결하였다.<br>icarus 테마의 경우 <code>disqus.ejs</code> 파일의 내용을 <code>universal Code</code>에서 제공하는 코드로 변경하니 정상적으로 작동되었다.<br>테마마다 약간의 설정이 다를수 있으니 참고정도만 하시면 되겠습니다.</p>
-<h2 id="언어선택-문제"><a href="#언어선택-문제" class="headerlink" title="언어선택 문제"></a>언어선택 문제</h2><p>현재 disqus에서는 한글을 지원하지 않는 것으로 변경되었다고 합니다. 니<br>그래서 편법으로 설정하는 방법이 있는데 편법이라 방법이 나와있는 포스팅을 공유하는 것으로 대체하겠습다.<br><a href="https://jungjoongi.com/2018/10/30/disqus-korean-setting/" rel="external nofollow noopener noreferrer" target="_blank">디스커스 한글 세팅을 해보자</a></p>
+<h2 id="언어선택-문제"><a href="#언어선택-문제" class="headerlink" title="언어선택 문제"></a>언어선택 문제</h2><p>현재 disqus에서는 한글을 지원하지 않는 것으로 변경되었다고 합니다.<br>그래서 편법으로 설정하는 방법이 있는데 편법이라 방법이 나와있는 포스팅을 공유하는 것으로 대체하겠습니다.<br><a href="https://jungjoongi.com/2018/10/30/disqus-korean-setting/" rel="external nofollow noopener noreferrer" target="_blank">디스커스 한글 세팅을 해보자</a></p>
 </body></html>
         </div>
 
@@ -687,7 +687,7 @@ document.addEventListener('DOMContentLoaded', function () {
     
     
 
-<a id="back-to-top" title="Back to Top" href="javascript:;">
+<a id="back-to-top" title="Kembali ke atas" href="javascript:;">
     <i class="fas fa-chevron-up"></i>
 </a>
 <script src="/js/back-to-top.js" defer></script>
